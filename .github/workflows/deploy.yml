@@ -37,7 +37,7 @@ jobs:
       - name: Install dependencies
         run: |
           npm ci --include=optional
-          npm install @rollup/rollup-linux-x64-gnu@4.57.0 --no-save
+          npm install @rollup/rollup-linux-x64-gnu@4.57.0 @tailwindcss/oxide-linux-x64-gnu@4.1.18 lightningcss-linux-x64-gnu@1.30.2 --no-save
 
       - name: Build
         run: npm run build
