@@ -1,0 +1,16 @@
+[
+  {
+    "id": "bnb-chain-bnbchain-skills-skills-bnbchain-mcp-skill",
+    "title": "bnbchain-mcp",
+    "summary": "BNB Chain MCP server connection and tool usage. Covers npx @bnb-chain/mcp@latest, PRIVATE_KEY and RPC, and every MCP tool — blocks, transactions, contracts, ERC20/NFT transfers, wallet, ERC-8004 agent registration, Greenfield. Use when connecting to bnbchain-mcp, querying or transacting on BNB Chain/opBNB/EVM, registering as ERC-8004 agent, or using Greenfield.",
+    "usage": "For **parameter names, examples, and detailed usage** of each tool, use:\n\n| Reference | Content |\n|-----------|---------|\n| [references/evm-tools-reference.md](references/evm-tools-reference.md) | Blocks, transactions, network, wallet, contracts, tokens, NFT — all EVM tools |\n| [references/erc8004-tools-reference.md](references/erc8004-tools-reference.md) | register_erc8004_agent, set_erc8004_agent_uri, get_erc8004_agent, get_erc8004_agent_wallet |\n| [references/greenfield-tools-reference.md](references/greenfield-tools-reference.md) | Buckets, objects, folders, payment accounts — all Greenfield tools |\n| [references/prompts-reference.md](references/prompts-reference.md) | All MCP prompts and when to use them |\n\n---",
+    "category": "bnb-chain",
+    "category_title": "BNB Chain",
+    "source": {
+      "name": "bnbchain-skills",
+      "repository": "https://github.com/bnb-chain/bnbchain-skills",
+      "install": "npx skills add bnb-chain/bnbchain-skills"
+    },
+    "skill_path": "skills/bnbchain-skills/skills/bnbchain-mcp-skill/SKILL.md"
+  }
+]

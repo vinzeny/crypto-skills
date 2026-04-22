@@ -1,0 +1,128 @@
+[
+  {
+    "id": "coinbase-coinbase-agentic-wallet-skills-skills-authenticate-wallet",
+    "title": "authenticate-wallet",
+    "summary": "Sign in to the wallet. Use when you or the user want to log in, sign in, connect, or set up the wallet, or when any wallet operation fails with authentication or \"not signed in\" errors. This skill is a prerequisite before sending, trading, or funding.",
+    "usage": "| Command                                      | Purpose                                |\n| -------------------------------------------- | -------------------------------------- |\n| `npx awal@2.8.0 status`                     | Check server health and auth status    |\n| `npx awal@2.8.0 auth login <email>`         | Send OTP code to email, returns flowId |\n| `npx awal@2.8.0 auth verify <otp>`          | Complete authentication with OTP code  |\n| `npx awal@2.8.0 balance`                    | Get USDC wallet balance                |\n| `npx awal@2.8.0 address`                    | Get wallet address                     |\n| `npx awal@2.8.0 show`                       | Open the wallet companion window       |",
+    "category": "coinbase",
+    "category_title": "Coinbase",
+    "source": {
+      "name": "coinbase-agentic-wallet-skills",
+      "repository": "https://github.com/coinbase/agentic-wallet-skills",
+      "install": "npx skills add coinbase/agentic-wallet-skills"
+    },
+    "skill_path": "skills/coinbase-agentic-wallet-skills/skills/authenticate-wallet/SKILL.md"
+  },
+  {
+    "id": "coinbase-coinbase-agentic-wallet-skills-skills-fund",
+    "title": "fund",
+    "summary": "Add money to the wallet. Use when you or the user want to fund, deposit, top up, load, buy USDC, add funds, onramp, or get USDC. Also use when the wallet has insufficient balance for a send or trade operation, or when someone asks \"how do I get USDC?\"",
+    "usage": "Use the wallet companion app to fund the wallet with USDC via Coinbase Onramp. This supports multiple payment methods including Apple Pay, debit cards, bank transfers, and funding from a Coinbase account.",
+    "category": "coinbase",
+    "category_title": "Coinbase",
+    "source": {
+      "name": "coinbase-agentic-wallet-skills",
+      "repository": "https://github.com/coinbase/agentic-wallet-skills",
+      "install": "npx skills add coinbase/agentic-wallet-skills"
+    },
+    "skill_path": "skills/coinbase-agentic-wallet-skills/skills/fund/SKILL.md"
+  },
+  {
+    "id": "coinbase-coinbase-agentic-wallet-skills-skills-monetize-service",
+    "title": "monetize-service",
+    "summary": "Build and deploy a paid API that other agents can pay to use via x402. Use when you or the user want to monetize an API, make money, earn money, offer a service, sell a service to other agents, charge for endpoints, create a paid endpoint, or set up a paid service. Covers \"make money by offering an endpoint\", \"sell a service\", \"monetize your data\", \"create a paid API\".",
+    "usage": "Create an Express server that charges USDC for API access using the x402 payment protocol. Callers pay per-request in USDC on Base — no accounts, API keys, or subscriptions needed. Your service is automatically discoverable by other agents via the x402 Bazaar.",
+    "category": "coinbase",
+    "category_title": "Coinbase",
+    "source": {
+      "name": "coinbase-agentic-wallet-skills",
+      "repository": "https://github.com/coinbase/agentic-wallet-skills",
+      "install": "npx skills add coinbase/agentic-wallet-skills"
+    },
+    "skill_path": "skills/coinbase-agentic-wallet-skills/skills/monetize-service/SKILL.md"
+  },
+  {
+    "id": "coinbase-coinbase-agentic-wallet-skills-skills-pay-for-service",
+    "title": "pay-for-service",
+    "summary": "Make a paid API request to an x402 endpoint with automatic USDC payment. Use when you or the user want to call a paid API, make an x402 request, use a paid service, or pay for an API call. Use after finding a service with search-for-service.",
+    "usage": "```bash\nnpx awal@2.8.0 x402 pay <url> [-X <method>] [-d <json>] [-q <params>] [-h <json>] [--max-amount <n>] [--json]\n```",
+    "category": "coinbase",
+    "category_title": "Coinbase",
+    "source": {
+      "name": "coinbase-agentic-wallet-skills",
+      "repository": "https://github.com/coinbase/agentic-wallet-skills",
+      "install": "npx skills add coinbase/agentic-wallet-skills"
+    },
+    "skill_path": "skills/coinbase-agentic-wallet-skills/skills/pay-for-service/SKILL.md"
+  },
+  {
+    "id": "coinbase-coinbase-agentic-wallet-skills-skills-query-onchain-data",
+    "title": "query-onchain-data",
+    "summary": "Query onchain data on Base using the CDP SQL API via x402. Use when you or your user want to view onchain information about decoded blocks, transactions, and event.",
+    "usage": "Use the CDP SQL API to query onchain data (events, transactions, blocks, transfers) on Base. Queries are executed via x402 and are charged per query.",
+    "category": "coinbase",
+    "category_title": "Coinbase",
+    "source": {
+      "name": "coinbase-agentic-wallet-skills",
+      "repository": "https://github.com/coinbase/agentic-wallet-skills",
+      "install": "npx skills add coinbase/agentic-wallet-skills"
+    },
+    "skill_path": "skills/coinbase-agentic-wallet-skills/skills/query-onchain-data/SKILL.md"
+  },
+  {
+    "id": "coinbase-coinbase-agentic-wallet-skills-skills-search-for-service",
+    "title": "search-for-service",
+    "summary": "Search and browse the x402 bazaar marketplace for paid API services. Use when you or the user want to find available services, see what's available, discover APIs, or need an external service to accomplish a task. Also use as a fallback when no other skill clearly matches — search the bazaar to see if a paid service exists. Covers \"what can I do?\", \"find me an API for...\", \"what services are available?\", \"search for...\", \"browse the bazaar\".",
+    "usage": "### Search the Bazaar\n\nFind paid services by keyword using BM25 relevance search:\n\n```bash\nnpx awal@2.8.0 x402 bazaar search <query> [-k <n>] [--network <network>] [--scheme <scheme>] [--max-price <price>] [--json]\n```\n\n| Option                  | Description                                                              |\n| ----------------------- | ------------------------------------------------------------------------ |\n| `-k, --top <n>`         | Number of results, 1–20 (default: 20)                                    |\n| `--network <name>`      | Filter by chain (base, base-sepolia, polygon, solana, solana-devnet)     |\n| `--scheme <scheme>`     | Filter by payment scheme: `exact` or `upto`                              |\n| `--max-price <price>`   | Maximum price in USD (e.g. `0.01`)                                       |\n| `--asset <address>`     | Filter by payment asset address                                          |\n| `--pay-to <address>`    | Filter by recipient wallet address                                       |\n| `--extensions <type>`   | Filter by extension type (e.g. `outputSchema`, `bazaar`)                 |\n| `--json`                | Output as JSON                                                           |\n\n### List Bazaar Resources\n\nBrowse all available resources:\n\n```bash\nnpx awal@2.8.0 x402 bazaar list [--network <network>] [--full] [--refresh] [--js…",
+    "category": "coinbase",
+    "category_title": "Coinbase",
+    "source": {
+      "name": "coinbase-agentic-wallet-skills",
+      "repository": "https://github.com/coinbase/agentic-wallet-skills",
+      "install": "npx skills add coinbase/agentic-wallet-skills"
+    },
+    "skill_path": "skills/coinbase-agentic-wallet-skills/skills/search-for-service/SKILL.md"
+  },
+  {
+    "id": "coinbase-coinbase-agentic-wallet-skills-skills-send-usdc",
+    "title": "send-usdc",
+    "summary": "Send USDC to an Ethereum address or ENS name. Use when you or the user want to send money, pay someone, transfer USDC, tip, donate, or send funds to a wallet address or .eth name. Covers phrases like \"send $5 to\", \"pay 0x...\", or \"transfer to vitalik.eth\".",
+    "usage": "```bash\nnpx awal@2.8.0 send <amount> <recipient> [--chain <chain>] [--json]\n```",
+    "category": "coinbase",
+    "category_title": "Coinbase",
+    "source": {
+      "name": "coinbase-agentic-wallet-skills",
+      "repository": "https://github.com/coinbase/agentic-wallet-skills",
+      "install": "npx skills add coinbase/agentic-wallet-skills"
+    },
+    "skill_path": "skills/coinbase-agentic-wallet-skills/skills/send-usdc/SKILL.md"
+  },
+  {
+    "id": "coinbase-coinbase-agentic-wallet-skills-skills-trade",
+    "title": "trade",
+    "summary": "Swap or trade tokens on Base network. Use when you or the user want to trade, swap, exchange, buy, sell, or convert between tokens like USDC, ETH, and WETH. Covers phrases like \"buy ETH\", \"sell ETH for USDC\", \"convert USDC to ETH\", \"get some ETH\".",
+    "usage": "```bash\nnpx awal@2.8.0 trade <amount> <from> <to> [options]\n```",
+    "category": "coinbase",
+    "category_title": "Coinbase",
+    "source": {
+      "name": "coinbase-agentic-wallet-skills",
+      "repository": "https://github.com/coinbase/agentic-wallet-skills",
+      "install": "npx skills add coinbase/agentic-wallet-skills"
+    },
+    "skill_path": "skills/coinbase-agentic-wallet-skills/skills/trade/SKILL.md"
+  },
+  {
+    "id": "coinbase-coinbase-agentic-wallet-skills-skills-x402",
+    "title": "x402",
+    "summary": "Search for new services and make paid API requests using the x402 payment protocol. Use when you don't have a clear tool to choose, search the bazaar. You can also use this tool if you or the user want to call an x402 endpoint, discover payment requirements, browse the bazaar, or search for paid services.",
+    "usage": "### Search the Bazaar\n\nFind paid services by keyword using BM25 relevance search:\n\n```bash\nnpx awal@2.8.0 x402 bazaar search <query> [-k <n>] [--network <network>] [--scheme <scheme>] [--max-price <price>] [--json]\n```\n\n| Option                  | Description                                                              |\n| ----------------------- | ------------------------------------------------------------------------ |\n| `-k, --top <n>`         | Number of results, 1–20 (default: 20)                                    |\n| `--network <name>`      | Filter by chain (base, base-sepolia, polygon, solana, solana-devnet)     |\n| `--scheme <scheme>`     | Filter by payment scheme: `exact` or `upto`                              |\n| `--max-price <price>`   | Maximum price in USD (e.g. `0.01`)                                       |\n| `--asset <address>`     | Filter by payment asset address                                          |\n| `--pay-to <address>`    | Filter by recipient wallet address                                       |\n| `--extensions <type>`   | Filter by extension type (e.g. `outputSchema`, `bazaar`)                 |\n| `--json`                | Output as JSON                                                           |\n\n### List Bazaar Resources\n\nBrowse all available resources:\n\n```bash\nnpx awal@2.8.0 x402 bazaar list [--network <network>] [--full] [--refresh] [--js…",
+    "category": "coinbase",
+    "category_title": "Coinbase",
+    "source": {
+      "name": "coinbase-agentic-wallet-skills",
+      "repository": "https://github.com/coinbase/agentic-wallet-skills",
+      "install": "npx skills add coinbase/agentic-wallet-skills"
+    },
+    "skill_path": "skills/coinbase-agentic-wallet-skills/skills/x402/SKILL.md"
+  }
+]

@@ -1,0 +1,34 @@
+# Dependencies
+node_modules
+
+# Build output
+dist
+.astro
+
+# Test and tool output
+test-results
+coverage
+
+# Local deploy state
+.vercel
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Environment
+.env
+.env.local
+.env.production.local
+.env.development.local
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.idea
+.vscode
+*.swp
+*.swo

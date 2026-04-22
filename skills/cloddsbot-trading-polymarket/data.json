@@ -1,0 +1,16 @@
+[
+  {
+    "id": "polymarket-cloddsbot-trading-polymarket",
+    "title": "trading-polymarket",
+    "summary": "Execute trades on Polymarket using py_clob_client - full API access for market data, orders, positions",
+    "usage": "| Type | Use Case | Example |\n|------|----------|---------|\n| **GTC** | Entries - wait for fill | Place buy at 0.45, wait for dip |\n| **FOK** | Exits - need immediate fill | Market sell entire position NOW |\n| **GTD** | Time-limited orders | Offer expires in 5 minutes |\n| **FAK** | Partial fills OK | Get as much as possible now |",
+    "category": "polymarket",
+    "category_title": "Polymarket",
+    "source": {
+      "name": "cloddsbot-trading-polymarket",
+      "repository": "https://github.com/alsk1992/CloddsBot/blob/main/src/skills/bundled/trading-polymarket/SKILL.md",
+      "install": "CloddsBot bundled skill"
+    },
+    "skill_path": "skills/cloddsbot-trading-polymarket/SKILL.md"
+  }
+]

@@ -1,0 +1,57 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import catalog from "../../data/crypto-skills.json";
+
+export function getStaticPaths() {
+  return catalog.skills.map((skill) => ({
+    params: { id: skill.id },
+    props: { skill },
+  }));
+}
+
+const { skill } = Astro.props;
+const homeHref = import.meta.env.BASE_URL.endsWith("/") ? import.meta.env.BASE_URL : `${import.meta.env.BASE_URL}/`;
+---
+
+<Layout title={skill.title} description={skill.summary_short || skill.summary}>
+  <article class="skill-page" style={`--accent: ${skill.accent}`}>
+    <a class="back-link" href={homeHref}>Back to directory</a>
+    <div class="skill-page-header">
+      <div>
+        <div class="detail-kicker">
+          <span class="category-dot"></span>
+          {skill.category_title}
+        </div>
+        <h1>{skill.title}</h1>
+      </div>
+      {
+        skill.source.repository ? (
+          <a class="repo-link" href={skill.source.repository} target="_blank" rel="noreferrer">
+            Repository
+          </a>
+        ) : null
+      }
+    </div>
+
+    <section class="detail-section">
+      <h2>摘要</h2>
+      <p>{skill.summary}</p>
+    </section>
+
+    <section class="detail-section">
+      <h2>使用方法</h2>
+      <pre>{skill.usage}</pre>
+    </section>
+
+    <section class="detail-section detail-grid">
+      <div>
+        <h2>安装</h2>
+        <code>{skill.source.install || "See repository"}</code>
+      </div>
+      <div>
+        <h2>Skill 路径</h2>
+        <code>{skill.skill_path}</code>
+      </div>
+    </section>
+  </article>
+</Layout>

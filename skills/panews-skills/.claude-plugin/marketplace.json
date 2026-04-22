@@ -1,0 +1,25 @@
+{
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "panews-agent-toolkit",
+  "metadata": {
+    "version": "0.1.0",
+    "description": "Marketplace index for the PANews Agent Toolkit Claude Code plugin."
+  },
+  "owner": {
+    "name": "PANews",
+    "email": "hello@panony.com"
+  },
+  "plugins": [
+    {
+      "name": "panews",
+      "description": "PANews Agent Toolkit for crypto news discovery, creator workflows, and PANews page reading.",
+      "version": "0.1.0",
+      "author": {
+        "name": "Seven Du",
+        "email": "seven@panony.com"
+      },
+      "source": "./",
+      "category": "productivity"
+    }
+  ]
+}

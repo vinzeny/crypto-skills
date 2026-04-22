@@ -1,0 +1,16 @@
+[
+  {
+    "id": "polymarket-kjhelgason-polymarket-agent-skills",
+    "title": "polymarket",
+    "summary": "Polymarket prediction market API expertise. Use when implementing Polymarket trading bots, authentication flows, market discovery, WebSocket connections, or debugging py-clob-client issues. Covers CLOB API, Gamma API, Data API, edge cases like USDC.e vs native USDC, order constraints, and production patterns.",
+    "usage": "```python\nfrom py_clob_client.client import ClobClient\nfrom py_clob_client.clob_types import OrderArgs, OrderType\nfrom py_clob_client.order_builder.constants import BUY\nimport requests",
+    "category": "polymarket",
+    "category_title": "Polymarket",
+    "source": {
+      "name": "kjhelgason-polymarket-agent-skills",
+      "repository": "https://github.com/KJHelgason/Polymarket_Agent_skills",
+      "install": "git clone 后复制到 .claude/skills/polymarket"
+    },
+    "skill_path": "skills/kjhelgason-polymarket-agent-skills/SKILL.md"
+  }
+]

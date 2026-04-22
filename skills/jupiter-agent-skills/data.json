@@ -1,0 +1,58 @@
+[
+  {
+    "id": "jupiter-jupiter-agent-skills-skills-integrating-jupiter",
+    "title": "integrating-jupiter",
+    "summary": "Comprehensive guidance for integrating Jupiter APIs (Swap, Lend, Perps, Trigger, Recurring, Tokens, Price, Portfolio, Prediction Markets, Send, Studio, Lock, Routing). Use for endpoint selection, integration flows, error handling, and production hardening.",
+    "usage": "Single skill for all Jupiter APIs, optimized for fast routing and deterministic execution.",
+    "category": "jupiter",
+    "category_title": "Jupiter",
+    "source": {
+      "name": "jupiter-agent-skills",
+      "repository": "https://github.com/jup-ag/agent-skills",
+      "install": "npx skills add jup-ag/agent-skills"
+    },
+    "skill_path": "skills/jupiter-agent-skills/skills/integrating-jupiter/SKILL.md"
+  },
+  {
+    "id": "jupiter-jupiter-agent-skills-skills-jupiter-lend",
+    "title": "jupiter-lend",
+    "summary": "Interact with Jupiter Lend Protocol. Read-only SDK (@jup-ag/lend-read) for querying liquidity pools, lending markets (jlTokens), and vaults. Write SDK (@jup-ag/lend) for lending (deposit/withdraw) and vault operations (deposit collateral, borrow, repay, manage positions).",
+    "usage": "Example prompts you can use to demo Jupiter Lend integrations:\n\n- Discover all available vaults and list them\n- Fetch all vault positions for a user\n- Deposit collateral and borrow in a single transaction\n- Repay max debt and withdraw max collateral for a position\n- Get user Earn (jlToken) positions and underlying balances\n- Build a flashloan for arbitrage or liquidation\n- Get liquidity rates and APY for a token\n- Create a new vault position (positionId 0), deposit collateral, and borrow",
+    "category": "jupiter",
+    "category_title": "Jupiter",
+    "source": {
+      "name": "jupiter-agent-skills",
+      "repository": "https://github.com/jup-ag/agent-skills",
+      "install": "npx skills add jup-ag/agent-skills"
+    },
+    "skill_path": "skills/jupiter-agent-skills/skills/jupiter-lend/SKILL.md"
+  },
+  {
+    "id": "jupiter-jupiter-agent-skills-skills-jupiter-swap-migration",
+    "title": "jupiter-swap-migration",
+    "summary": "Migration guide from Jupiter Metis (v1) or Ultra to Swap API v2. Use when migrating existing Jupiter swap integrations, updating base URLs, or transitioning from quote+swap-instructions to the unified build endpoint.",
+    "usage": "Migrate existing Jupiter swap integrations from **Metis (v1)** or **Ultra** to the unified **Swap API v2**.",
+    "category": "jupiter",
+    "category_title": "Jupiter",
+    "source": {
+      "name": "jupiter-agent-skills",
+      "repository": "https://github.com/jup-ag/agent-skills",
+      "install": "npx skills add jup-ag/agent-skills"
+    },
+    "skill_path": "skills/jupiter-agent-skills/skills/jupiter-swap-migration/SKILL.md"
+  },
+  {
+    "id": "jupiter-jupiter-agent-skills-skills-jupiter-vrfd",
+    "title": "jupiter-vrfd",
+    "summary": "Use when a user mentions Jupiter token verification, VRFD eligibility, paying 1000 JUP to verify a token, submitting a verification request, or updating metadata via the Jupiter express verification flow.",
+    "usage": "This skill routes agents through the public Jupiter token-verification flow for a Solana token mint.",
+    "category": "jupiter",
+    "category_title": "Jupiter",
+    "source": {
+      "name": "jupiter-agent-skills",
+      "repository": "https://github.com/jup-ag/agent-skills",
+      "install": "npx skills add jup-ag/agent-skills"
+    },
+    "skill_path": "skills/jupiter-agent-skills/skills/jupiter-vrfd/SKILL.md"
+  }
+]

@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0a0a0f"/>
+      <stop offset="100%" style="stop-color:#0f0f18"/>
+    </linearGradient>
+    <linearGradient id="blue" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#3b82f6"/>
+      <stop offset="100%" style="stop-color:#2563eb"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <rect width="1200" height="630" fill="url(#blue)" opacity="0.05"/>
+  <rect x="60" y="50" width="80" height="80" rx="16" fill="url(#blue)"/>
+  <path d="M100 75L70 100L100 125L130 100L100 75Z" fill="white" opacity="0.95"/>
+  <path d="M70 130L100 150L130 130" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none" opacity="0.8"/>
+  <path d="M70 150L100 170L130 150" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none" opacity="0.6"/>
+  <text x="180" y="105" font-family="system-ui, sans-serif" font-size="36" font-weight="700" fill="white">Polymarket</text>
+  <text x="180" y="138" font-family="system-ui, sans-serif" font-size="28" fill="#94a3b8">Skills</text>
+  <text x="60" y="210" font-family="system-ui, sans-serif" font-size="32" fill="#f4f4f5">The ultimate directory of</text>
+  <text x="60" y="255" font-family="system-ui, sans-serif" font-size="32" fill="#f4f4f5">MCP servers for prediction</text>
+  <text x="60" y="300" font-family="system-ui, sans-serif" font-size="32" fill="#f4f4f5">market data &amp; trading.</text>
+  <rect x="60" y="480" width="220" height="50" rx="8" fill="#3b82f6"/>
+  <text x="170" y="512" font-family="system-ui, sans-serif" font-size="16" font-weight="600" fill="white" text-anchor="middle">Explore Skills</text>
+  <circle cx="1050" cy="520" r="50" fill="#3b82f6" opacity="0.2"/>
+  <path d="M1030 520L1045 535L1065 505" stroke="#60a5fa" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  <circle cx="1120" cy="100" r="30" fill="#3b82f6" opacity="0.1"/>
+</svg>

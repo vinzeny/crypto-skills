@@ -1,0 +1,111 @@
+/**
+ * Byreal CLI - AI-friendly CLI for Byreal CLMM DEX on Solana
+ */
+
+import { Command } from 'commander';
+import chalk from 'chalk';
+import { VERSION, CLI_NAME, LOGO, EXPERIMENTAL_WARNING } from './core/constants.js';
+import { initTelemetry, reportInstallIfNeeded, trackCommandInvoked } from './core/telemetry.js';
+import { createPoolsCommand } from './cli/commands/pools.js';
+import { createTokensCommand } from './cli/commands/tokens.js';
+import { createOverviewCommand } from './cli/commands/overview.js';
+import { createSkillCommand } from './cli/commands/skill.js';
+import { createCatalogCommand } from './cli/commands/catalog.js';
+import { createWalletCommand } from './cli/commands/wallet.js';
+import { createConfigCommand } from './cli/commands/config.js';
+import { createSetupCommand } from './cli/commands/setup.js';
+import { createSwapCommand } from './cli/commands/swap.js';
+import { createPositionsCommand } from './cli/commands/positions.js';
+import { createUpdateCommand } from './cli/commands/update.js';
+import { createStatsCommand } from './cli/commands/stats.js';
+import { checkForUpdate, printUpdateNotice } from './core/update-check.js';
+import { showPreviousUpdateResult, triggerBackgroundUpdate, isAutoUpdateEnabled, isAutoUpdateSuppressed } from './core/auto-updater.js';
+
+// ============================================
+// Main Program
+// ============================================
+
+const program = new Command();
+
+program
+  .name(CLI_NAME)
+  .description('AI-friendly CLI for Byreal CLMM DEX on Solana')
+  .version(VERSION, '-v, --version', 'Output the version number')
+  .option('-o, --output <format>', 'Output format (json, table)', 'table')
+  .option('--debug', 'Show debug information')
+  .option('--non-interactive', 'Disable interactive prompts')
+  .addHelpText('before', chalk.cyan(LOGO) + chalk.yellow(EXPERIMENTAL_WARNING))
+  .hook('preAction', (thisCommand, actionCommand) => {
+    const opts = thisCommand.opts();
+    if (opts.debug) {
+      process.env.DEBUG = 'true';
+    }
+    trackCommandInvoked(actionCommand, opts);
+  });
+
+// ============================================
+// Register Commands
+// ============================================
+
+program.addCommand(createPoolsCommand());
+program.addCommand(createTokensCommand());
+program.addCommand(createOverviewCommand());
+program.addCommand(createSkillCommand());
+program.addCommand(createCatalogCommand());
+program.addCommand(createWalletCommand());
+program.addCommand(createConfigCommand());
+program.addCommand(createSetupCommand());
+program.addCommand(createSwapCommand());
+program.addCommand(createPositionsCommand());
+program.addCommand(createUpdateCommand());
+program.addCommand(createStatsCommand());
+
+// ============================================
+// Error Handling
+// ============================================
+
+program.showHelpAfterError('(add --help for additional information)');
+
+// Handle unknown commands
+program.on('command:*', () => {
+  console.error(chalk.red(`\nError: Unknown command "${program.args.join(' ')}"`));
+  console.log();
+  program.outputHelp();
+  process.exit(1);
+});
+
+// ============================================
+// Parse and Execute
+// ============================================
+
+async function main() {
+  // Initialize telemetry (fire-and-forget, never blocks)
+  initTelemetry();
+  reportInstallIfNeeded();
+
+  try {
+    showPreviousUpdateResult();
+    await program.parseAsync(process.argv);
+    const opts = program.opts();
+    if (opts.output !== 'json' && !isAutoUpdateSuppressed()) {
+      const updateResult = checkForUpdate();
+      if (updateResult?.updateAvailable) {
+        if (isAutoUpdateEnabled()) {
+          triggerBackgroundUpdate(updateResult.latestVersion);
+        } else {
+          printUpdateNotice();
+        }
+      }
+    }
+  } catch (error) {
+    if (error instanceof Error) {
+      console.error(chalk.red(`\nError: ${error.message}`));
+      if (process.env.DEBUG) {
+        console.error(error.stack);
+      }
+    }
+    process.exit(1);
+  }
+}
+
+main();

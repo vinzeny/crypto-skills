@@ -1,0 +1,100 @@
+[
+  {
+    "id": "okx-okx-agent-skills-skills-okx-cex-bot",
+    "title": "okx-cex-bot",
+    "summary": "Manage Grid bots (spot/contract/coin-margined) and DCA Martingale bots (Spot DCA 现货马丁 / Contract DCA 合约马丁) on OKX. Covers create, stop, amend, monitor P&L, TP/SL, margin/investment adjustment, and AI-recommended parameters. Requires API credentials. Not for regular orders (okx-cex-trade), market data (okx-cex-market), or account info (okx-cex-portfolio).",
+    "usage": "### Grid Bot\n\n| Command | Type | Description |\n|---|---|---|\n| `okx bot grid create` | WRITE | Create a grid bot (spot or contract) |\n| `okx bot grid stop` | WRITE | Stop a grid bot |\n| `okx bot grid orders` | READ | List active or history grid bots |\n| `okx bot grid details` | READ | Grid bot details + PnL |\n| `okx bot grid sub-orders` | READ | Individual grid fills or pending orders |\n\n### DCA Bot (Spot & Contract)\n\n| Command | Type | Description |\n|---|---|---|\n| `okx bot dca create` | WRITE | Create a DCA (Martingale) bot (spot or contract) |\n| `okx bot dca stop` | WRITE | Stop a DCA bot (spot or contract) |\n| `okx bot dca orders` | READ | List active or history DCA bots (default: contract_dca) |\n| `okx bot dca details` | READ | DCA bot details + PnL |\n| `okx bot dca sub-orders` | READ | DCA cycles and orders within a cycle |",
+    "category": "okx",
+    "category_title": "OKX",
+    "source": {
+      "name": "okx-agent-skills",
+      "repository": "https://github.com/okx/agent-skills",
+      "install": "npm install -g @okx_ai/okx-trade-mcp @okx_ai/okx-trade-cli"
+    },
+    "skill_path": "skills/okx-agent-skills/skills/okx-cex-bot/SKILL.md"
+  },
+  {
+    "id": "okx-okx-agent-skills-skills-okx-cex-earn",
+    "title": "okx-cex-earn",
+    "summary": "Manages OKX Simple Earn (flexible savings/lending), Flash Earn, On-chain Earn (staking/DeFi), Dual Investment (DCD/双币赢), and AutoEarn (自动赚币) via the okx CLI. Use this skill whenever the user wants to check earn balances, browse flash-earn projects, subscribe or redeem earn products, view or set lending rates, monitor on-chain staking orders, interact with dual investment structured products, or manage auto-earn — even if phrased casually as 活期赚币, 定期赚币, 闪赚, 赚币, 申购, 赎回, 链上赚币, 质押, 理财, 双币赢, 双币理财, 双币申购, 高卖, 低买, dual investment, DCD, flash earn, buy low, sell high structured product, earn with target price, 目标价, 自动赚币, auto earn, auto-earn, 自动借出, 自动质押, auto lend, auto staking, USDG earn, USDG 赚币, 闲置资金自动理财, fixed earn, fixed deposit, term deposit, 定期理财, 定期. Also use when the user asks about idle funds and whether to earn on them.",
+    "usage": "### earn savings — Simple Earn (9 commands)\n\n| Command | Type | Auth | Description |\n|---|---|---|---|\n| `earn savings balance [ccy]` | READ | Required | Savings balance (all or specific currency). Also fetch fixed-term orders for a complete picture. |\n| `earn savings purchase --ccy --amt [--rate]` | WRITE | Required | Subscribe funds to Simple Earn (活期) |\n| `earn savings redeem --ccy --amt` | WRITE | Required | Redeem funds from Simple Earn (活期) |\n| `earn savings set-rate --ccy --rate` | WRITE | Required | Set minimum lending rate |\n| `earn savings lending-history` | READ | Required | User's personal lending records with earnings detail |\n| `earn savings rate-history` | READ | Required | Simple Earn lending rates and fixed-term offers (require auth) |\n| `earn savings fixed-orders [--ccy] [--state]` | READ | Required | Query fixed-term (定期) orders. States: pending/earning/expired/settled/cancelled |\n| `earn savings fixed-purchase --ccy --amt --term [--confirm]` | WRITE | Required | Subscribe to Simple Earn Fixed (定期). Without `--confirm`: preview only |\n| `earn savings fixed-redeem <reqId>` | WRITE | Required | Redeem a fixed-term order (full amount). Only `pending` state orders can be redeemed early |\n\nFor full command syntax, rate field semantics, and confirmation templates, read `{baseDir}/references/savings-commands.md`.\n\n### earn dcd — Dual Investment / 双币赢 (6 commands)…",
+    "category": "okx",
+    "category_title": "OKX",
+    "source": {
+      "name": "okx-agent-skills",
+      "repository": "https://github.com/okx/agent-skills",
+      "install": "npm install -g @okx_ai/okx-trade-mcp @okx_ai/okx-trade-cli"
+    },
+    "skill_path": "skills/okx-agent-skills/skills/okx-cex-earn/SKILL.md"
+  },
+  {
+    "id": "okx-okx-agent-skills-skills-okx-cex-market",
+    "title": "okx-cex-market",
+    "summary": "Use this skill when the user asks for: price of any asset, ticker, order book, market depth, candles, OHLCV, funding rate, open interest, open interest history, OI change scanner, market screener/filter (top movers, high-volume, high-OI, newly listed), mark price, index price, recent trades, price limit, instrument list, stock tokens, metals prices (gold, silver, XAU, XAG), commodities prices (oil, crude, natural gas, OIL), forex rates (EUR/USD, GBP/USD, EURUSDT), bond instruments, non-crypto assets, tradeable instruments by category, or any technical indicator query (RSI, MACD, EMA, MA, Bollinger Bands, KDJ, SuperTrend, AHR999, BTC rainbow, and 70+ more indicators). All commands are read-only and do NOT require API credentials. Do NOT use for account balance/positions (use okx-cex-portfolio), placing/cancelling orders (use okx-cex-trade), or grid/DCA bots (use okx-cex-bot).",
+    "usage": "| # | Command | Description |\n|---|---|---|\n| 1 | `okx market ticker <instId>` | Last price, 24h high/low/vol/change% |\n| 2 | `okx market tickers <instType>` | All tickers for SPOT / SWAP / FUTURES / OPTION |\n| 3 | `okx market instruments --instType <type> [--instId <id>]` | List instruments (instId, ctVal, lotSz, minSz, tickSz, state) |\n| 4 | `okx market orderbook <instId> [--sz <n>]` | Order book asks/bids (default top 5 per side, max 400) |\n| 5 | `okx market candles <instId> [--bar <bar>] [--limit <n>] [--after <ts>] [--before <ts>]` | OHLCV candles (default `--bar 1m`); auto-routes to historical endpoint for data back to 2021; `--after` paginates back in time, `--before` paginates forward |\n| 6 | `okx market index-candles <instId> [--bar <bar>] [--limit <n>] [--history]` | Index OHLCV (use `BTC-USD` not `BTC-USDT`) |\n| 7 | `okx market funding-rate <instId> [--history] [--limit <n>]` | Current or historical funding rate (SWAP only) |\n| 8 | `okx market trades <instId> [--limit <n>]` | Recent public trades |\n| 9 | `okx market mark-price --instType <type> [--instId <id>]` | Mark price (SWAP / FUTURES / OPTION) |\n| 10 | `okx market index-ticker [--instId <id>] [--quoteCcy <ccy>]` | Index price (e.g., BTC-USD) |\n| 11 | `okx market price-limit <instId>` | Upper/lower price limits (SWAP / FUTURES only) |\n| 12 | `okx market open-interest --instType <type> [--instId <id>]` | Open in…",
+    "category": "okx",
+    "category_title": "OKX",
+    "source": {
+      "name": "okx-agent-skills",
+      "repository": "https://github.com/okx/agent-skills",
+      "install": "npm install -g @okx_ai/okx-trade-mcp @okx_ai/okx-trade-cli"
+    },
+    "skill_path": "skills/okx-agent-skills/skills/okx-cex-market/SKILL.md"
+  },
+  {
+    "id": "okx-okx-agent-skills-skills-okx-cex-portfolio",
+    "title": "okx-cex-portfolio",
+    "summary": "This skill should be used when the user asks about 'account balance', 'how much USDT do I have', 'my funding account', 'show my positions', 'open positions', 'position P&L', 'unrealized PnL', 'closed positions', 'position history', 'realized PnL', 'account bills', 'transaction history', 'trading fees', 'fee tier', 'account config', 'max order size', 'how much can I buy', 'withdrawable amount', 'transfer funds', 'move USDT to trading account', or 'switch position mode'. Requires API credentials. Do NOT use for market prices (use okx-cex-market), placing/cancelling orders (use okx-cex-trade), or grid/DCA bots (use okx-cex-bot).",
+    "usage": "### Read Commands\n\n| # | Command | Type | Description |\n|---|---|---|---|\n| 1 | `okx account balance [ccy]` | READ | Trading account equity, available, frozen |\n| 2 | `okx account asset-balance [ccy] [--valuation]` | READ | Funding account balance; `--valuation` adds earn/trading/funding valuation summary |\n| 3 | `okx account positions` | READ | Open contract/swap positions |\n| 4 | `okx account positions-history` | READ | Closed positions + realized PnL |\n| 5 | `okx account bills` | READ | Account ledger (deposits, withdrawals, trades) |\n| 6 | `okx account fees --instType <type>` | READ | My trading fee tier (maker/taker) |\n| 7 | `okx account config` | READ | Account level, position mode, UID |\n| 8 | `okx account max-size --instId <id> --tdMode <mode>` | READ | Max buy/sell size at current price |\n| 9 | `okx account max-avail-size --instId <id> --tdMode <mode>` | READ | Available size for next order |\n| 10 | `okx account max-withdrawal [ccy]` | READ | Max withdrawable per currency |\n\n### Write Commands\n\n| # | Command | Type | Description |\n|---|---|---|---|\n| 11 | `okx account set-position-mode <mode>` | WRITE | Switch net/hedge position mode |\n| 12 | `okx account transfer` | WRITE | Transfer funds between accounts |",
+    "category": "okx",
+    "category_title": "OKX",
+    "source": {
+      "name": "okx-agent-skills",
+      "repository": "https://github.com/okx/agent-skills",
+      "install": "npm install -g @okx_ai/okx-trade-mcp @okx_ai/okx-trade-cli"
+    },
+    "skill_path": "skills/okx-agent-skills/skills/okx-cex-portfolio/SKILL.md"
+  },
+  {
+    "id": "okx-okx-agent-skills-skills-okx-cex-skill-mp",
+    "title": "okx-cex-skill-mp",
+    "summary": "Use this skill when the user asks to: 'find a trading skill', 'search for skills', 'install a skill', 'add a skill', 'download a skill', 'browse skill marketplace', 'what skills are available', 'update a skill', 'check for skill updates', 'remove a skill', 'uninstall a skill', 'list installed skills', 'show my skills', 'skill categories', or any request to discover, install, update, or manage AI trading skills from the OKX Skills Marketplace. This skill covers searching, browsing categories, installing via CLI, downloading zip packages, checking for updates, and removing installed skills. Requires API credentials for marketplace API access. Do NOT use for placing orders (use okx-cex-trade), market data (use okx-cex-market), or bot management (use okx-cex-bot).",
+    "usage": "| # | Command | Description |\n|---|---------|-------------|\n| 1 | `okx skill search <keyword>` | Search marketplace by keyword |\n| 2 | `okx skill search --categories <id>` | Filter skills by category |\n| 3 | `okx skill categories` | List all available categories |\n| 4 | `okx skill add <name>` | Download + install to all detected agents |\n| 5 | `okx skill download <name> [--dir <path>] [--format zip\\|skill]` | Download package (default format: zip) |\n| 6 | `okx skill list` | List locally installed skills |\n| 7 | `okx skill check <name>` | Check if a newer version is available |\n| 8 | `okx skill remove <name>` | Uninstall a skill |\n\nAdd `--json` to any command for raw JSON output. Add `--env` to wrap the output as `{\"env\", \"profile\", \"data\"}`.\n\n---",
+    "category": "okx",
+    "category_title": "OKX",
+    "source": {
+      "name": "okx-agent-skills",
+      "repository": "https://github.com/okx/agent-skills",
+      "install": "npm install -g @okx_ai/okx-trade-mcp @okx_ai/okx-trade-cli"
+    },
+    "skill_path": "skills/okx-agent-skills/skills/okx-cex-skill-mp/SKILL.md"
+  },
+  {
+    "id": "okx-okx-agent-skills-skills-okx-cex-trade",
+    "title": "okx-cex-trade",
+    "summary": "This skill should be used when the user asks to 'buy BTC', 'sell ETH', 'place a limit order', 'place a market order', 'cancel my order', 'amend my order', 'long BTC perp', 'short ETH swap', 'open a position', 'close a position', 'set take profit', 'set stop loss', 'add a trailing stop', 'set leverage', 'check my orders', 'order status', 'fill history', 'trade history', 'buy a call', 'sell a put', 'buy call option', 'sell put option', 'option chain', 'implied volatility', 'IV', 'option Greeks', 'delta', 'gamma', 'theta', 'vega', 'delta hedge', 'option order', 'option position', 'option fills', 'event contract', 'buy Yes', 'buy No', 'buy Up', 'buy Down', 'BTC above', 'price above', '15min price', 'prediction market', or any request to place/cancel/amend spot, perpetual swap, delivery futures, options, or event contract orders on OKX CEX. Covers spot trading, swap/perpetual contracts, delivery futures, options (calls/puts, Greeks, IV), event contracts (binary Yes/No or Up/Down outcomes), and conditional (TP/SL/trailing) algo orders. Requires API credentials. Do NOT use for market data (use okx-cex-market), account balance/positions (use okx-cex-portfolio), or grid/DCA bots (use okx-cex-bot).",
+    "usage": "### Spot Orders (11 commands)\n\n| # | Command | Type | Description |\n|---|---|---|---|\n| 1 | `okx spot place` | WRITE | Place spot order (market/limit/post_only/fok/ioc) |\n| 2 | `okx spot cancel` | WRITE | Cancel spot order |\n| 3 | `okx spot amend` | WRITE | Amend spot order price or size |\n| 4 | `okx spot algo place` | WRITE | Place spot TP/SL algo order |\n| 5 | `okx spot algo amend` | WRITE | Amend spot TP/SL levels |\n| 6 | `okx spot algo cancel` | WRITE | Cancel spot algo order |\n| 7 | `okx spot algo trail` | WRITE | Place spot trailing stop order |\n| 8 | `okx spot orders` | READ | List open or historical spot orders |\n| 9 | `okx spot get` | READ | Single spot order details |\n| 10 | `okx spot fills` | READ | Spot trade fill history |\n| 11 | `okx spot algo orders` | READ | List spot TP/SL algo orders |\n\nFor full command syntax, parameter tables, and edge cases, read `{baseDir}/references/spot-commands.md`.\n\n### Swap / Perpetual Orders (15 commands)\n\n| # | Command | Type | Description |\n|---|---|---|---|\n| 12 | `okx swap place` | WRITE | Place perpetual swap order |\n| 13 | `okx swap cancel` | WRITE | Cancel swap order |\n| 14 | `okx swap amend` | WRITE | Amend swap order price or size |\n| 15 | `okx swap close` | WRITE | Close entire position at market |\n| 16 | `okx swap leverage` | WRITE | Set leverage for an instrument |\n| 17 | `okx swap algo place` | WRITE | Place swap TP/SL…",
+    "category": "okx",
+    "category_title": "OKX",
+    "source": {
+      "name": "okx-agent-skills",
+      "repository": "https://github.com/okx/agent-skills",
+      "install": "npm install -g @okx_ai/okx-trade-mcp @okx_ai/okx-trade-cli"
+    },
+    "skill_path": "skills/okx-agent-skills/skills/okx-cex-trade/SKILL.md"
+  },
+  {
+    "id": "okx-okx-agent-skills-skills-okx-sentiment-tracker",
+    "title": "okx-sentiment-tracker",
+    "summary": "Use this skill when the user asks about: 'any crypto news', 'what happened recently', 'latest news', 'any big news today', 'catch me up', 'market update', 'daily briefing', 'morning briefing', 'market summary', 'BTC news', 'ETH news', 'any news on SOL', 'coin updates', 'what's going on with BTC', 'search SEC ETF', 'stablecoin regulation news', 'Bitcoin halving news', 'is BTC bullish or bearish', 'coin sentiment', 'how do people feel about ETH', 'sentiment trend', 'what's hot in crypto', 'trending coins', 'most mentioned coins', 'top bullish coins', 'bearish sentiment', 'social buzz', 'market mood', 'fear and greed', 'news sources', 'which platforms', 'full article', 'read more', or any request for crypto news, market intelligence, sentiment analysis, or social trend data. Requires API credentials. Do NOT use for market prices/candles (use okx-cex-market), placing orders (use okx-cex-trade), or account info (use okx-cex-portfolio).",
+    "usage": "### Browse News\n\n| User says | Command |\n|-----------|---------|\n| \"what's been happening in crypto lately\" / \"catch me up on recent news\" | `okx news latest` |\n| \"any big news today\" / \"what are the major stories right now\" | `okx news important` |\n| \"what happened in crypto yesterday\" | `okx news latest --begin <yesterday_0am> --end <today_0am>` |\n| \"any news on BTC recently\" / \"what's going on with BTC\" | `okx news by-coin --coins BTC` |\n| \"any major updates on ETH or SOL\" | `okx news by-coin --coins ETH,SOL --importance high` |\n\n### Search News\n\n| User says | Command |\n|-----------|---------|\n| \"any updates on the SEC ETF decision\" | `okx news search --keyword \"SEC ETF\"` |\n| \"what's the latest on stablecoin regulation\" | `okx news search --keyword \"stablecoin regulation\"` |\n| \"any news about the Bitcoin halving\" | `okx news search --keyword \"Bitcoin halving\"` |\n\n### Coin Sentiment Analysis\n\n| User says | Command |\n|-----------|---------|\n| \"is the market bullish or bearish on BTC right now\" / \"how do people feel about BTC\" | `okx news coin-sentiment --coins BTC` |\n| \"compare how people feel about ETH vs SOL\" | `okx news coin-sentiment --coins ETH,SOL` |\n| \"how has BTC sentiment changed over the past 24 hours\" | `okx news coin-trend BTC --period 1h --points 24` |\n| \"show me BTC sentiment over the past week\" | `okx news coin-trend BTC --period 24h --points 7` |\n| \"what's hot…",
+    "category": "okx",
+    "category_title": "OKX",
+    "source": {
+      "name": "okx-agent-skills",
+      "repository": "https://github.com/okx/agent-skills",
+      "install": "npm install -g @okx_ai/okx-trade-mcp @okx_ai/okx-trade-cli"
+    },
+    "skill_path": "skills/okx-agent-skills/skills/okx-sentiment-tracker/SKILL.md"
+  }
+]

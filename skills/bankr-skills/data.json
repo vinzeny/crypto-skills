@@ -1,0 +1,436 @@
+[
+  {
+    "id": "bankr-bankr-skills-0xwork",
+    "title": "0xwork",
+    "summary": "Find and complete paid tasks on the 0xWork decentralized marketplace (Base chain, USDC escrow). Use when: the agent wants to earn money/USDC by doing work, discover available tasks, claim a bounty, submit deliverables, post tasks with bounties, check earnings or wallet balance, sell digital products, list services, or set up as a 0xWork worker/poster. Task categories: Writing, Research, Social, Creative, Code, Data. NOT for: managing the 0xWork platform or frontend development.",
+    "usage": "```bash\nnpm install -g @0xwork/cli@latest\n```\n\nVerify: `0xwork --help`",
+    "category": "bankr",
+    "category_title": "Bankr",
+    "source": {
+      "name": "bankr-skills",
+      "repository": "https://github.com/BankrBot/skills",
+      "install": "install the [skill-name] skill from https://github.com/BankrBot/skills/tree/main/[skill-name]"
+    },
+    "skill_path": "skills/bankr-skills/0xwork/SKILL.md"
+  },
+  {
+    "id": "bankr-bankr-skills-alchemy",
+    "title": "alchemy",
+    "summary": "Blockchain API access via Alchemy. Use when an agent needs to query blockchain data (balances, token prices, NFT ownership, transfer history, transaction simulation, gas estimates) across Ethereum, Base, Arbitrum, BNB, Polygon, Solana, and more. Supports API key access ($ALCHEMY_API_KEY), x402 wallet-based pay-per-request (SIWE/SIWS + USDC), and MPP protocol (SIWE + Tempo/Stripe). Triggers on mentions of RPC, blockchain data, onchain queries, token balances, NFT metadata, portfolio data, webhooks, Alchemy, x402, MPP, SIWE, SIWS, or agentic gateway.",
+    "usage": "Alchemy provides comprehensive blockchain API access across Ethereum, Base, Arbitrum, BNB, Polygon, Solana, and more.",
+    "category": "bankr",
+    "category_title": "Bankr",
+    "source": {
+      "name": "bankr-skills",
+      "repository": "https://github.com/BankrBot/skills",
+      "install": "install the [skill-name] skill from https://github.com/BankrBot/skills/tree/main/[skill-name]"
+    },
+    "skill_path": "skills/bankr-skills/alchemy/SKILL.md"
+  },
+  {
+    "id": "bankr-bankr-skills-bankr",
+    "title": "bankr",
+    "summary": "AI-powered crypto trading agent, wallet API, and LLM gateway via natural language. Use when the user wants to trade crypto, check portfolio balances (with PnL and NFTs), view token prices, search tokens, transfer crypto, manage NFTs, use leverage (Hyperliquid or Avantis), bet on Polymarket, deploy tokens, set up automated trading, sign and submit raw transactions, call x402 paid API endpoints, or access LLM models through the Bankr LLM gateway funded by your Bankr wallet. Supports Base, Ethereum, Polygon, Solana, and Unichain.",
+    "usage": "CLI 0.2.0 organizes commands into three namespaces: `wallet`, `agent`, and `tokens`. Old flat commands (`balances`, `prompt`, `status`, etc.) still work as deprecated aliases.\n\n### `bankr wallet` — Wallet Operations\n\n| Command | Description |\n|---------|-------------|\n| `bankr wallet` | Show wallet info (default: whoami) |\n| `bankr wallet portfolio` | Portfolio balances across all chains (hides tokens under $1 by default) |\n| `bankr wallet portfolio --pnl` | Include profit/loss data |\n| `bankr wallet portfolio --nfts` | Include NFT holdings |\n| `bankr wallet portfolio --all` | Include both PnL and NFTs |\n| `bankr wallet portfolio --chain <chains>` | Filter by chain(s): base, polygon, mainnet, unichain, solana (comma-separated) |\n| `bankr wallet portfolio --json` | Output raw JSON |\n| `bankr wallet transfer --to <recipient> --token <symbol> --amount <amount>` | Transfer tokens with symbol resolution |\n| `bankr wallet transfer --to <recipient> --token USDC --amount 50 --chain base` | Transfer with explicit chain |\n| `bankr wallet sign` | Sign messages/typed data/transactions |\n| `bankr wallet submit` | Submit raw transactions |\n\n### `bankr agent` — AI Agent Operations\n\n| Command | Description |\n|---------|-------------|\n| `bankr agent prompt <text>` | Send a prompt to the Bankr AI agent |\n| `bankr agent prompt --continue <text>` | Continue the most recent conversation thread |\n|…",
+    "category": "bankr",
+    "category_title": "Bankr",
+    "source": {
+      "name": "bankr-skills",
+      "repository": "https://github.com/BankrBot/skills",
+      "install": "install the [skill-name] skill from https://github.com/BankrBot/skills/tree/main/[skill-name]"
+    },
+    "skill_path": "skills/bankr-skills/bankr/SKILL.md"
+  },
+  {
+    "id": "bankr-bankr-skills-base",
+    "title": "base",
+    "summary": "Placeholder for Base skill.",
+    "usage": "Placeholder for Base skill.",
+    "category": "bankr",
+    "category_title": "Bankr",
+    "source": {
+      "name": "bankr-skills",
+      "repository": "https://github.com/BankrBot/skills",
+      "install": "install the [skill-name] skill from https://github.com/BankrBot/skills/tree/main/[skill-name]"
+    },
+    "skill_path": "skills/bankr-skills/base/SKILL.md"
+  },
+  {
+    "id": "bankr-bankr-skills-botchan",
+    "title": "botchan",
+    "summary": "CLI for the onchain agent messaging layer on the Base blockchain, built on Net Protocol. Explore other agents, post to feeds, send direct messages, and store information permanently onchain.",
+    "usage": "Explore what's happening—no wallet needed:\n\n```bash\nbotchan feeds                    # See available feeds\nbotchan read general --limit 5   # Read recent posts\n```\n\nSee an agent you're curious about? View their profile:\n```bash\nbotchan profile 0xb7d1f7ea97e92b282aa9d3ed153f68ada9fddbf9\n```\n\nReady to post? Set up a wallet below.",
+    "category": "bankr",
+    "category_title": "Bankr",
+    "source": {
+      "name": "bankr-skills",
+      "repository": "https://github.com/BankrBot/skills",
+      "install": "install the [skill-name] skill from https://github.com/BankrBot/skills/tree/main/[skill-name]"
+    },
+    "skill_path": "skills/bankr-skills/botchan/SKILL.md"
+  },
+  {
+    "id": "bankr-bankr-skills-clanker",
+    "title": "clanker",
+    "summary": "Deploy ERC20 tokens on Base, Ethereum, Arbitrum, and other EVM chains using the Clanker SDK. Use when the user wants to deploy a new token, create a memecoin, set up token vesting, configure airdrops, manage token rewards, claim LP fees, or update token metadata. Supports V4 deployment with vaults, airdrops, dev buys, custom market caps, vanity addresses, and multi-chain deployment.",
+    "usage": "### Installation\n\n```bash\nnpm install clanker-sdk viem",
+    "category": "bankr",
+    "category_title": "Bankr",
+    "source": {
+      "name": "bankr-skills",
+      "repository": "https://github.com/BankrBot/skills",
+      "install": "install the [skill-name] skill from https://github.com/BankrBot/skills/tree/main/[skill-name]"
+    },
+    "skill_path": "skills/bankr-skills/clanker/SKILL.md"
+  },
+  {
+    "id": "bankr-bankr-skills-endaoment",
+    "title": "endaoment",
+    "summary": "Donate to charities onchain via Endaoment. Use when the user wants to donate crypto to charity, make a charitable contribution, give to nonprofits, support a cause, or donate to a 501(c)(3). Supports Base, Ethereum, and Optimism. Handles USDC donations directly or swaps ETH/tokens to USDC automatically.",
+    "usage": "### Find a Charity\n\nSearch by name or EIN:\n```bash\n./scripts/search.sh \"27-1661997\"         # EIN lookup (GiveDirectly)\n./scripts/search.sh \"Red Cross\"          # Name search\n```\n\n### Donate USDC (Base)\n\n```bash\n./scripts/donate.sh <ein> <amount_usdc>\n```\n\nExample: Donate $5 USDC to GiveDirectly:\n```bash\n./scripts/donate.sh 27-1661997 5\n```",
+    "category": "bankr",
+    "category_title": "Bankr",
+    "source": {
+      "name": "bankr-skills",
+      "repository": "https://github.com/BankrBot/skills",
+      "install": "install the [skill-name] skill from https://github.com/BankrBot/skills/tree/main/[skill-name]"
+    },
+    "skill_path": "skills/bankr-skills/endaoment/SKILL.md"
+  },
+  {
+    "id": "bankr-bankr-skills-ens-primary-name",
+    "title": "ens-primary-name",
+    "summary": "Set your primary ENS name on Base and other L2s. Use when user wants to set their ENS name, configure reverse resolution, set primary name, or make their address resolve to an ENS name. Supports Base, Arbitrum, Optimism, and Ethereum mainnet.",
+    "usage": "Set your primary ENS name on Base and other L2 chains via the ENS Reverse Registrar.",
+    "category": "bankr",
+    "category_title": "Bankr",
+    "source": {
+      "name": "bankr-skills",
+      "repository": "https://github.com/BankrBot/skills",
+      "install": "install the [skill-name] skill from https://github.com/BankrBot/skills/tree/main/[skill-name]"
+    },
+    "skill_path": "skills/bankr-skills/ens-primary-name/SKILL.md"
+  },
+  {
+    "id": "bankr-bankr-skills-erc-8004",
+    "title": "erc-8004",
+    "summary": "Register AI agents on Ethereum mainnet using ERC-8004 (Trustless Agents). Use when the user wants to register their agent identity on-chain, create an agent profile, claim an agent NFT, set up agent reputation, or make their agent discoverable. Handles bridging ETH to mainnet, IPFS upload, and on-chain registration.",
+    "usage": "Register your AI agent on Ethereum mainnet with a verifiable on-chain identity, making it discoverable and enabling trust signals.",
+    "category": "bankr",
+    "category_title": "Bankr",
+    "source": {
+      "name": "bankr-skills",
+      "repository": "https://github.com/BankrBot/skills",
+      "install": "install the [skill-name] skill from https://github.com/BankrBot/skills/tree/main/[skill-name]"
+    },
+    "skill_path": "skills/bankr-skills/erc-8004/SKILL.md"
+  },
+  {
+    "id": "bankr-bankr-skills-gitlawb",
+    "title": "gitlawb",
+    "summary": "Decentralized git for AI agents and humans. Use when the user wants to create repositories,\npush code, open pull requests, review and merge PRs, manage issues, create or claim bounties,\ndelegate tasks to other agents, register human-readable names on Base L2, or interact with the\ngitlawb decentralized git network. Supports cryptographic DID identities, Ed25519-signed pushes,\nUCAN capability delegation, libp2p networking, and 31+ MCP tools for AI agent integration.\nDo NOT use for GitHub, GitLab, or other centralized git hosts.",
+    "usage": "### Guided Setup\n\n```bash\ngl quickstart\n```\n\nInteractive wizard: creates identity, registers with node, creates first repo. Use `--yes` for non-interactive mode.\n\n### Manual Setup\n\n```bash",
+    "category": "bankr",
+    "category_title": "Bankr",
+    "source": {
+      "name": "bankr-skills",
+      "repository": "https://github.com/BankrBot/skills",
+      "install": "install the [skill-name] skill from https://github.com/BankrBot/skills/tree/main/[skill-name]"
+    },
+    "skill_path": "skills/bankr-skills/gitlawb/SKILL.md"
+  },
+  {
+    "id": "bankr-bankr-skills-helixa",
+    "title": "helixa",
+    "summary": "Helixa — Onchain identity, reputation, and Cred Scores for AI agents on Base. Use when an agent wants to mint an identity NFT, check its Cred Score, verify social accounts, update traits/narrative, query agent reputation data, check staking info, or search the agent directory. Supports SIWA (Sign-In With Agent) auth and x402 micropayments. Also use when asked about Helixa, AgentDNA, ERC-8004, Cred Scores, $CRED token, or agent identity.",
+    "usage": "1. No API key required for public endpoints\n2. Use the shell scripts in `scripts/` for all operations\n3. Authenticated actions (mint, update, verify) require SIWA auth — see `references/siwa.md`\n4. Paid actions (mint) cost $1 USDC via x402. Updates are free\n\n```bash",
+    "category": "bankr",
+    "category_title": "Bankr",
+    "source": {
+      "name": "bankr-skills",
+      "repository": "https://github.com/BankrBot/skills",
+      "install": "install the [skill-name] skill from https://github.com/BankrBot/skills/tree/main/[skill-name]"
+    },
+    "skill_path": "skills/bankr-skills/helixa/SKILL.md"
+  },
+  {
+    "id": "bankr-bankr-skills-hydrex",
+    "title": "hydrex",
+    "summary": "Interact with Hydrex liquidity pools on Base. Use when the user wants to lock HYDX for voting power, check voting power for gauge voting, vote on liquidity pool strategies, view pool information, check voting weights, participate in Hydrex governance, deposit single-sided liquidity into auto-managed vaults to earn Hydrex yields, claim oHYDX rewards from incentive campaigns, or exercise oHYDX into veHYDX. Uses Bankr for transaction execution.",
+    "usage": "### Check Voting Power\n\n```\nWhat's my Hydrex voting power?\n```\n\n### Lock HYDX for Voting Power\n\n```\nLock 1000 HYDX on Hydrex with rolling lock\n```\n\n### Vote on Pools\n\n```\nVote optimally on Hydrex to maximize fees\n```\n\n```\nVote 50/50 on HYDX/USDC and cbBTC/WETH on Hydrex\n```\n\n### Single-Sided Liquidity\n\n```\nWhat single-sided liquidity vaults can I deposit BNKR into on Hydrex?\n```\n\n```\nDeposit 500 BNKR into the BNKR/WETH single-sided vault on Hydrex\n```\n\n### Rewards\n\n```\nCheck my Hydrex rewards\n```\n\n```\nClaim my Hydrex oHYDX rewards\n```\n\n```\nConvert my oHYDX to veHYDX on Hydrex\n```",
+    "category": "bankr",
+    "category_title": "Bankr",
+    "source": {
+      "name": "bankr-skills",
+      "repository": "https://github.com/BankrBot/skills",
+      "install": "install the [skill-name] skill from https://github.com/BankrBot/skills/tree/main/[skill-name]"
+    },
+    "skill_path": "skills/bankr-skills/hydrex/SKILL.md"
+  },
+  {
+    "id": "bankr-bankr-skills-litcoin",
+    "title": "litcoin-miner",
+    "summary": "Mine LITCOIN — a proof-of-comprehension and proof-of-research cryptocurrency on Base. Use when the user wants to mine crypto with AI, earn tokens through reading comprehension or solving optimization problems, stake LITCOIN, open vaults, mint LITCREDIT, manage mining guilds, deploy autonomous agents, or interact with the LITCOIN DeFi protocol.",
+    "usage": "No LLM or AI key needed. The SDK's deterministic solver parses documents without LLM calls.\n\n```python\nfrom litcoin import Agent\n\nagent = Agent(bankr_key=\"bk_YOUR_KEY\")",
+    "category": "bankr",
+    "category_title": "Bankr",
+    "source": {
+      "name": "bankr-skills",
+      "repository": "https://github.com/BankrBot/skills",
+      "install": "install the [skill-name] skill from https://github.com/BankrBot/skills/tree/main/[skill-name]"
+    },
+    "skill_path": "skills/bankr-skills/litcoin/SKILL.md"
+  },
+  {
+    "id": "bankr-bankr-skills-moltycash",
+    "title": "moltycash",
+    "summary": "USDC payments from AI agents to humans via molty.cash. Use when the agent wants to\ntip someone, hire a person for a task, or create a pay-per-task gig. Payments settle\non-chain via x402 on Base using Bankr wallet for signing.\nDo NOT use for token swaps, DeFi, or non-USDC payments.",
+    "usage": "[molty.cash](https://molty.cash) lets AI agents pay humans with USDC. Tip someone, hire them for a task, or post a gig for multiple people to earn from — all settled on-chain via [x402](https://x402.org) on Base.",
+    "category": "bankr",
+    "category_title": "Bankr",
+    "source": {
+      "name": "bankr-skills",
+      "repository": "https://github.com/BankrBot/skills",
+      "install": "install the [skill-name] skill from https://github.com/BankrBot/skills/tree/main/[skill-name]"
+    },
+    "skill_path": "skills/bankr-skills/moltycash/SKILL.md"
+  },
+  {
+    "id": "bankr-bankr-skills-neynar",
+    "title": "neynar",
+    "summary": "Interact with Farcaster via Neynar API. Use when the user wants to read Farcaster feeds, look up users, post casts, search content, or interact with the Farcaster social protocol. Requires NEYNAR_API_KEY.",
+    "usage": "### Setup\n\n1. Get an API key from [dev.neynar.com](https://dev.neynar.com)\n2. Create config:\n\n```bash\nmkdir -p ~/.clawdbot/skills/neynar\ncat > ~/.clawdbot/skills/neynar/config.json << 'EOF'\n{\n  \"apiKey\": \"YOUR_NEYNAR_API_KEY\",\n  \"signerUuid\": \"YOUR_SIGNER_UUID\"\n}\nEOF\n```\n\n**Note**: `signerUuid` is only required for posting casts. Get one via Neynar's signer management.\n\n### Verify Setup\n\n```bash\nscripts/neynar.sh user dwr.eth\n```",
+    "category": "bankr",
+    "category_title": "Bankr",
+    "source": {
+      "name": "bankr-skills",
+      "repository": "https://github.com/BankrBot/skills",
+      "install": "install the [skill-name] skill from https://github.com/BankrBot/skills/tree/main/[skill-name]"
+    },
+    "skill_path": "skills/bankr-skills/neynar/SKILL.md"
+  },
+  {
+    "id": "bankr-bankr-skills-onchainkit",
+    "title": "onchainkit",
+    "summary": "Build onchain applications with React components and TypeScript utilities from Coinbase's OnchainKit. Use when users want to create crypto wallets, swap tokens, mint NFTs, build payments, display blockchain identities, or develop any onchain app functionality. Supports wallet connection, transaction building, token operations, identity management, and complete onchain app development workflows.",
+    "usage": "- **Basic App**: `assets/templates/basic-app/` - Minimal onchain app\n- **Token Swap**: `assets/templates/swap-app/` - Complete swap interface\n- **NFT Minting**: `assets/templates/nft-mint/` - NFT marketplace\n- **Commerce**: `assets/templates/commerce/` - Onchain store",
+    "category": "bankr",
+    "category_title": "Bankr",
+    "source": {
+      "name": "bankr-skills",
+      "repository": "https://github.com/BankrBot/skills",
+      "install": "install the [skill-name] skill from https://github.com/BankrBot/skills/tree/main/[skill-name]"
+    },
+    "skill_path": "skills/bankr-skills/onchainkit/SKILL.md"
+  },
+  {
+    "id": "bankr-bankr-skills-productclank",
+    "title": "productclank-campaigns",
+    "summary": "Community-powered growth for builders. Boost amplifies your social posts with authentic community engagement (replies, likes, reposts). Discover finds relevant conversations and generates AI-powered replies at scale. Use Boost when the user has a post URL. Use Discover when the user wants to find and engage in conversations about their product.",
+    "usage": "- \"Boost this post\" / \"get engagement on my announcement\"\n- \"Get community replies on my LinkedIn post\"\n- \"Get likes on my tweet\" / \"get reposts on my cast\"\n- User shares a post URL from any platform and wants community engagement\n- Launch announcements, product updates, partnership posts — any post you want your community to rally behind",
+    "category": "bankr",
+    "category_title": "Bankr",
+    "source": {
+      "name": "bankr-skills",
+      "repository": "https://github.com/BankrBot/skills",
+      "install": "install the [skill-name] skill from https://github.com/BankrBot/skills/tree/main/[skill-name]"
+    },
+    "skill_path": "skills/bankr-skills/productclank/SKILL.md"
+  },
+  {
+    "id": "bankr-bankr-skills-qrcoin",
+    "title": "qrcoin",
+    "summary": "Interact with QR Coin auctions on Base. Use when the user wants to participate in qrcoin.fun QR code auctions — check auction status, view current bids, create new bids, or contribute to existing bids. QR Coin lets you bid to display URLs on QR codes; the highest bidder's URL gets encoded.",
+    "usage": "Participate in [QR Coin](https://qrcoin.fun) auctions on Base blockchain. QR Coin lets you bid to display URLs on QR codes — the highest bidder's URL gets encoded when the auction ends.",
+    "category": "bankr",
+    "category_title": "Bankr",
+    "source": {
+      "name": "bankr-skills",
+      "repository": "https://github.com/BankrBot/skills",
+      "install": "install the [skill-name] skill from https://github.com/BankrBot/skills/tree/main/[skill-name]"
+    },
+    "skill_path": "skills/bankr-skills/qrcoin/SKILL.md"
+  },
+  {
+    "id": "bankr-bankr-skills-quicknode",
+    "title": "quicknode",
+    "summary": "Blockchain RPC and data access via Quicknode. Use when an agent needs to read onchain data (balances, token prices, transaction status, gas estimates, block data) across Base, Ethereum, Polygon, Solana, or Unichain. Supports both API key access and x402 wallet-based pay-per-request access with no account needed. Triggers on mentions of RPC, blockchain data, onchain queries, token balances, gas estimation, block number, transaction receipt, Quicknode, or x402.",
+    "usage": "Quicknode provides high-performance RPC endpoints across 77+ blockchain networks including all chains Bankr supports: Base, Ethereum, Polygon, Solana, and Unichain.",
+    "category": "bankr",
+    "category_title": "Bankr",
+    "source": {
+      "name": "bankr-skills",
+      "repository": "https://github.com/BankrBot/skills",
+      "install": "install the [skill-name] skill from https://github.com/BankrBot/skills/tree/main/[skill-name]"
+    },
+    "skill_path": "skills/bankr-skills/quicknode/SKILL.md"
+  },
+  {
+    "id": "bankr-bankr-skills-signals",
+    "title": "signals",
+    "summary": "Transaction-verified trading signals on Base. Register agent as signal provider,\npublish trades with TX hash proof, consume signals from top performers via REST API.\nAll track records verified against blockchain data. No fake performance claims.\nTriggers on: \"publish signal\", \"post trade signal\", \"register provider\",\n\"subscribe to signals\", \"copy trade\", \"bankr signals\", \"signal feed\",\n\"trading leaderboard\", \"read signals\", \"get top traders\".",
+    "usage": "Transaction-verified trading signals on Base blockchain. Agents publish trades\nwith cryptographic proof via transaction hashes. Subscribers filter by performance\nmetrics and copy top performers. No self-reported results.",
+    "category": "bankr",
+    "category_title": "Bankr",
+    "source": {
+      "name": "bankr-skills",
+      "repository": "https://github.com/BankrBot/skills",
+      "install": "install the [skill-name] skill from https://github.com/BankrBot/skills/tree/main/[skill-name]"
+    },
+    "skill_path": "skills/bankr-skills/signals/SKILL.md"
+  },
+  {
+    "id": "bankr-bankr-skills-siwa",
+    "title": "siwa",
+    "summary": "SIWA (Sign-In With Agent) authentication for ERC-8004 registered agents.",
+    "usage": "Sign-In With Agent (SIWA) lets AI agents authenticate with services using their ERC-8004 onchain identity.",
+    "category": "bankr",
+    "category_title": "Bankr",
+    "source": {
+      "name": "bankr-skills",
+      "repository": "https://github.com/BankrBot/skills",
+      "install": "install the [skill-name] skill from https://github.com/BankrBot/skills/tree/main/[skill-name]"
+    },
+    "skill_path": "skills/bankr-skills/siwa/SKILL.md"
+  },
+  {
+    "id": "bankr-bankr-skills-stakr",
+    "title": "stakr-protocol",
+    "summary": "Interact with the Stakr protocol — ERC-4626 vaults with multi-reward staking. Use when the user or an agent needs to work with Stakr vaults, add or modify rewards (addRewardToken, addRewards, modifyRewardToken, modifyReward), create or manage an \"agent vault\" or \"own vault\", fund incentive programs, configure reward schedules, or integrate Stakr in scripts or tooling. Prefer this skill whenever Stakr, StakrVault, rewards, staking, or vault ownership is mentioned.",
+    "usage": "This skill gives agents the context to interact with the **Stakr** protocol: ERC-4626 tokenized vaults with **multi-reward staking** for any ERC-20 token. Use it when building integrations, scripts, or tooling that create vaults, add rewards, modify reward schedules, or let an agent operate its \"own\" vault.",
+    "category": "bankr",
+    "category_title": "Bankr",
+    "source": {
+      "name": "bankr-skills",
+      "repository": "https://github.com/BankrBot/skills",
+      "install": "install the [skill-name] skill from https://github.com/BankrBot/skills/tree/main/[skill-name]"
+    },
+    "skill_path": "skills/bankr-skills/stakr/SKILL.md"
+  },
+  {
+    "id": "bankr-bankr-skills-symbiosis",
+    "title": "symbiosis",
+    "summary": "Cross-chain token swaps across 54+ blockchains via Symbiosis protocol. Use when the user wants to swap or bridge tokens between any chains — Base, Ethereum, Polygon, Arbitrum, Optimism, BNB Chain, Avalanche, Solana, Bitcoin, TON, Tron, and 40+ more. Supports any-to-any token swaps with automatic routing. Uses Bankr Submit API to execute transactions.",
+    "usage": "Use Symbiosis when the user wants to:\n- **Bridge or swap tokens between different chains** (e.g., USDC from Base to Polygon, ETH from Ethereum to Arbitrum)\n- **Access chains beyond Bankr's native 5** (Arbitrum, Optimism, BNB Chain, Avalanche, zkSync, Linea, Scroll, Mantle, Blast, and 40+ more)\n- **Swap to/from Bitcoin, TON, or Tron**\n- **Get a cross-chain quote** without executing",
+    "category": "bankr",
+    "category_title": "Bankr",
+    "source": {
+      "name": "bankr-skills",
+      "repository": "https://github.com/BankrBot/skills",
+      "install": "install the [skill-name] skill from https://github.com/BankrBot/skills/tree/main/[skill-name]"
+    },
+    "skill_path": "skills/bankr-skills/symbiosis/SKILL.md"
+  },
+  {
+    "id": "bankr-bankr-skills-bankr-token-scam-analysis",
+    "title": "token-scam-analysis",
+    "summary": "Deep on-chain scam / rug / soft-rug analysis for EVM tokens (especially Clanker, Doppler, Bankr-style single-admin ERC-20s). Use when the user asks to \"analyze this token for scam\", \"is this a rug\", \"should I trust this migration\", \"do a deep dive on holders and deployer\", or provides one or more token addresses and wants a risk verdict backed by on-chain facts. Especially useful for migration narratives where a team claims they are \"redeploying to fix tokenomics\".",
+    "usage": "- User gives one or more token contract addresses and asks for a risk assessment.\n- User mentions a \"migration\" / \"redeploy\" / \"new contract\" narrative.\n- User names a Twitter/X handle of the project and wants to cross-reference claims vs on-chain reality.\n- Comparing old vs new contracts from the same team.",
+    "category": "bankr",
+    "category_title": "Bankr",
+    "source": {
+      "name": "bankr-skills",
+      "repository": "https://github.com/BankrBot/skills",
+      "install": "install the [skill-name] skill from https://github.com/BankrBot/skills/tree/main/[skill-name]"
+    },
+    "skill_path": "skills/bankr-skills/bankr-token-scam-analysis/SKILL.md"
+  },
+  {
+    "id": "bankr-bankr-skills-trails",
+    "title": "Trails",
+    "summary": "---",
+    "usage": "### Get a swap quote (USDC on Polygon -> ETH on Base)\n\n```bash\nBANKR_WALLET=$(curl -s https://api.bankr.bot/agent/me \\\n  -H \"X-API-Key: $BANKR_API_KEY\" \\\n  | jq -r '.wallets[] | select(.chain == \"evm\") | .address')\n\ncurl -s https://trails-api.sequence.app/rpc/Trails/QuoteIntent \\\n  -H \"Content-Type: application/json\" \\\n  -H \"X-Access-Key: $TRAILS_API\" \\\n  -d \"{\n    \\\"ownerAddress\\\": \\\"$BANKR_WALLET\\\",\n    \\\"originChainId\\\": 137,\n    \\\"originTokenAddress\\\": \\\"0x3c499c542cef5e3811e1192ce70d8cC03d5c3359\\\",\n    \\\"originTokenAmount\\\": \\\"10000000\\\",\n    \\\"destinationChainId\\\": 8453,\n    \\\"destinationTokenAddress\\\": \\\"0x0000000000000000000000000000000000000000\\\",\n    \\\"destinationTokenAmount\\\": \\\"0\\\",\n    \\\"tradeType\\\": \\\"EXACT_INPUT\\\",\n    \\\"options\\\": { \\\"slippageTolerance\\\": 0.005 }\n  }\" | jq '.intent.quote'\n```\n\n### Discover yield pools\n\n```bash\ncurl -s https://trails-api.sequence.app/rpc/Trails/GetEarnPools \\\n  -H \"Content-Type: application/json\" \\\n  -H \"X-Access-Key: $TRAILS_API\" \\\n  -d '{\"chainIds\": [137]}' \\\n  | jq '[.pools[] | select(.isActive and .token.symbol == \"USDC\")] | sort_by(-.tvl) | .[0]'\n```",
+    "category": "bankr",
+    "category_title": "Bankr",
+    "source": {
+      "name": "bankr-skills",
+      "repository": "https://github.com/BankrBot/skills",
+      "install": "install the [skill-name] skill from https://github.com/BankrBot/skills/tree/main/[skill-name]"
+    },
+    "skill_path": "skills/bankr-skills/trails/SKILL.md"
+  },
+  {
+    "id": "bankr-bankr-skills-bankr-twitter-agent",
+    "title": "twitter-agent",
+    "summary": "Build and run a Twitter/X agent with a distinct personality and automated workflows",
+    "usage": "To use this skill, reference it in your prompt so the agent knows to load the personality and storyline files first. Examples:\n\n- \"using the twitter-agent skill, draft a new tweet and post it\"\n- \"use the twitter skill to write a tweet about what's happening today\"\n- \"using the twitter-agent skill, check our recent mentions and reply in character\"\n- \"use the twitter skill to react to this news: [paste headline or link]\"\n- \"using the twitter-agent skill, continue the storyline with a new post\"\n- \"use the twitter skill to draft 3 tweet options for me to pick from\"\n- \"using the twitter-agent skill, set up a daily morning post automation\"\n- \"use the twitter skill to help me build my agent's personality\"\n- \"using the twitter-agent skill, run the storyline audit\"\n- \"using the twitter-agent skill, approve pending draft <id>\"",
+    "category": "bankr",
+    "category_title": "Bankr",
+    "source": {
+      "name": "bankr-skills",
+      "repository": "https://github.com/BankrBot/skills",
+      "install": "install the [skill-name] skill from https://github.com/BankrBot/skills/tree/main/[skill-name]"
+    },
+    "skill_path": "skills/bankr-skills/bankr-twitter-agent/SKILL.md"
+  },
+  {
+    "id": "bankr-bankr-skills-veil",
+    "title": "veil",
+    "summary": "Privacy and shielded transactions on Base via Veil Cash (veil.cash). Deposit ETH or USDC into private pools, withdraw/transfer privately using ZK proofs. Manage Veil keypairs, check private/queue balances across all pools, and submit deposits via Bankr. Use when the user wants anonymous or private transactions, shielded transfers, or ZK-based privacy on Base.",
+    "usage": "### 1) Install the Veil SDK\n\n**Option A: Global npm install (recommended)**\n```bash\nnpm install -g @veil-cash/sdk\n```\n\n**Option B: Clone from GitHub**\n```bash\nmkdir -p ~/.openclaw/workspace/repos\ncd ~/.openclaw/workspace/repos\ngit clone https://github.com/veildotcash/veildotcash-sdk.git\ncd veildotcash-sdk\nnpm ci && npm run build\n```\n\n### 2) Configure Base RPC (recommended)\n\nVeil queries a lot of blockchain data (UTXOs, merkle proofs, etc.), so public RPCs will likely hit rate limits. A dedicated RPC from [Alchemy](https://www.alchemy.com/), [Infura](https://www.infura.io/), or similar is recommended.\n\nPut `RPC_URL=...` in **one** of these:\n\n- `~/.clawdbot/skills/veil/.env` *(preferred)*\n- or the SDK repo `.env` (less ideal)\n\nExample:\n```bash\nmkdir -p ~/.clawdbot/skills/veil\ncat > ~/.clawdbot/skills/veil/.env << 'EOF'\nRPC_URL=https://base-mainnet.g.alchemy.com/v2/YOUR_KEY\nEOF\nchmod 600 ~/.clawdbot/skills/veil/.env\n```\n\n### 3) Make scripts executable\n\n```bash\nchmod +x scripts/*.sh\n```\n\n### 4) Generate your Veil keypair\n\n```bash\nscripts/veil-init.sh\nscripts/veil-keypair.sh\n```\n\n### 5) Check your setup\n\n```bash\nscripts/veil-status.sh\n```\n\n### 6) Find your Bankr Base address\n\n```bash\nscripts/veil-bankr-prompt.sh \"What is my Base wallet address? Respond with just the address.\"\n```\n\n### 7) Check balances\n\n```bash",
+    "category": "bankr",
+    "category_title": "Bankr",
+    "source": {
+      "name": "bankr-skills",
+      "repository": "https://github.com/BankrBot/skills",
+      "install": "install the [skill-name] skill from https://github.com/BankrBot/skills/tree/main/[skill-name]"
+    },
+    "skill_path": "skills/bankr-skills/veil/SKILL.md"
+  },
+  {
+    "id": "bankr-bankr-skills-yoink",
+    "title": "yoink",
+    "summary": "Play Yoink, an onchain capture-the-flag game on Base. Yoink the flag from the current holder, check game stats and leaderboards, view player scores, and compete for the trophy. Uses Bankr for transaction execution.",
+    "usage": "Play Yoink, an onchain capture-the-flag game on Base. Yoink the flag from the current holder to start your clock. The player with the most total yoinks holds the trophy.",
+    "category": "bankr",
+    "category_title": "Bankr",
+    "source": {
+      "name": "bankr-skills",
+      "repository": "https://github.com/BankrBot/skills",
+      "install": "install the [skill-name] skill from https://github.com/BankrBot/skills/tree/main/[skill-name]"
+    },
+    "skill_path": "skills/bankr-skills/yoink/SKILL.md"
+  },
+  {
+    "id": "bankr-bankr-skills-zapper",
+    "title": "zapper",
+    "summary": "Placeholder for Zapper skill.",
+    "usage": "Placeholder for Zapper skill.",
+    "category": "bankr",
+    "category_title": "Bankr",
+    "source": {
+      "name": "bankr-skills",
+      "repository": "https://github.com/BankrBot/skills",
+      "install": "install the [skill-name] skill from https://github.com/BankrBot/skills/tree/main/[skill-name]"
+    },
+    "skill_path": "skills/bankr-skills/zapper/SKILL.md"
+  },
+  {
+    "id": "bankr-bankr-skills-zerion",
+    "title": "zerion",
+    "summary": "Interpreted crypto wallet data for AI agents. Use when an agent needs portfolio values, token positions, DeFi positions, NFT holdings, transaction history, PnL data, token prices, charts, gas prices, swap quotes, or DApp information across 41+ chains. Zerion transforms raw blockchain data into agent-ready JSON with USD values, protocol labels, and enriched metadata. Supports x402 pay-per-request ($0.01 USDC on Base) and API key access. Triggers on mentions of portfolio, wallet analysis, positions, transactions, PnL, profit/loss, DeFi, token balances, NFTs, swap quotes, gas prices, or Zerion.",
+    "usage": "Zerion provides interpreted, enriched crypto wallet data across 41+ chains including Ethereum, Base, Arbitrum, Optimism, Polygon, Solana, and more.",
+    "category": "bankr",
+    "category_title": "Bankr",
+    "source": {
+      "name": "bankr-skills",
+      "repository": "https://github.com/BankrBot/skills",
+      "install": "install the [skill-name] skill from https://github.com/BankrBot/skills/tree/main/[skill-name]"
+    },
+    "skill_path": "skills/bankr-skills/zerion/SKILL.md"
+  },
+  {
+    "id": "bankr-bankr-skills-zyfai",
+    "title": "zyfai",
+    "summary": "Earn yield on any Ethereum wallet on Base, Arbitrum, and Plasma. Use when a user wants passive DeFi yield on their funds. Deploys a non-custodial deterministic subaccount (Safe) linked to their EOA, enables automated yield optimization, and lets them deposit/withdraw anytime.",
+    "usage": "Turn any Ethereum wallet into a yield-generating account.",
+    "category": "bankr",
+    "category_title": "Bankr",
+    "source": {
+      "name": "bankr-skills",
+      "repository": "https://github.com/BankrBot/skills",
+      "install": "install the [skill-name] skill from https://github.com/BankrBot/skills/tree/main/[skill-name]"
+    },
+    "skill_path": "skills/bankr-skills/zyfai/SKILL.md"
+  }
+]

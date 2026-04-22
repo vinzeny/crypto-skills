@@ -1,0 +1,31 @@
+{
+  "name": "crypto-skills-directory",
+  "type": "module",
+  "version": "0.0.1",
+  "scripts": {
+    "predev": "node scripts/build-crypto-skills.mjs",
+    "dev": "astro dev",
+    "prebuild": "node scripts/build-crypto-skills.mjs",
+    "build": "astro build",
+    "prepreview": "node scripts/build-crypto-skills.mjs",
+    "preview": "astro preview",
+    "astro": "astro",
+    "fetch:skills": "bun scripts/fetch-skills.js"
+  },
+  "dependencies": {
+    "@astrojs/react": "^4.4.2",
+    "@tailwindcss/typography": "^0.5.19",
+    "@tailwindcss/vite": "^4.1.18",
+    "@types/react": "^19.2.10",
+    "@types/react-dom": "^19.2.3",
+    "astro": "^5.16.16",
+    "clsx": "^2.1.1",
+    "lucide-react": "^0.563.0",
+    "marked": "^17.0.1",
+    "react": "^19.2.4",
+    "react-dom": "^19.2.4",
+    "react-syntax-highlighter": "^16.1.0",
+    "tailwind-merge": "^3.4.0",
+    "tailwindcss": "^4.1.18"
+  }
+}

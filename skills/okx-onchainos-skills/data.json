@@ -1,0 +1,198 @@
+[
+  {
+    "id": "okx-okx-onchainos-skills-skills-okx-agentic-wallet",
+    "title": "okx-agentic-wallet",
+    "summary": "Use this skill when the user mentions wallet login, sign in, verify OTP, add wallet, switch account, wallet status, logout, wallet balance, assets, holdings, send tokens, transfer ETH, transfer USDC, pay someone, send crypto, send ERC-20, send SPL, transaction history, recent transactions, tx status, tx detail, order list, call smart contract, interact with contract, execute contract function, send calldata, invoke smart contract, show my addresses, wallet addresses, deposit, receive, top up, fund my wallet, list accounts, sign message, personal sign, personalSign, eip712, sign data, sign typed data, sign EIP-712, TEE signing, export wallet, export mnemonic. Manages the wallet lifecycle: auth (login, OTP verify, account addition, switching, status, logout), authenticated balance queries, wallet address display (grouped by XLayer/EVM/Solana), token transfers (native & ERC-20/SPL), transaction history, smart contract calls, and message signing (personalSign for EVM & Solana, EIP-712 for EVM).",
+    "usage": "> **CLI Reference**: For full parameter tables, return field schemas, and usage examples, see [cli-reference.md](references/cli-reference.md).\n\n### A — Account Management\n\n> Login commands (`wallet login`, `wallet verify`) are covered in **Step 2: Authentication**.\n\n| # | Command | Description                                                            | Auth Required |\n|---|---|---|---|\n| A3 | `onchainos wallet add` | Add a new wallet account                                               | Yes           |\n| A4 | `onchainos wallet switch <account_id>` | Switch to a different wallet account                                   | No            |\n| A5 | `onchainos wallet status` | Show current login status, active account, and policy settings          | No            |\n| A6 | `onchainos wallet logout` | Logout and clear all stored credentials                                | No            |\n| A7 | `onchainos wallet chains` | List all supported chains with names and IDs | No |\n| A8 | `onchainos wallet addresses [--chain <chain>]` | Show wallet addresses grouped by chain category (X Layer, EVM, Solana) | No            |\n\n### B — Authenticated Balance\n\n| # | Command | Description | Auth Required |\n|---|---|---|---|\n| B1 | `onchainos wallet balance` | Current account overview — EVM/SOL addresses, all-chain token list and total USD value | Yes |\n| B2 | `onchainos wallet balance --chain <c…",
+    "category": "okx",
+    "category_title": "OKX",
+    "source": {
+      "name": "okx-onchainos-skills",
+      "repository": "https://github.com/okx/onchainos-skills",
+      "install": "npx skills add okx/onchainos-skills"
+    },
+    "skill_path": "skills/okx-onchainos-skills/skills/okx-agentic-wallet/SKILL.md"
+  },
+  {
+    "id": "okx-okx-onchainos-skills-skills-okx-audit-log",
+    "title": "okx-audit-log",
+    "summary": "Use this skill when the user asks to export audit logs, find audit log location, view command history, 导出日志, 查看日志, 日志路径, 操作记录, 调用记录, 命令历史. Do NOT use for wallet balance, token search, swap, or any other on-chain operation — use the corresponding skill instead.",
+    "usage": "Provide the audit log file path for developers to troubleshoot issues offline.",
+    "category": "okx",
+    "category_title": "OKX",
+    "source": {
+      "name": "okx-onchainos-skills",
+      "repository": "https://github.com/okx/onchainos-skills",
+      "install": "npx skills add okx/onchainos-skills"
+    },
+    "skill_path": "skills/okx-onchainos-skills/skills/okx-audit-log/SKILL.md"
+  },
+  {
+    "id": "okx-okx-onchainos-skills-skills-okx-defi-invest",
+    "title": "okx-defi-invest",
+    "summary": "Use this skill to 'invest in DeFi', 'earn yield on USDC', 'deposit into Aave', 'stake ETH on Lido', 'search DeFi products', 'find best APY', 'redeem my DeFi position', 'withdraw from lending', 'claim DeFi rewards', 'borrow USDC', 'repay loan', 'add liquidity to Uniswap V3', 'remove liquidity', 'show APY history', 'TVL chart', 'V3 depth chart', 'V3 price history', or mentions DeFi investing, yield farming, lending, borrowing, staking, liquidity pools, APY/TVL trends, V3 depth/price charts. Do NOT use for DEX swaps (okx-dex-swap), token prices (okx-dex-market), wallet balances (okx-wallet-portfolio), or viewing positions only (okx-defi-portfolio).",
+    "usage": "| # | Command | Description |\n|---|---------|-------------|\n| 1 | `defi support-chains` | Get supported chains for DeFi |\n| 2 | `defi support-platforms` | Get supported platforms for DeFi |\n| 3 | `defi list` | List top DeFi products by APY |\n| 4 | `defi search --token <tokens> [--platform <names>] [--chain <chain>] [--product-group <group>]` | Search DeFi products |\n| 5 | `defi detail --investment-id <id>` | Get full product details |\n| 6 | `defi invest --investment-id <id> --address <addr> --token <symbol_or_addr> --amount <minimal_units> [--chain <chain>] [--slippage <pct>] [--tick-lower <n>] [--tick-upper <n>] [--token-id <nft>]` | One-step deposit (CLI handles prepare + precision + calldata) |\n| 7 | `defi withdraw --investment-id <id> --address <addr> --chain <chain> [--ratio <0-1>] [--amount <minimal_units>] [--token-id <nft>] [--platform-id <pid>] [--slippage <pct>]` | One-step withdrawal (CLI handles position lookup + calldata) |\n| 8 | `defi collect --address <addr> --chain <chain> --reward-type <type> [--investment-id <id>] [--platform-id <pid>] [--token-id <nft>] [--principal-index <idx>]` | One-step reward claim (CLI handles reward check + calldata) |\n| 9 | `defi positions --address <addr> --chains <chains>` | List DeFi positions by platform |\n| 10 | `defi position-detail --address <addr> --chain <chain> --platform-id <pid>` | Get detailed position info |\n| 11 | `def…",
+    "category": "okx",
+    "category_title": "OKX",
+    "source": {
+      "name": "okx-onchainos-skills",
+      "repository": "https://github.com/okx/onchainos-skills",
+      "install": "npx skills add okx/onchainos-skills"
+    },
+    "skill_path": "skills/okx-onchainos-skills/skills/okx-defi-invest/SKILL.md"
+  },
+  {
+    "id": "okx-okx-onchainos-skills-skills-okx-defi-portfolio",
+    "title": "okx-defi-portfolio",
+    "summary": "Use this skill to 'check my DeFi positions', 'view DeFi holdings', 'show my DeFi portfolio', 'what DeFi am I invested in', 'show my staking positions', 'show my lending positions', 'DeFi balance', 'DeFi 持仓', '查看DeFi持仓', '我的DeFi资产', '持仓详情', '持仓列表', or mentions viewing DeFi holdings, positions, portfolio across protocols. Covers positions overview and per-protocol position detail. Do NOT use for deposit/redeem/claim operations — use okx-defi-invest. Do NOT use for wallet token balances — use okx-wallet-portfolio. Do NOT use for DEX spot swaps — use okx-dex-swap.",
+    "usage": "| # | Command | Description |\n|---|---------|-------------|\n| 1 | `onchainos defi support-chains` | Get supported chains for DeFi |\n| 2 | `onchainos defi support-platforms` | Get supported platforms for DeFi |\n| 3 | `onchainos defi positions --address <addr> --chains <chains>` | Get user DeFi holdings overview |\n| 4 | `onchainos defi position-detail --address <addr> --chain <chain> --platform-id <id>` | Get detailed holdings for a protocol |",
+    "category": "okx",
+    "category_title": "OKX",
+    "source": {
+      "name": "okx-onchainos-skills",
+      "repository": "https://github.com/okx/onchainos-skills",
+      "install": "npx skills add okx/onchainos-skills"
+    },
+    "skill_path": "skills/okx-onchainos-skills/skills/okx-defi-portfolio/SKILL.md"
+  },
+  {
+    "id": "okx-okx-onchainos-skills-skills-okx-dex-market",
+    "title": "okx-dex-market",
+    "summary": "Use this skill for on-chain market data: token prices/价格, K-line/OHLC charts, index prices, and wallet PnL/盈亏分析 (win rate, my wallet's DEX trade history, realized/unrealized PnL per token). Use when the user asks for 'token price', 'price chart', 'candlestick', 'K线', 'OHLC', 'how much is X worth', 'show my PnL', '胜率', '盈亏', 'my wallet DEX history', 'realized profit', or 'unrealized profit'. NOTE: if the user wants to write a WebSocket script/脚本/bot, use okx-dex-ws instead.",
+    "usage": "| # | Command | Use When |\n|---|---|---|\n| 1 | `onchainos market price --address <address>` | Single token price (**default for all 行情/price queries**) |\n| 2 | `onchainos market prices --tokens <tokens>` | Batch price query (multiple tokens at once) |\n| 3 | `onchainos market kline --address <address>` | K-line / candlestick chart |\n| 4 | `onchainos market index --address <address>` | Index price — **only when user explicitly asks for aggregate/cross-exchange price** |\n| 5 | `onchainos market portfolio-supported-chains` | Check which chains support PnL |\n| 6 | `onchainos market portfolio-overview` | Wallet PnL overview (win rate, realized PnL, top 3 tokens) |\n| 7 | `onchainos market portfolio-dex-history` | Wallet DEX transaction history |\n| 8 | `onchainos market portfolio-recent-pnl` | Recent PnL by token for a wallet |\n| 9 | `onchainos market portfolio-token-pnl` | Per-token PnL snapshot (realized/unrealized) |\n\n**Index price** → `onchainos market index` only when the user explicitly asks for \"aggregate price\", \"index price\", \"综合价格\", \"指数价格\", or a cross-exchange composite price. For all other price / 行情 / \"how much is X\" queries → use `onchainos market price`.\n\n### Step 1: Collect Parameters\n\n- Missing chain → ask the user which chain they want to use before proceeding; for portfolio PnL queries, first call `onchainos market portfolio-supported-chains`…",
+    "category": "okx",
+    "category_title": "OKX",
+    "source": {
+      "name": "okx-onchainos-skills",
+      "repository": "https://github.com/okx/onchainos-skills",
+      "install": "npx skills add okx/onchainos-skills"
+    },
+    "skill_path": "skills/okx-onchainos-skills/skills/okx-dex-market/SKILL.md"
+  },
+  {
+    "id": "okx-okx-onchainos-skills-skills-okx-dex-signal",
+    "title": "okx-dex-signal",
+    "summary": "Use this skill for smart-money/whale/KOL/大户 activity tracking, aggregated buy signal/信号 alerts, and leaderboard/牛人榜 rankings. Covers: (1) address tracker — raw DEX transaction feed for smart money, KOL, or custom wallet addresses; (2) aggregated buy-only signal alerts — tokens bought collectively by smart money/KOL/whales; (3) leaderboard — top traders by PnL, win rate, volume, or ROI. Use when the user asks 'what are smart money buying', '聪明钱最新交易', 'KOL交易动态', '追踪聪明钱', 'track address trades', '大户在买什么', 'whale signals', 'smart money alerts', '信号', '大户信号', 'top traders', '牛人榜', or wants to monitor notable wallet activity. NOTE: if the user wants to write a WebSocket script/脚本/bot, use okx-dex-ws instead.",
+    "usage": "| # | Command | Use When |\n|---|---|---|\n| 1 | `onchainos tracker activities --tracker-type <type>` | See actual trades by smart money/KOL/custom wallets (transaction-level, includes buys and sells) |\n| 2 | `onchainos signal chains` | Check which chains support signals |\n| 3 | `onchainos signal list --chain <chain>` | Aggregated **buy-only** signal alerts (smart money / KOL / whale) |\n| 4 | `onchainos leaderboard supported-chains` | Check which chains support leaderboard |\n| 5 | `onchainos leaderboard list --chain <chain> --time-frame <tf> --sort-by <sort>` | Top trader leaderboard ranked by PnL/win rate/volume/ROI (max 20) |\n\n**Rule**: If the user wants to see actual trades (transaction-level, can include sells) → tracker. If the user wants to know which tokens have triggered buy alerts across multiple wallets → signal list.\n\n### Step 1: Collect Parameters\n\n**Address Tracker:**\n- `--tracker-type` is required: `smart_money`, `kol`, or `multi_address`\n- `--wallet-address` is required when `--tracker-type multi_address`; omit for smart_money/kol\n- `--trade-type` defaults to `0` (all); use `1` for buy-only, `2` for sell-only\n- `--chain` is optional — omit to get results across all chains\n- Optional token filters (use when user wants to narrow results by token quality or size):\n  - `--min-volume` / `--max-volume` — trade volume range (USD)\n  - `--min-marke…",
+    "category": "okx",
+    "category_title": "OKX",
+    "source": {
+      "name": "okx-onchainos-skills",
+      "repository": "https://github.com/okx/onchainos-skills",
+      "install": "npx skills add okx/onchainos-skills"
+    },
+    "skill_path": "skills/okx-onchainos-skills/skills/okx-dex-signal/SKILL.md"
+  },
+  {
+    "id": "okx-okx-onchainos-skills-skills-okx-dex-swap",
+    "title": "okx-dex-swap",
+    "summary": "Use this skill to 'swap tokens', 'trade OKB for USDC', 'buy tokens', 'sell tokens', 'exchange crypto', 'convert tokens', 'swap SOL for USDC', 'get a swap quote', 'execute a trade', 'find the best swap route', 'cheapest way to swap', 'optimal swap', 'compare swap rates', 'get swap calldata', 'build unsigned tx', or mentions swapping, trading, buying, selling, or exchanging tokens on XLayer, Solana, Ethereum, Base, BSC, Arbitrum, Polygon, or any of 20+ supported chains. Aggregates liquidity from 500+ DEX sources for optimal routing and price. Supports slippage control, price impact protection, and cross-DEX route optimization.",
+    "usage": "| # | Command | Description |\n|---|---|---|\n| 1 | `onchainos swap chains` | Get supported chains for DEX aggregator |\n| 2 | `onchainos swap liquidity --chain <chain>` | Get available liquidity sources on a chain |\n| 3 | `onchainos swap approve --token ... --amount ... --chain ...` | Get ERC-20 approval transaction data (advanced/manual use) |\n| 4 | `onchainos swap quote --from ... --to ... --readable-amount ... --chain ...` | Get swap quote (read-only price estimate). **No `--slippage` param**. |\n| 5 | `onchainos swap execute --from ... --to ... --readable-amount ... --chain ... --wallet ... [--slippage <pct>] [--gas-level <level>] [--mev-protection]` | **One-shot swap**: quote → approve (if needed) → swap → sign & broadcast → txHash. |\n| 6 | `onchainos swap swap --from ... --to ... --readable-amount ... --chain ... --wallet ... [--slippage <pct>]` | **Calldata only**: returns unsigned tx data. Does NOT sign or broadcast. |",
+    "category": "okx",
+    "category_title": "OKX",
+    "source": {
+      "name": "okx-onchainos-skills",
+      "repository": "https://github.com/okx/onchainos-skills",
+      "install": "npx skills add okx/onchainos-skills"
+    },
+    "skill_path": "skills/okx-onchainos-skills/skills/okx-dex-swap/SKILL.md"
+  },
+  {
+    "id": "okx-okx-onchainos-skills-skills-okx-dex-token",
+    "title": "okx-dex-token",
+    "summary": "Use this skill for token-level data: search tokens, trending/hot tokens (热门, 代币榜单), liquidity pools, holder distribution (whale/巨鲸, sniper, bundler-tagged holder %), token risk metadata (riskControlLevel, tokenTags, dev stats, suspicious/bundle holding % via advanced-info), recent buy/sell activity, trade feed/逐笔成交/每笔交易/stream trades, top profit addresses, token trade history, detailed price info with market cap volume liquidity and holder count (price-info), or holder cluster analysis (持仓集中度, cluster overview, cluster rug pull risk/跑路风险, new wallet percentage/新钱包持仓比例, holder clusters, 'are top holders in same cluster'). NOTE: if the user wants to write a WebSocket script/脚本/bot, use okx-dex-ws instead.",
+    "usage": "| # | Command | Use When |\n|---|---|---|\n| 1 | `onchainos token search --query <query> [--chains <chains>]` | Search tokens by name, symbol, or address |\n| 2 | `onchainos token info --address <address>` | Token metadata (name, symbol, decimals, logo) |\n| 3 | `onchainos token price-info --address <address>` | Price + market cap + liquidity + volume + 24h change |\n| 4 | `onchainos token holders --address <address>` | Holder distribution (top 100, optional tag filter: KOL/whale/smart money) |\n| 5 | `onchainos token liquidity --address <address>` | Top 5 liquidity pools |\n| 6 | `onchainos token hot-tokens` | Hot/trending token list (by trending score or X mentions, max 100) |\n| 7 | `onchainos token advanced-info --address <address>` | Risk level, creator, dev stats, holder concentration |\n| 8 | `onchainos token top-trader --address <address>` | Top traders / profit addresses for a token |\n| 9 | `onchainos token trades --address <address>` | DEX trade history with optional tag/wallet filters |\n| 10 | `onchainos token cluster-overview --address <address>` | Holder cluster concentration (cluster level, rug pull %, new address %) |\n| 11 | `onchainos token cluster-top-holders --address <address> --range-filter <1\\|2\\|3>` | Top 10/50/100 holder overview (avg PnL, cost, trend); 1=top10, 2=top50, 3=top100 |\n| 12 | `onchainos token cluster-list --address <address>` | Holder cluster list (c…",
+    "category": "okx",
+    "category_title": "OKX",
+    "source": {
+      "name": "okx-onchainos-skills",
+      "repository": "https://github.com/okx/onchainos-skills",
+      "install": "npx skills add okx/onchainos-skills"
+    },
+    "skill_path": "skills/okx-onchainos-skills/skills/okx-dex-token/SKILL.md"
+  },
+  {
+    "id": "okx-okx-onchainos-skills-skills-okx-dex-trenches",
+    "title": "okx-dex-trenches",
+    "summary": "Use this skill for meme/打狗/alpha token research on pump.fun and similar launchpads: scanning new token launches, checking developer reputation/开发者信息/dev launch history/has this dev rugged before/开发者跑路记录, bundle/sniper detection/捆绑狙击, bonding curve status/bonding curve progress, finding similar tokens by the same dev/相似代币, and wallets that co-invested (同车/aped) into a token. Use when the user asks about 'new meme coins', 'pump.fun launches', 'trenches', 'trench', '扫链', 'developer launch history', 'developer rug history', 'check if dev has rugged', 'bundler analysis', 'who else bought this token', 'who aped into this', 'similar tokens', 'bonding curve progress', '打狗', '新盘', '开发者信息', '开发者历史', '捆绑', '同车', 'rug pull count', 'similar meme coins', '捆绑情况', '已迁移出 bonding curve', or '发过多少个项目'. NOTE: if the user wants to write a WebSocket script/脚本/bot, use okx-dex-ws instead.",
+    "usage": "| # | Command | Use When |\n|---|---|---|\n| 1 | `onchainos memepump chains` | Discover supported chains and protocols |\n| 2 | `onchainos memepump tokens --chain <chain> [--stage <stage>]` | Browse/filter meme tokens by stage (default: NEW) — **trenches / 扫链** |\n| 3 | `onchainos memepump token-details --address <address>` | Deep-dive into a specific meme token |\n| 4 | `onchainos memepump token-dev-info --address <address>` | Developer reputation and holding info |\n| 5 | `onchainos memepump similar-tokens --address <address>` | Find similar tokens by same creator |\n| 6 | `onchainos memepump token-bundle-info --address <address>` | Bundle/sniper analysis |\n| 7 | `onchainos memepump aped-wallet --address <address>` | Aped (same-car/同车) wallet list |\n\n### Step 1: Collect Parameters\n\n- Missing chain → default to Solana (`--chain solana`); verify support with `onchainos memepump chains` first\n- Missing `--stage` for memepump-tokens → default to `NEW`; only ask if the user's intent clearly points to a different stage\n- Stage coverage: `NEW` and `MIGRATING` include tokens created within the last **24 h**; `MIGRATED` includes tokens whose migration completed within the last **3 days**\n- User mentions a protocol name → first call `onchainos memepump chains` to get the protocol ID, then pass `--protocol-id-list <id>` to `memepump-tokens`. Do NOT use `okx-dex-token` to search for protocol n…",
+    "category": "okx",
+    "category_title": "OKX",
+    "source": {
+      "name": "okx-onchainos-skills",
+      "repository": "https://github.com/okx/onchainos-skills",
+      "install": "npx skills add okx/onchainos-skills"
+    },
+    "skill_path": "skills/okx-onchainos-skills/skills/okx-dex-trenches/SKILL.md"
+  },
+  {
+    "id": "okx-okx-onchainos-skills-skills-okx-dex-ws",
+    "title": "okx-dex-ws",
+    "summary": "Use this skill when the user mentions 'onchainos ws', 'ws start', 'ws poll', 'ws stop', 'ws channels', 'ws session', 'ws channel-info', 'idle-timeout', 'idle timeout', 'WebSocket channels', 'WS频道', or asks about managing WebSocket sessions/会话管理. Also use when writing a custom WebSocket script/脚本/bot for real-time on-chain data. Covers: onchainos ws CLI commands (start/poll/stop/list/channels/channel-info), session lifecycle, idle-timeout configuration, and all 9 DEX WebSocket channels (price, candle, trades, price-info, signals, tracker, meme scanning).",
+    "usage": "Two ways to consume real-time DEX data:\n1. **CLI** (`onchainos ws`) — start a background session, poll events incrementally. Best for monitoring and agent-driven workflows.\n2. **Script** — write a custom WebSocket client in Python/Node/Rust. Best for bots and custom logic.",
+    "category": "okx",
+    "category_title": "OKX",
+    "source": {
+      "name": "okx-onchainos-skills",
+      "repository": "https://github.com/okx/onchainos-skills",
+      "install": "npx skills add okx/onchainos-skills"
+    },
+    "skill_path": "skills/okx-onchainos-skills/skills/okx-dex-ws/SKILL.md"
+  },
+  {
+    "id": "okx-okx-onchainos-skills-skills-okx-onchain-gateway",
+    "title": "okx-onchain-gateway",
+    "summary": "Use this skill to 'broadcast transaction', 'send tx', 'estimate gas', 'simulate transaction', 'check tx status', 'track my transaction', 'get gas price', 'gas limit', 'broadcast signed tx', 'transaction hash confirmed on-chain', '交易哈希是否上链', '是否确认', or mentions broadcasting transactions, sending transactions on-chain, gas estimation, transaction simulation, tracking broadcast orders, or checking transaction status. Covers gas price, gas limit estimation, transaction simulation, transaction broadcasting, and order tracking across XLayer, Solana, Ethereum, Base, BSC, Arbitrum, Polygon, and 20+ other chains. Do NOT use for swap quote or execution - use okx-dex-swap instead. Do NOT use for general programming questions about transaction handling. Do NOT use when the user says only a single word like 'gas' or 'broadcast' without specifying a chain, transaction, or any other context.",
+    "usage": "| # | Command | Description |\n|---|---|---|\n| 1 | `onchainos gateway chains` | Get supported chains for gateway |\n| 2 | `onchainos gateway gas --chain <chain>` | Get current gas prices for a chain |\n| 3 | `onchainos gateway gas-limit --from ... --to ... --chain ...` | Estimate gas limit for a transaction |\n| 4 | `onchainos gateway simulate --from ... --to ... --data ... --chain ...` | Simulate a transaction (dry-run) |\n| 5 | `onchainos gateway broadcast --signed-tx ... --address ... --chain ...` | Broadcast a signed transaction |\n| 6 | `onchainos gateway orders --address ... --chain ...` | Track broadcast order status |",
+    "category": "okx",
+    "category_title": "OKX",
+    "source": {
+      "name": "okx-onchainos-skills",
+      "repository": "https://github.com/okx/onchainos-skills",
+      "install": "npx skills add okx/onchainos-skills"
+    },
+    "skill_path": "skills/okx-onchainos-skills/skills/okx-onchain-gateway/SKILL.md"
+  },
+  {
+    "id": "okx-okx-onchainos-skills-skills-okx-security",
+    "title": "okx-security",
+    "summary": "Use this skill for security scanning: check transaction safety, is this transaction safe, pre-execution check, security scan, token risk scanning, honeypot detection, DApp/URL phishing detection, message signature safety, malicious transaction detection, approval safety checks, token approval management. Triggers: 'is this token safe', 'check token security', 'honeypot check', 'scan this tx', 'scan this swap tx', 'tx risk check', 'is this URL a scam', 'check if this dapp is safe', 'phishing site check', 'is this signature safe', 'check this signing request', 'check my approvals', 'show risky approvals', 'revoke approval', 'check if this approve is safe', token authorization, ERC20 allowance, Permit2. Covers token-scan, dapp-scan, tx-scan (EVM+Solana pre-execution), sig-scan (EIP-712/personal_sign), approvals (ERC-20/Permit2). Chinese: 安全扫描, 代币安全, 蜜罐检测, 貔貅盘, 钓鱼网站, 交易安全, 签名安全, 代币风险, 授权管理, 授权查询, 风险授权, 代币授权. Do NOT use for wallet balance/send/history — use okx-agentic-wallet.",
+    "usage": "| # | Command | Description |\n|---|---|---|\n| 1 | `onchainos security token-scan` | Token risk / honeypot detection (all chains) |\n| 2 | `onchainos security dapp-scan` | DApp / URL phishing detection (chain-agnostic) |\n| 3 | `onchainos security tx-scan` | Transaction pre-execution security (EVM + Solana) |\n| 4 | `onchainos security sig-scan` | Message signature security (EVM only) |\n| 5 | `onchainos security approvals` | Token approval / Permit2 authorization query (EVM only) |",
+    "category": "okx",
+    "category_title": "OKX",
+    "source": {
+      "name": "okx-onchainos-skills",
+      "repository": "https://github.com/okx/onchainos-skills",
+      "install": "npx skills add okx/onchainos-skills"
+    },
+    "skill_path": "skills/okx-onchainos-skills/skills/okx-security/SKILL.md"
+  },
+  {
+    "id": "okx-okx-onchainos-skills-skills-okx-wallet-portfolio",
+    "title": "okx-wallet-portfolio",
+    "summary": "Use this skill when the user provides a specific wallet address and wants to check its balance, token holdings, portfolio value, or DeFi positions. Typical triggers: 'check balance of 0xAbc...', 'show tokens in this address', 'what tokens does 0xAbc hold', 'portfolio value of this address', address portfolio value, multi-chain balance lookup for a given address. Supports XLayer, Solana, Ethereum, Base, BSC, Arbitrum, Polygon, and 20+ other chains. Do NOT use when the user asks about their own wallet without providing an address (e.g., 'check my wallet balance', 'show my assets', '查看我的余额') — use okx-agentic-wallet instead, which queries the logged-in wallet. Do NOT use for PnL analysis, DEX history, realized/unrealized profit — use okx-dex-market. Do NOT use for signal tracking — use okx-dex-signal. Do NOT use for meme scanning — use okx-dex-trenches. Do NOT use for programming questions about balance APIs or integration.",
+    "usage": "| # | Command | Description |\n|---|---|---|\n| 1 | `onchainos portfolio chains` | Get supported chains for balance queries |\n| 2 | `onchainos portfolio total-value --address <address> --chains <chains>` | Get total asset value for a wallet (both params required) |\n| 3 | `onchainos portfolio all-balances --address <address> --chains <chains>` | Get all token balances for a wallet (both params required) |\n| 4 | `onchainos portfolio token-balances --address ... --tokens ...` | Get specific token balances |",
+    "category": "okx",
+    "category_title": "OKX",
+    "source": {
+      "name": "okx-onchainos-skills",
+      "repository": "https://github.com/okx/onchainos-skills",
+      "install": "npx skills add okx/onchainos-skills"
+    },
+    "skill_path": "skills/okx-onchainos-skills/skills/okx-wallet-portfolio/SKILL.md"
+  },
+  {
+    "id": "okx-okx-onchainos-skills-skills-okx-x402-payment",
+    "title": "okx-x402-payment",
+    "summary": "This skill should be used when the user encounters an HTTP 402 Payment Required response, wants to pay for a payment-gated API or resource, or mentions 'x402', 'pay for access', '402 payment', 'payment-gated URL', or 'sign x402 payment'. Primary path signs via TEE with a wallet session (JWT) — recommended. Fallback path allows local EIP-3009 signing with the user's own private key only when the user explicitly opts in (key stays local but is not TEE-protected). Returns the payment proof (signature + authorization) that the caller can attach as a payment header to access the resource. Do NOT use for swap or token transfers — use okx-dex-swap instead. Do NOT use for wallet balance or portfolio queries — use okx-agentic-wallet or okx-wallet-portfolio. Do NOT use for security scanning — use okx-security. Do NOT use for transaction broadcasting — use okx-onchain-gateway. Do NOT use for general programming questions.",
+    "usage": "| # | Command                           | Description                                                          |\n|---|-----------------------------------|----------------------------------------------------------------------|\n| 1 | `onchainos payment x402-pay`      | Sign an x402 payment via TEE (wallet session) and return the proof   |\n| 2 | `onchainos payment eip3009-sign`  | Sign an EIP-3009 authorization locally with a hex private key        |",
+    "category": "okx",
+    "category_title": "OKX",
+    "source": {
+      "name": "okx-onchainos-skills",
+      "repository": "https://github.com/okx/onchainos-skills",
+      "install": "npx skills add okx/onchainos-skills"
+    },
+    "skill_path": "skills/okx-onchainos-skills/skills/okx-x402-payment/SKILL.md"
+  }
+]

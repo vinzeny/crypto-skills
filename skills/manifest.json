@@ -1,0 +1,327 @@
+{
+  "generated_at": "2026-04-21T11:35:33.285Z",
+  "categories": [
+    {
+      "slug": "binance",
+      "label": "Binance",
+      "sources": [
+        {
+          "dir": "binance-skills-hub",
+          "path": "skills/binance-skills-hub",
+          "data": "skills/binance-skills-hub/data.json",
+          "url": "https://github.com/binance/binance-skills-hub",
+          "install": "npx skills add https://github.com/binance/binance-skills-hub"
+        }
+      ],
+      "skipped": []
+    },
+    {
+      "slug": "okx",
+      "label": "OKX",
+      "sources": [
+        {
+          "dir": "okx-onchainos-skills",
+          "path": "skills/okx-onchainos-skills",
+          "data": "skills/okx-onchainos-skills/data.json",
+          "url": "https://github.com/okx/onchainos-skills",
+          "install": "npx skills add okx/onchainos-skills"
+        },
+        {
+          "dir": "okx-agent-skills",
+          "path": "skills/okx-agent-skills",
+          "data": "skills/okx-agent-skills/data.json",
+          "url": "https://github.com/okx/agent-skills",
+          "install": "npm install -g @okx_ai/okx-trade-mcp @okx_ai/okx-trade-cli"
+        }
+      ],
+      "skipped": []
+    },
+    {
+      "slug": "bybit",
+      "label": "Bybit",
+      "sources": [
+        {
+          "dir": "bybit-skills",
+          "path": "skills/bybit-skills",
+          "data": "skills/bybit-skills/data.json",
+          "url": "https://github.com/bybit-exchange/skills",
+          "install": "直接使用仓库根目录 SKILL.md"
+        }
+      ],
+      "skipped": []
+    },
+    {
+      "slug": "crypto-com",
+      "label": "Crypto.com",
+      "sources": [
+        {
+          "dir": "crypto-agent-trading",
+          "path": "skills/crypto-agent-trading",
+          "data": "skills/crypto-agent-trading/data.json",
+          "url": "https://github.com/crypto-com/crypto-agent-trading",
+          "install": "npx skills add crypto-com/crypto-agent-trading/crypto-com-app -g -y"
+        }
+      ],
+      "skipped": []
+    },
+    {
+      "slug": "coinbase",
+      "label": "Coinbase",
+      "sources": [
+        {
+          "dir": "coinbase-agentic-wallet-skills",
+          "path": "skills/coinbase-agentic-wallet-skills",
+          "data": "skills/coinbase-agentic-wallet-skills/data.json",
+          "url": "https://github.com/coinbase/agentic-wallet-skills",
+          "install": "npx skills add coinbase/agentic-wallet-skills"
+        }
+      ],
+      "skipped": []
+    },
+    {
+      "slug": "uniswap",
+      "label": "Uniswap",
+      "sources": [
+        {
+          "dir": "uniswap-ai",
+          "path": "skills/uniswap-ai",
+          "data": "skills/uniswap-ai/data.json",
+          "url": "https://github.com/Uniswap/uniswap-ai",
+          "install": "npx skills add Uniswap/uniswap-ai"
+        }
+      ],
+      "skipped": []
+    },
+    {
+      "slug": "jupiter",
+      "label": "Jupiter",
+      "sources": [
+        {
+          "dir": "jupiter-agent-skills",
+          "path": "skills/jupiter-agent-skills",
+          "data": "skills/jupiter-agent-skills/data.json",
+          "url": "https://github.com/jup-ag/agent-skills",
+          "install": "npx skills add jup-ag/agent-skills"
+        }
+      ],
+      "skipped": []
+    },
+    {
+      "slug": "polymarket",
+      "label": "Polymarket",
+      "sources": [
+        {
+          "dir": "polymarket-agent-skills",
+          "path": "skills/polymarket-agent-skills",
+          "data": "skills/polymarket-agent-skills/data.json",
+          "url": "https://github.com/Polymarket/agent-skills",
+          "install": "直接读取仓库 SKILL.md"
+        },
+        {
+          "dir": "polymarket-agents",
+          "path": "skills/polymarket-agents",
+          "data": "skills/polymarket-agents/data.json",
+          "url": "https://github.com/Polymarket/agents",
+          "install": "pip install -r requirements.txt 后按 README 配置"
+        },
+        {
+          "dir": "poly-skills-website",
+          "path": "skills/poly-skills-website",
+          "data": "skills/poly-skills-website/data.json",
+          "url": "https://github.com/DevAgarwal2/poly-skills-website",
+          "install": "目录站，未见标准安装命令"
+        },
+        {
+          "dir": "mjunaidca-polymarket-skills",
+          "path": "skills/mjunaidca-polymarket-skills",
+          "data": "skills/mjunaidca-polymarket-skills/data.json",
+          "url": "https://github.com/mjunaidca/polymarket-skills",
+          "install": "npx skills add mjunaidca/polymarket-skills"
+        },
+        {
+          "dir": "bowen-polymarket-agent-skills",
+          "path": "skills/bowen-polymarket-agent-skills",
+          "data": "skills/bowen-polymarket-agent-skills/data.json",
+          "url": "https://github.com/bowen31337/polymarket-agent-skills",
+          "install": "git clone https://github.com/bowen31337/polymarket-agent-skills.git ~/.claude/skills/polymarket"
+        },
+        {
+          "dir": "kjhelgason-polymarket-agent-skills",
+          "path": "skills/kjhelgason-polymarket-agent-skills",
+          "data": "skills/kjhelgason-polymarket-agent-skills/data.json",
+          "url": "https://github.com/KJHelgason/Polymarket_Agent_skills",
+          "install": "git clone 后复制到 .claude/skills/polymarket"
+        },
+        {
+          "dir": "openclaw-decker-polymarket",
+          "path": "skills/openclaw-decker-polymarket",
+          "data": "skills/openclaw-decker-polymarket/data.json",
+          "url": "https://github.com/openclaw/skills/blob/main/skills/gigshow/decker-polymarket/SKILL.md",
+          "install": "OpenClaw skill 路径"
+        },
+        {
+          "dir": "cloddsbot-trading-polymarket",
+          "path": "skills/cloddsbot-trading-polymarket",
+          "data": "skills/cloddsbot-trading-polymarket/data.json",
+          "url": "https://github.com/alsk1992/CloddsBot/blob/main/src/skills/bundled/trading-polymarket/SKILL.md",
+          "install": "CloddsBot bundled skill"
+        }
+      ],
+      "skipped": [
+        {
+          "title": "SkillsAuth: nousresearch/polymarket",
+          "reason": "README only provides a SkillsAuth page, not a GitHub repository URL.",
+          "url": "https://skillsauth.com/skills/nousresearch/polymarket",
+          "install": "npx skillsauth add nousresearch/hermes-agent polymarket"
+        }
+      ]
+    },
+    {
+      "slug": "gmgn",
+      "label": "GMGN",
+      "sources": [
+        {
+          "dir": "gmgn-skills",
+          "path": "skills/gmgn-skills",
+          "data": "skills/gmgn-skills/data.json",
+          "url": "https://github.com/GMGNAI/gmgn-skills",
+          "install": "npx skills add GMGNAI/gmgn-skills"
+        }
+      ],
+      "skipped": []
+    },
+    {
+      "slug": "surf",
+      "label": "Surf",
+      "sources": [
+        {
+          "dir": "surf-skills",
+          "path": "skills/surf-skills",
+          "data": "skills/surf-skills/data.json",
+          "url": "https://github.com/asksurf-ai/surf-skills",
+          "install": "npx skills add asksurf-ai/surf-skills --skill surf"
+        }
+      ],
+      "skipped": []
+    },
+    {
+      "slug": "solana",
+      "label": "Solana",
+      "sources": [
+        {
+          "dir": "awesome-solana-ai",
+          "path": "skills/awesome-solana-ai",
+          "data": "skills/awesome-solana-ai/data.json",
+          "url": "https://github.com/solana-foundation/awesome-solana-ai",
+          "install": "目录型资源"
+        },
+        {
+          "dir": "solana-clawd",
+          "path": "skills/solana-clawd",
+          "data": "skills/solana-clawd/data.json",
+          "url": "https://github.com/x402agent/solana-clawd",
+          "install": "npx skills add x402agent/solana-clawd"
+        }
+      ],
+      "skipped": []
+    },
+    {
+      "slug": "bnb-chain",
+      "label": "BNB Chain",
+      "sources": [
+        {
+          "dir": "bnbchain-skills",
+          "path": "skills/bnbchain-skills",
+          "data": "skills/bnbchain-skills/data.json",
+          "url": "https://github.com/bnb-chain/bnbchain-skills",
+          "install": "npx skills add bnb-chain/bnbchain-skills"
+        }
+      ],
+      "skipped": []
+    },
+    {
+      "slug": "bankr",
+      "label": "Bankr",
+      "sources": [
+        {
+          "dir": "bankr-skills",
+          "path": "skills/bankr-skills",
+          "data": "skills/bankr-skills/data.json",
+          "url": "https://github.com/BankrBot/skills",
+          "install": "install the [skill-name] skill from https://github.com/BankrBot/skills/tree/main/[skill-name]"
+        }
+      ],
+      "skipped": []
+    },
+    {
+      "slug": "panews",
+      "label": "PANews",
+      "sources": [
+        {
+          "dir": "panews-skills",
+          "path": "skills/panews-skills",
+          "data": "skills/panews-skills/data.json",
+          "url": "https://github.com/panewslab/skills",
+          "install": "npx skills add https://github.com/panewslab/skills --skill panews-creator 等"
+        }
+      ],
+      "skipped": []
+    },
+    {
+      "slug": "6551",
+      "label": "6551 Daily News",
+      "sources": [
+        {
+          "dir": "daily-news",
+          "path": "skills/daily-news",
+          "data": "skills/daily-news/data.json",
+          "url": "https://github.com/6551Team/daily-news",
+          "install": "OpenClaw: cp -r openclaw-skill/daily-news ~/.openclaw/skills/6551-daily-news"
+        }
+      ],
+      "skipped": []
+    },
+    {
+      "slug": "slowmist",
+      "label": "SlowMist",
+      "sources": [
+        {
+          "dir": "misttrack-skills",
+          "path": "skills/misttrack-skills",
+          "data": "skills/misttrack-skills/data.json",
+          "url": "https://github.com/slowmist/misttrack-skills",
+          "install": "npx skills add slowmist/misttrack-skills"
+        }
+      ],
+      "skipped": []
+    },
+    {
+      "slug": "byreal",
+      "label": "Byreal",
+      "sources": [
+        {
+          "dir": "byreal-agent-skills",
+          "path": "skills/byreal-agent-skills",
+          "data": "skills/byreal-agent-skills/data.json",
+          "url": "https://github.com/byreal-git/byreal-agent-skills",
+          "install": "npx skills add byreal-git/byreal-agent-skills"
+        }
+      ],
+      "skipped": []
+    },
+    {
+      "slug": "coinank",
+      "label": "CoinAnk",
+      "sources": [
+        {
+          "dir": "coinank-openapi-skill",
+          "path": "skills/coinank-openapi-skill",
+          "data": "skills/coinank-openapi-skill/data.json",
+          "url": "https://github.com/coinank/coinank-openapi-skill",
+          "install": "git clone https://github.com/coinank/coinank-openapi-skill.git ~/.openclaw/skills/coinank-openapi-skill"
+        }
+      ],
+      "skipped": []
+    }
+  ]
+}

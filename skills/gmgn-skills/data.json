@@ -1,0 +1,86 @@
+[
+  {
+    "id": "gmgn-gmgn-skills-skills-gmgn-cooking",
+    "title": "gmgn-cooking",
+    "summary": "[FINANCIAL EXECUTION] Create and launch meme coins and crypto tokens on launchpads (Pump.fun, PancakeSwap, FourMeme, Bonk, BAGS, Flap, Raydium, etc.) via bonding curve fair launch, or query token creation stats by launchpad via GMGN API. Requires explicit user confirmation. Use when user asks to create a token, launch a meme coin, cook a coin, deploy on a launchpad, or check launchpad creation stats on Solana, BSC, Base, ETH, or TON.",
+    "usage": "| Sub-command | Description |\n|-------------|-------------|\n| `cooking stats` | Get token creation count statistics grouped by launchpad platform (normal auth) |\n| `cooking create` | Deploy a new token on a launchpad platform (requires private key) |",
+    "category": "gmgn",
+    "category_title": "GMGN",
+    "source": {
+      "name": "gmgn-skills",
+      "repository": "https://github.com/GMGNAI/gmgn-skills",
+      "install": "npx skills add GMGNAI/gmgn-skills"
+    },
+    "skill_path": "skills/gmgn-skills/skills/gmgn-cooking/SKILL.md"
+  },
+  {
+    "id": "gmgn-gmgn-skills-skills-gmgn-market",
+    "title": "gmgn-market",
+    "summary": "Get crypto and meme token price charts (K-line, candlestick, OHLCV), trending meme coin rankings by volume, and newly launched tokens on launchpads (pump.fun, fourmeme, letsbonk, Raydium, etc.) via GMGN API on Solana, BSC, or Base. Use when user asks for price chart, trending tokens, what's pumping, hot coins, new launches, token signals, or wants to discover early-stage opportunities.",
+    "usage": "| Sub-command | Description |\n|-------------|-------------|\n| `market kline` | Token candlestick / OHLCV data and trading volume over a time range |\n| `market trending` | Trending tokens ranked by swap activity — use `--interval` to specify the time window (e.g. `1m` for 1-minute hottest, `1h` for 1-hour trending) |\n| `market trenches` | Newly launched launchpad platform tokens — **use this when the user asks for \"new tokens\", \"just launched tokens\", \"latest tokens on pump.fun/letsbonk\"**. Three categories: `new_creation` (just created), `near_completion` (bonding curve almost full), `completed` (graduated to open market / DEX) |\n| `market signal` | Real-time token signal feed — price spikes, smart money buys, large buys, Dex ads, CTO events, and more. Results sorted by `trigger_at` descending. **sol / bsc only. Max 50 results per group.** |",
+    "category": "gmgn",
+    "category_title": "GMGN",
+    "source": {
+      "name": "gmgn-skills",
+      "repository": "https://github.com/GMGNAI/gmgn-skills",
+      "install": "npx skills add GMGNAI/gmgn-skills"
+    },
+    "skill_path": "skills/gmgn-skills/skills/gmgn-market/SKILL.md"
+  },
+  {
+    "id": "gmgn-gmgn-skills-skills-gmgn-portfolio",
+    "title": "gmgn-portfolio",
+    "summary": "Analyze any crypto wallet by address — holdings, realized/unrealized P&L, win rate, trading history, performance stats, specific token balance, and tokens created by a developer wallet (with ATH market cap and DEX graduation status) via GMGN API on Solana, BSC, or Base. Use when user asks about a wallet's holdings, P&L, win rate, what tokens a dev has launched, the highest ATH token a dev ever created, or wants a wallet report to decide whether to copy-trade or follow.",
+    "usage": "| Sub-command | Description |\n|-------------|-------------|\n| `portfolio info` | Wallets and main currency balances bound to the API Key |\n| `portfolio holdings` | Wallet token holdings with P&L |\n| `portfolio activity` | Transaction history |\n| `portfolio stats` | Trading statistics (supports batch) |\n| `portfolio token-balance` | Token balance for a specific token |\n| `portfolio created-tokens` | Tokens created by a developer wallet, with market cap and ATH info |",
+    "category": "gmgn",
+    "category_title": "GMGN",
+    "source": {
+      "name": "gmgn-skills",
+      "repository": "https://github.com/GMGNAI/gmgn-skills",
+      "install": "npx skills add GMGNAI/gmgn-skills"
+    },
+    "skill_path": "skills/gmgn-skills/skills/gmgn-portfolio/SKILL.md"
+  },
+  {
+    "id": "gmgn-gmgn-skills-skills-gmgn-swap",
+    "title": "gmgn-swap",
+    "summary": "[FINANCIAL EXECUTION] Buy and sell meme coins and crypto tokens on Solana, BSC, or Base — single swap, multi-wallet batch trading, limit orders, stop loss, take profit, trailing stop loss, trailing take profit via GMGN API. Requires explicit user confirmation. Use when user asks to buy, sell, or swap a token, trade from multiple wallets, set a limit order, stop loss, take profit, or check order status.",
+    "usage": "| Sub-command | Description |\n|-------------|-------------|\n| `swap` | Submit a token swap |\n| `multi-swap` | Submit token swaps across multiple wallets concurrently (up to 100) |\n| `order quote` | Get a swap quote (no transaction submitted; requires critical auth) |\n| `order get` | Query order status |\n| `order strategy create` | Create a limit/strategy order (requires private key) |\n| `order strategy list` | List strategy orders (requires private key) |\n| `order strategy cancel` | Cancel a strategy order (requires private key) |",
+    "category": "gmgn",
+    "category_title": "GMGN",
+    "source": {
+      "name": "gmgn-skills",
+      "repository": "https://github.com/GMGNAI/gmgn-skills",
+      "install": "npx skills add GMGNAI/gmgn-skills"
+    },
+    "skill_path": "skills/gmgn-skills/skills/gmgn-swap/SKILL.md"
+  },
+  {
+    "id": "gmgn-gmgn-skills-skills-gmgn-token",
+    "title": "gmgn-token",
+    "summary": "Research any crypto or meme token by address — real-time price, market cap, liquidity, holder list, trader list, top Smart Money and KOL positions, security audit (honeypot, rug pull risk, dev wallet, renounced status), social links (Twitter/X, website) via GMGN API on Solana, BSC, or Base. Use when user asks about a token's price, safety, holders, traders, smart money exposure, or wants due diligence before buying.",
+    "usage": "| Sub-command | Description |\n|-------------|-------------|\n| `token info` | Basic info + realtime price, liquidity, market cap, total supply, holder count, social links (market cap = price × circulating_supply) |\n| `token security` | Security metrics (honeypot, taxes, holder concentration, contract risks) |\n| `token pool` | Liquidity pool info (DEX, reserves, liquidity depth) |\n| `token holders` | Top token holders list with profit/loss breakdown |\n| `token traders` | Top token traders list with profit/loss breakdown |",
+    "category": "gmgn",
+    "category_title": "GMGN",
+    "source": {
+      "name": "gmgn-skills",
+      "repository": "https://github.com/GMGNAI/gmgn-skills",
+      "install": "npx skills add GMGNAI/gmgn-skills"
+    },
+    "skill_path": "skills/gmgn-skills/skills/gmgn-token/SKILL.md"
+  },
+  {
+    "id": "gmgn-gmgn-skills-skills-gmgn-track",
+    "title": "gmgn-track",
+    "summary": "Get real-time crypto buy/sell activity from Smart Money wallets, KOL influencer wallets, and personally followed wallets via GMGN API — alpha signals, whale tracking, meme token copy-trading ideas on Solana, BSC, or Base. Use when user asks what smart money or KOLs are buying, wants whale alerts, on-chain alpha, or copy-trade signals. (For a specific wallet address, use gmgn-portfolio.)",
+    "usage": "| Sub-command | Description |\n|-------------|-------------|\n| `track follow-wallet` | Trade records from wallets the user personally follows on GMGN |\n| `track kol` | Real-time trades from KOL / influencer wallets tagged by GMGN |\n| `track smartmoney` | Real-time trades from smart money / whale wallets tagged by GMGN |",
+    "category": "gmgn",
+    "category_title": "GMGN",
+    "source": {
+      "name": "gmgn-skills",
+      "repository": "https://github.com/GMGNAI/gmgn-skills",
+      "install": "npx skills add GMGNAI/gmgn-skills"
+    },
+    "skill_path": "skills/gmgn-skills/skills/gmgn-track/SKILL.md"
+  }
+]

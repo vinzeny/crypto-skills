@@ -1,0 +1,85 @@
+---
+import "../styles/global.css";
+
+interface Props {
+  title: string;
+  description?: string;
+}
+
+const {
+  title,
+  description = "Browse AI crypto skills by exchange, protocol, and source repository.",
+} = Astro.props;
+
+const pageTitle = title === "Crypto Skills" ? "Crypto Skills" : `${title} | Crypto Skills`;
+const basePath = import.meta.env.BASE_URL.endsWith("/") ? import.meta.env.BASE_URL : `${import.meta.env.BASE_URL}/`;
+const homeHref = basePath;
+const iconHref = `${basePath}crypto-skills.svg`;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content={description} />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="generator" content={Astro.generator} />
+    <meta name="theme-color" content="#080a0f" />
+    <link rel="icon" href={iconHref} type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Silkscreen:wght@400;700&family=VT323&display=swap"
+      rel="stylesheet"
+    />
+    <title>{pageTitle}</title>
+  </head>
+  <body>
+    <header class="site-header">
+      <a href={homeHref} class="brand-mark" aria-label="CryptoSkill home">
+        <strong style="font-size: 20px; letter-spacing: -0.5px;">CryptoSkill</strong>
+      </a>
+      <nav class="site-nav">
+        <a href="https://github.com/vinzeny/crypto-skills" target="_blank" rel="noreferrer" class="github-link">
+          GitHub
+        </a>
+        <a id="language-toggle" class="language-toggle" href="?lang=zh" aria-label="Toggle language">
+          <span aria-hidden="true">文</span>
+          <span id="language-toggle-label">中文</span>
+        </a>
+      </nav>
+    </header>
+
+    <script is:inline>
+      (() => {
+        const link = document.getElementById("language-toggle");
+        const label = document.getElementById("language-toggle-label");
+        const params = new URLSearchParams(window.location.search);
+        const currentLanguage = params.get("lang") === "zh" ? "zh" : "en";
+        const nextLanguage = currentLanguage === "en" ? "zh" : "en";
+
+        params.set("lang", nextLanguage);
+
+        if (label) {
+          label.textContent = currentLanguage === "en" ? "中文" : "EN";
+        }
+
+        if (link) {
+          link.href = `${window.location.pathname}?${params.toString()}${window.location.hash}`;
+        }
+      })();
+    </script>
+
+    <main>
+      <slot />
+    </main>
+
+    <footer class="site-footer">
+      <div>
+        <strong>Crypto Skills Directory</strong>
+        <p>Built from local data.json files in this repository.</p>
+      </div>
+      <a href="#skills">Back to skills</a>
+    </footer>
+  </body>
+</html>

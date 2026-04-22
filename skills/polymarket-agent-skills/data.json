@@ -1,0 +1,16 @@
+[
+  {
+    "id": "polymarket-polymarket-agent-skills",
+    "title": "web3-polymarket",
+    "summary": "Polymarket integration for prediction market trading on Polygon. Covers authentication (L1 EIP-712, L2 HMAC-SHA256, builder headers), order placement (GTC/GTD/FOK/FAK, batch, post-only, heartbeat), market data (Gamma API, Data API, orderbook, subgraph), WebSocket streaming (market/user/sports channels), CTF operations (split, merge, redeem, negative risk), bridge (deposits, withdrawals, multi-chain), and gasless relayer transactions. Use when building AI agents, autonomous market makers, prediction market UIs, or any application integrating with Polymarket on Polygon.",
+    "usage": "Use this skill when the user asks about or needs to build:\n- Polymarket API authentication (L1/L2, API keys, HMAC signing)\n- Placing or managing orders (limit, market, GTC, GTD, FOK, FAK, batch, cancel)\n- Reading orderbook data (prices, spreads, midpoints, depth)\n- Market data fetching (events, markets, by slug, by tag, pagination)\n- WebSocket subscriptions (market channel, user channel, sports)\n- CTF operations (split, merge, redeem positions)\n- Negative risk markets (multi-outcome, conversion, augmented neg risk)\n- Bridge operations (deposits, withdrawals, multi-chain)\n- Gasless transactions (relayer client, order attribution)\n- Builder program integration (order attribution, API keys, tiers)\n- Polymarket SDK usage (TypeScript @polymarket/clob-client, Python py-clob-client)",
+    "category": "polymarket",
+    "category_title": "Polymarket",
+    "source": {
+      "name": "polymarket-agent-skills",
+      "repository": "https://github.com/Polymarket/agent-skills",
+      "install": "直接读取仓库 SKILL.md"
+    },
+    "skill_path": "skills/polymarket-agent-skills/SKILL.md"
+  }
+]

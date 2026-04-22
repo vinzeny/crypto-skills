@@ -1,0 +1,198 @@
+[
+  {
+    "id": "binance-binance-skills-hub-skills-binance-binance",
+    "title": "binance",
+    "summary": "Use binance-cli for Binance Spot, Futures (USD-S), and Convert. Requires auth.",
+    "usage": "| Command | Description |\n|---------|-------------|\n| [`algo`](./references/algo.md) | Algo Trading |\n| [`alpha`](./references/alpha.md) | Alpha |\n| [`c2c`](./references/c2c.md) | C2C |\n| [`convert`](./references/convert.md) | Convert |\n| [`copy-trading`](./references/copy-trading.md) | Copy Trading |\n| [`crypto-loan`](./references/crypto-loan.md) | Crypto Loan |\n| [`derivatives-options`](./references/derivatives-options.md) | Derivatives Trading (Options) |\n| [`derivatives-portfolio-margin`](./references/derivatives-portfolio-margin.md) | Derivatives Trading (Portfolio Margin) |\n| [`derivatives-portfolio-margin-pro`](./references/derivatives-portfolio-margin-pro.md) | Derivatives Trading (Portfolio Margin Pro) |\n| [`dual-investment`](./references/dual-investment.md) | Dual Investment |\n| [`fiat`](./references/fiat.md) | Fiat |\n| [`futures-coin`](./references/futures-coin.md) | Derivatives Trading (COIN-M Futures) |\n| [`futures-usds`](./references/futures-usds.md) | Derivatives Trading (USDS-M Futures) |\n| [`gift-card`](./references/gift-card.md) | Gift Card |\n| [`margin-trading`](./references/margin-trading.md) | Margin Trading |\n| [`mining`](./references/mining.md) | Mining |\n| [`pay`](./references/pay.md) | Pay |\n| [`rebate`](./references/rebate.md) | Rebate |\n| [`simple-earn`](./references/simple-earn.md) | Simple Earn |\n| [`spot`](./references/spot.md) | Spot Trading |\n|…",
+    "category": "binance",
+    "category_title": "Binance",
+    "source": {
+      "name": "binance-skills-hub",
+      "repository": "https://github.com/binance/binance-skills-hub",
+      "install": "npx skills add https://github.com/binance/binance-skills-hub"
+    },
+    "skill_path": "skills/binance-skills-hub/skills/binance/binance/SKILL.md"
+  },
+  {
+    "id": "binance-binance-skills-hub-skills-binance-web3-binance-agentic-wallet",
+    "title": "binance-agentic-wallet",
+    "summary": "Use when the user mentions connect/disconnect wallet, sign in, sign out, web3 wallet, wallet address,\ncheck balance, how much crypto do I have, send BNB/USDT/crypto, transfer tokens, swap tokens,\nbuy/sell token, DEX trade, limit order, market order, cancel order, get a quote, transaction history,\nwallet settings, daily limit, slippage, MEV protection, supported chains, available networks,\nor any on-chain wallet operation.",
+    "usage": "| User Intent                                                          | Command                       | Reference                                         |\n|----------------------------------------------------------------------|-------------------------------|---------------------------------------------------|\n| Sign in / connect wallet                                             | `auth signin` → `auth verify` | [authentication.md](references/authentication.md) |\n| Sign out / disconnect wallet                                         | `auth signout`                | [authentication.md](references/authentication.md) |\n| Check if wallet is connected                                         | `wallet status`               | [wallet-view.md](references/wallet-view.md)       |\n| List supported chains / available networks                           | `wallet chains`               | [wallet-view.md](references/wallet-view.md)       |\n| Get my wallet address                                                | `wallet address`              | [wallet-view.md](references/wallet-view.md)       |\n| Check token balances                                                 | `wallet balance`              | [wallet-view.md](references/wallet-view.md)       |\n| View transaction history                                             | `wallet tx-history`           | [wallet-view.md](references/wallet-vie…",
+    "category": "binance",
+    "category_title": "Binance",
+    "source": {
+      "name": "binance-skills-hub",
+      "repository": "https://github.com/binance/binance-skills-hub",
+      "install": "npx skills add https://github.com/binance/binance-skills-hub"
+    },
+    "skill_path": "skills/binance-skills-hub/skills/binance-web3/binance-agentic-wallet/SKILL.md"
+  },
+  {
+    "id": "binance-binance-skills-hub-skills-binance-web3-binance-tokenized-securities-info",
+    "title": "binance-tokenized-securities-info",
+    "summary": "Query Ondo tokenized US stock data on Binance Web3.\nCovers: supported stock token list, RWA metadata (company info, attestation reports),\nmarket and per-asset trading status (with corporate action codes for earnings, dividends, splits),\nreal-time on-chain data (token price, holders, circulating supply, market cap),\nUS stock fundamentals (P/E, dividend yield, 52-week range), and token K-Line/candlestick charts.\n\nUse this skill when users ask about:\n- Tokenized stock price, holders, or on-chain data for specific tickers\n- Whether a stock token is tradable, paused, or halted\n- Ondo RWA token list or which US stocks are available on-chain\n- Corporate actions affecting a token (dividends, stock splits, earnings halt)\n- Stock token K-Line or candlestick chart data\n- Comparing on-chain token price vs US stock price\n\nNOT for general crypto tokens (BTC, ETH, SOL, etc.) — use query-token-info for those.",
+    "usage": "1. **List Supported Stocks**: Get all Ondo tokenized tickers with chain and contract info\n2. **Company Research**: Get company metadata, CEO, industry, concept tags, and attestation reports\n3. **Market Status Check**: Determine if the Ondo market is open, closed, or in pre/post-market session\n4. **Corporate Action Detection**: Check if a specific asset is paused or limited due to earnings, dividends, stock splits, mergers, or maintenance\n5. **Real-Time Data**: Get on-chain price, holder count, circulating supply, US stock P/E, dividend yield, 52-week range, and order limits\n6. **Technical Analysis**: Fetch token K-Line (candlestick) data with configurable intervals and time ranges",
+    "category": "binance",
+    "category_title": "Binance",
+    "source": {
+      "name": "binance-skills-hub",
+      "repository": "https://github.com/binance/binance-skills-hub",
+      "install": "npx skills add https://github.com/binance/binance-skills-hub"
+    },
+    "skill_path": "skills/binance-skills-hub/skills/binance-web3/binance-tokenized-securities-info/SKILL.md"
+  },
+  {
+    "id": "binance-binance-skills-hub-skills-binance-web3-crypto-market-rank",
+    "title": "crypto-market-rank",
+    "summary": "Crypto market rankings and leaderboards. Query trending tokens, top searched tokens, Binance Alpha tokens,\ntokenized stocks, social hype sentiment ranks, smart money inflow token rankings,\ntop meme token rankings from Pulse launchpad, and top trader PnL leaderboards.\nUse this skill when users ask about token rankings, market trends, social buzz, meme rankings, breakout meme tokens, or top traders.",
+    "usage": "1. **Social Hype Analysis**: Discover tokens with highest social buzz and sentiment\n2. **Trending Tokens**: View currently trending tokens (rankType=10)\n3. **Top Searched**: See most searched tokens (rankType=11)\n4. **Alpha Discovery**: Browse Binance Alpha picks (rankType=20)\n5. **Stock Tokens**: View tokenized stocks (rankType=40)\n6. **Smart Money Inflow**: Discover which tokens smart money is buying most\n7. **Meme Rank**: Find top meme tokens from Pulse launchpad most likely to break out\n8. **PnL Leaderboard**: View top-performing trader addresses, PnL, win rates\n9. **Filtered Research**: Combine filters for targeted token or address screening",
+    "category": "binance",
+    "category_title": "Binance",
+    "source": {
+      "name": "binance-skills-hub",
+      "repository": "https://github.com/binance/binance-skills-hub",
+      "install": "npx skills add https://github.com/binance/binance-skills-hub"
+    },
+    "skill_path": "skills/binance-skills-hub/skills/binance-web3/crypto-market-rank/SKILL.md"
+  },
+  {
+    "id": "binance-binance-skills-hub-skills-binance-fiat",
+    "title": "fiat",
+    "summary": "Query Binance fiat payment capabilities — supported countries, currencies, payment methods, limits, and crypto prices — via public APIs, plus authenticated order/payment history lookup. Use whenever users ask about buying or selling crypto with fiat, depositing or withdrawing fiat, fiat-crypto exchange rates, payment options in a specific country, or their fiat order history — even if they don't explicitly mention Binance APIs.",
+    "usage": "Query Binance fiat payment capabilities, available payment methods, pricing, and supported currencies/countries using **public APIs** (no authentication required). For order and payment history, see [Authenticated Endpoints](./references/sapi-endpoints.md).",
+    "category": "binance",
+    "category_title": "Binance",
+    "source": {
+      "name": "binance-skills-hub",
+      "repository": "https://github.com/binance/binance-skills-hub",
+      "install": "npx skills add https://github.com/binance/binance-skills-hub"
+    },
+    "skill_path": "skills/binance-skills-hub/skills/binance/fiat/SKILL.md"
+  },
+  {
+    "id": "binance-binance-skills-hub-skills-binance-web3-meme-rush",
+    "title": "meme-rush",
+    "summary": "Meme token fast-trading assistant with two core capabilities:\n1. Meme Rush - Real-time meme token lists from launchpads (Pump.fun, Four.meme, etc.) across new, finalizing, and migrated stages\n2. Topic Rush - AI-powered market hot topics with associated tokens ranked by net inflow\nUse this skill when users ask about new meme tokens, meme launches, bonding curve, migration status,\npump.fun tokens, four.meme tokens, fast meme trading, market hot topics, or trending narratives.",
+    "usage": "1. **Snipe New Launches**: Find freshly created meme tokens on Pump.fun, Four.meme, etc.\n2. **Migration Watch**: Monitor tokens about to migrate — catch early DEX liquidity\n3. **Post-Migration Trading**: Find just-migrated tokens for early DEX entry\n4. **Filter by Dev Behavior**: Exclude dev wash trading, check dev sell %, burned tokens\n5. **Holder Analysis**: Filter by top10 %, dev %, sniper %, insider %, bundler % holdings\n6. **Smart Filtering**: Combine bonding curve progress, liquidity, volume, market cap filters\n7. **Topic Discovery**: Find AI-generated market hot topics and their associated tokens\n8. **Narrative Trading**: Trade tokens grouped by trending narratives, sorted by net inflow",
+    "category": "binance",
+    "category_title": "Binance",
+    "source": {
+      "name": "binance-skills-hub",
+      "repository": "https://github.com/binance/binance-skills-hub",
+      "install": "npx skills add https://github.com/binance/binance-skills-hub"
+    },
+    "skill_path": "skills/binance-skills-hub/skills/binance-web3/meme-rush/SKILL.md"
+  },
+  {
+    "id": "binance-binance-skills-hub-skills-binance-onchain-pay",
+    "title": "onchain-pay-open-api",
+    "summary": "Binance Onchain Pay enables users to buy cryptocurrency with fiat (e.g., EUR, USD) or send existing crypto from their Binance account directly to any external on-chain wallet address in a single flow—no manual withdrawal needed.\n\nEnables partners to integrate crypto buying services:\n- payment-method-list: Get available payment methods (Card, P2P, Google Pay, Apple Pay, etc.) with limits for a fiat/crypto pair\n- trading-pairs: List all supported fiat currencies and cryptocurrencies\n- estimated-quote: Get real-time price quote including exchange rate, fees, and estimated crypto amount\n- pre-order: Create a buy order and get redirect URL to Binance payment flow\n- order: Query order status and details (processing, completed, failed, etc.)\n- crypto-network: Get supported blockchain networks with withdraw fees and limits\n- p2p/trading-pairs: List P2P-specific trading pairs",
+    "usage": "This skill is designed for the following scenarios:\n\n### 1. 💳 Fiat-to-Crypto Purchase & Send\n**When to use**: User wants to buy crypto with fiat currency and send directly to an external on-chain wallet address\n- Buy USDT with USD/EUR/TWD using credit card → Send to MetaMask address on BSC\n- Purchase BTC with Google Pay → Transfer to hardware wallet\n- Buy USDC with P2P → Send to DeFi protocol contract address\n\n**Key APIs**: `trading-pairs` → `payment-method-list` → `estimated-quote` → `pre-order`\n\n### 2. 🔄 Direct Crypto Transfer (Send Primary)\n**When to use**: User has crypto in Binance account and wants to send to external address\n- Send existing USDT from Binance Spot to friend's wallet address\n- Transfer ETH to Uniswap contract for trading\n- Move crypto from Binance to self-custodial wallet (Trust Wallet, Ledger, etc.)\n\n**Key APIs**: `pre-order` with `SEND_PRIMARY` customization\n\n### 3. 🔗 Cross-Chain Bridge Operations\n**When to use**: User needs to buy crypto on one chain and transfer to another network\n- Buy USDC on Ethereum → Bridge to Polygon for lower fees\n- Purchase tokens on BSC → Transfer to Base network\n- Fiat to crypto on Solana → Send to Arbitrum for DeFi\n\n**Key APIs**: `crypto-network` → `pre-order` with network selection\n\n### 4. 🏪 Merchant Payment Integration\n**When to use**: Integrate crypto payment gateway for e-commerce or services\n- Accept fiat payments…",
+    "category": "binance",
+    "category_title": "Binance",
+    "source": {
+      "name": "binance-skills-hub",
+      "repository": "https://github.com/binance/binance-skills-hub",
+      "install": "npx skills add https://github.com/binance/binance-skills-hub"
+    },
+    "skill_path": "skills/binance-skills-hub/skills/binance/onchain-pay/SKILL.md"
+  },
+  {
+    "id": "binance-binance-skills-hub-skills-binance-p2p",
+    "title": "p2p",
+    "summary": "Binance P2P trading assistant for natural-language queries about P2P/C2C market ads, the user's own P2P order history, order detail & appeal tracking, and advertisement publish & management.\n\nUse when the user asks about P2P prices, searching/choosing ads, comparing payment methods, reviewing P2P order history, checking order detail/appeal status, querying complaints, publishing/updating/managing P2P advertisements, or viewing merchant profiles.\n\nDo NOT use for spot/futures prices, exchange trading, deposits/withdrawals, on-chain transfers, or anything unrelated to P2P/C2C.",
+    "usage": "### Use this skill when the user wants to:\n- Check **P2P** buy/sell quotes for a crypto/fiat pair (e.g., USDT/CNY).\n- Search **P2P advertisements** and filter by payment method(s), limits, merchant quality.\n- Compare prices across payment methods (e.g., Alipay vs bank transfer).\n- View **their own P2P order history / summary** (requires API key).\n- Query **order detail** and view full order timeline (requires API key).\n- Check **appeal/complaint status** and view complaint history (requires API key).\n- **Submit evidence** for an existing appeal (upload files + submit description) (requires API key).\n- **View complaint process timeline** (flow of actions, CS notes, evidence) (requires API key).\n- **Cancel an existing appeal** (withdraw complaint, irreversible) (requires API key).\n- **View available complaint reasons** for an order (requires API key).\n- **Publish, update, or manage P2P advertisements** (requires API key + merchant permission).\n- View **merchant profiles** and their ad listings (requires API key).\n- Query **supported digital and fiat currencies** (requires API key).\n\n### Do NOT use this skill when the user asks about:\n- Spot/Convert prices, futures/derivatives, margin, trading bots.\n- Deposits/withdrawals, wallet transfers, on-chain transactions.\n- Creating/cancelling orders, releasing coins (trading operations). Cancelling **appeals** (complaints) IS supported.…",
+    "category": "binance",
+    "category_title": "Binance",
+    "source": {
+      "name": "binance-skills-hub",
+      "repository": "https://github.com/binance/binance-skills-hub",
+      "install": "npx skills add https://github.com/binance/binance-skills-hub"
+    },
+    "skill_path": "skills/binance-skills-hub/skills/binance/p2p/SKILL.md"
+  },
+  {
+    "id": "binance-binance-skills-hub-skills-binance-payment",
+    "title": "payment-assistant",
+    "summary": "QR Code Payment Assistant for Funding Wallet Auto-deduction. Supports C2C and PIX QR payments. Use when the user wants to buy/purchase/pay/transfer/send (买, 购买, 支付, 付款, 转账, 发送), confirm/cancel payment (确认, 取消), or query order status (查询, 订单). Requires QR code data from user. PIX QR codes (pix, br.gov.bcb.pix) are auto-detected.",
+    "usage": "**When user sends a QR code image or asks to pay:**\n\n### Step 1 - Get QR Data (Choose ONE method)\n\n**Method A: AI Vision (BEST - if your platform supports it)**\n```\n1. Use your vision capability to read the QR code content directly from the image\n2. Skip decode_qr entirely, go straight to purchase with the QR data\n```\n```bash\npython3 payment_skill.py --action purchase --raw_qr \"https://app.binance.com/uni-qr/xxx\"\n```\n\n**Method B: decode_qr with explicit image path (RECOMMENDED)**\n```bash",
+    "category": "binance",
+    "category_title": "Binance",
+    "source": {
+      "name": "binance-skills-hub",
+      "repository": "https://github.com/binance/binance-skills-hub",
+      "install": "npx skills add https://github.com/binance/binance-skills-hub"
+    },
+    "skill_path": "skills/binance-skills-hub/skills/binance/payment/SKILL.md"
+  },
+  {
+    "id": "binance-binance-skills-hub-skills-binance-web3-query-address-info",
+    "title": "query-address-info",
+    "summary": "Query any on-chain wallet address token balances and positions. Retrieves all token holdings for a specified wallet address on a given chain,\nincluding token name, symbol, price, 24h price change, and holding quantity.\nUse this skill when users ask about wallet balance, token holds, portfolio, or asset positions for any blockchain address.",
+    "usage": "1. **Query Wallet Assets**: When users want to view tokens held by a wallet address\n2. **Track Holdings**: Monitor wallet token positions\n3. **Portfolio Analysis**: Understand wallet asset allocation",
+    "category": "binance",
+    "category_title": "Binance",
+    "source": {
+      "name": "binance-skills-hub",
+      "repository": "https://github.com/binance/binance-skills-hub",
+      "install": "npx skills add https://github.com/binance/binance-skills-hub"
+    },
+    "skill_path": "skills/binance-skills-hub/skills/binance-web3/query-address-info/SKILL.md"
+  },
+  {
+    "id": "binance-binance-skills-hub-skills-binance-web3-query-token-audit",
+    "title": "query-token-audit",
+    "summary": "Query token security audit to detect scams, honeypots, and malicious contracts before trading.\nReturns comprehensive security analysis including contract risks, trading risks, and scam detection.\nUse when users ask \"is this token safe?\", \"check token security\", \"audit token\", or before any swap.",
+    "usage": "1. **Pre-Trade Safety Check**: Verify token security before buying or swapping\n2. **Scam Detection**: Identify honeypots, fake tokens, and malicious contracts\n3. **Contract Analysis**: Check for dangerous ownership functions and hidden risks\n4. **Tax Verification**: Detect unusual buy/sell taxes before trading",
+    "category": "binance",
+    "category_title": "Binance",
+    "source": {
+      "name": "binance-skills-hub",
+      "repository": "https://github.com/binance/binance-skills-hub",
+      "install": "npx skills add https://github.com/binance/binance-skills-hub"
+    },
+    "skill_path": "skills/binance-skills-hub/skills/binance-web3/query-token-audit/SKILL.md"
+  },
+  {
+    "id": "binance-binance-skills-hub-skills-binance-web3-query-token-info",
+    "title": "query-token-info",
+    "summary": "Query token details by keyword, contract address, or chain. Search tokens, get metadata and social links,\nretrieve real-time market data (price, price trend, volume, holders, liquidity), and fetch K-Line candlestick charts.\nUse this skill when users search tokens, check token prices, view market data, or request kline/candlestick charts.",
+    "usage": "1. **Search Tokens**: Find tokens by name, symbol, or contract address across chains\n2. **Project Research**: Get token metadata, social links, and creator info\n3. **Market Analysis**: Real-time price, volume, holder distribution, and liquidity data\n4. **Chart Analysis**: K-Line candlestick data for technical analysis",
+    "category": "binance",
+    "category_title": "Binance",
+    "source": {
+      "name": "binance-skills-hub",
+      "repository": "https://github.com/binance/binance-skills-hub",
+      "install": "npx skills add https://github.com/binance/binance-skills-hub"
+    },
+    "skill_path": "skills/binance-skills-hub/skills/binance-web3/query-token-info/SKILL.md"
+  },
+  {
+    "id": "binance-binance-skills-hub-skills-binance-square-post",
+    "title": "square-post",
+    "summary": "Post content to Binance Square (Binance social platform for sharing trading insights).\nAuto-run on messages like 'post to square', 'square post'.\nSupports pure text posts.",
+    "usage": "## Overview",
+    "category": "binance",
+    "category_title": "Binance",
+    "source": {
+      "name": "binance-skills-hub",
+      "repository": "https://github.com/binance/binance-skills-hub",
+      "install": "npx skills add https://github.com/binance/binance-skills-hub"
+    },
+    "skill_path": "skills/binance-skills-hub/skills/binance/square-post/SKILL.md"
+  },
+  {
+    "id": "binance-binance-skills-hub-skills-binance-web3-trading-signal",
+    "title": "trading-signal",
+    "summary": "Subscribe and retrieve on-chain Smart Money signals. Monitor trading activities of smart money addresses,\nincluding buy/sell signals, trigger price, current price, max gain, and exit rate.\nUse this skill when users are looking for investment opportunities — smart money signals can serve as valuable references for potential trades.",
+    "usage": "1. **Track Smart Money**: Monitor professional investor trading behavior\n2. **Discover Opportunities**: Get early signals when smart money buys\n3. **Risk Alert**: Receive alerts when smart money starts selling\n4. **Performance Analysis**: Analyze historical signal performance and max gains\n5. **Strategy Validation**: Evaluate signal quality via exitRate and maxGain",
+    "category": "binance",
+    "category_title": "Binance",
+    "source": {
+      "name": "binance-skills-hub",
+      "repository": "https://github.com/binance/binance-skills-hub",
+      "install": "npx skills add https://github.com/binance/binance-skills-hub"
+    },
+    "skill_path": "skills/binance-skills-hub/skills/binance-web3/trading-signal/SKILL.md"
+  }
+]

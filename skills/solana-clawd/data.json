@@ -1,0 +1,156 @@
+[
+  {
+    "id": "solana-solana-clawd-skills-canvas",
+    "title": "Canvas Skill",
+    "summary": "Display HTML content on connected SolanaOS nodes (Mac app, iOS, Android).",
+    "usage": "Display HTML content on connected SolanaOS nodes (Mac app, iOS, Android).",
+    "category": "solana",
+    "category_title": "Solana",
+    "source": {
+      "name": "solana-clawd",
+      "repository": "https://github.com/x402agent/solana-clawd",
+      "install": "npx skills add x402agent/solana-clawd"
+    },
+    "skill_path": "skills/solana-clawd/skills/canvas/SKILL.md"
+  },
+  {
+    "id": "solana-solana-clawd-skills-openclaw-claude-code-skill-main",
+    "title": "claude-code-skill",
+    "summary": "Control Claude Code via MCP protocol. Trigger with \"plan\" to write a precise execution plan then feed it to Claude Code. Also supports direct commands, persistent sessions, agent teams, and advanced tool control.",
+    "usage": "### Use Persistent Sessions When:\n- ✅ Multi-step tasks requiring multiple tool calls\n- ✅ Iterative development (write code → test → fix → repeat)\n- ✅ Long conversations needing full context\n- ✅ Agent needs to work autonomously\n- ✅ You want streaming real-time feedback\n\n### Use Direct MCP Tools When:\n- ✅ Single command execution\n- ✅ Quick file read/write\n- ✅ One-off searches\n- ✅ No context needed between operations",
+    "category": "solana",
+    "category_title": "Solana",
+    "source": {
+      "name": "solana-clawd",
+      "repository": "https://github.com/x402agent/solana-clawd",
+      "install": "npx skills add x402agent/solana-clawd"
+    },
+    "skill_path": "skills/solana-clawd/skills/openclaw-claude-code-skill-main/SKILL.md"
+  },
+  {
+    "id": "solana-solana-clawd-skills-pumpfun-analytics",
+    "title": "PumpFun Analytics",
+    "summary": "Monitor bonding curves, graduation progress, and trade analytics on Pump.fun",
+    "usage": "Monitor bonding curve state, calculate price impact, track graduation progress, and analyze token economics on the Pump.fun protocol.",
+    "category": "solana",
+    "category_title": "Solana",
+    "source": {
+      "name": "solana-clawd",
+      "repository": "https://github.com/x402agent/solana-clawd",
+      "install": "npx skills add x402agent/solana-clawd"
+    },
+    "skill_path": "skills/solana-clawd/skills/pumpfun-analytics/SKILL.md"
+  },
+  {
+    "id": "solana-solana-clawd-skills-pumpfun-fees",
+    "title": "PumpFun Fee Sharing",
+    "summary": "Configure and claim creator fee sharing on Pump.fun tokens",
+    "usage": "### 1. Create Fee Sharing Config\n\n```typescript\nimport { PUMP_SDK } from \"@nirholas/pump-sdk\";\n\nconst createConfigIx = await PUMP_SDK.createFeeSharingConfig({\n  creator: wallet.publicKey,\n  mint: tokenMint,\n  pool: null, // null for pre-graduation tokens\n});\n```\n\n### 2. Set Shareholders\n\nShares must total exactly **10,000 BPS** (100%). Maximum **10 shareholders**.\n\n```typescript\nconst updateIx = await PUMP_SDK.updateFeeShares({\n  authority: wallet.publicKey,\n  mint: tokenMint,\n  currentShareholders: [wallet.publicKey],\n  newShareholders: [\n    { address: wallet.publicKey, shareBps: 7000 },           // 70%\n    { address: new PublicKey(\"Partner...\"), shareBps: 2000 }, // 20%\n    { address: new PublicKey(\"Dev...\"), shareBps: 1000 },     // 10%\n  ],\n});\n```\n\n### 3. Claim Accumulated Fees\n\n```typescript\nconst sdk = new OnlinePumpSdk(connection);\nconst claimResult = await sdk.distributeCreatorFees({\n  mint: tokenMint,\n  creator: wallet.publicKey,\n});\n```",
+    "category": "solana",
+    "category_title": "Solana",
+    "source": {
+      "name": "solana-clawd",
+      "repository": "https://github.com/x402agent/solana-clawd",
+      "install": "npx skills add x402agent/solana-clawd"
+    },
+    "skill_path": "skills/solana-clawd/skills/pumpfun-fees/SKILL.md"
+  },
+  {
+    "id": "solana-solana-clawd-skills-pumpfun-launcher",
+    "title": "PumpFun Token Launcher",
+    "summary": "Launch new tokens on Pump.fun directly via the Pump SDK",
+    "usage": "```typescript\nimport { Keypair, Connection } from \"@solana/web3.js\";\nimport { PUMP_SDK, OnlinePumpSdk, getBuyTokenAmountFromSolAmount } from \"@nirholas/pump-sdk\";\n\nconst connection = new Connection(process.env.HELIUS_RPC_URL!);\nconst mintKeypair = Keypair.generate();\nconst creator = wallet.publicKey;\n\n// Create token\nconst createIx = await PUMP_SDK.createV2Instruction({\n  mint: mintKeypair.publicKey,\n  name: \"My Token\",\n  symbol: \"MYTKN\",\n  uri: \"https://arweave.net/metadata.json\",\n  creator,\n  user: creator,\n  mayhemMode: false,\n});\n\n// Or create + buy in one transaction\nconst sdk = new OnlinePumpSdk(connection);\nconst global = await sdk.fetchGlobal();\nconst ixs = await PUMP_SDK.createV2AndBuyInstructions({\n  global,\n  mint: mintKeypair.publicKey,\n  name: \"My Token\",\n  symbol: \"MYTKN\",\n  uri: \"https://arweave.net/metadata.json\",\n  creator,\n  user: creator,\n  amount: new BN(1_000_000_000), // tokens to buy\n  solAmount: new BN(100_000_000),  // 0.1 SOL\n  mayhemMode: false,\n});\n```",
+    "category": "solana",
+    "category_title": "Solana",
+    "source": {
+      "name": "solana-clawd",
+      "repository": "https://github.com/x402agent/solana-clawd",
+      "install": "npx skills add x402agent/solana-clawd"
+    },
+    "skill_path": "skills/solana-clawd/skills/pumpfun-launcher/SKILL.md"
+  },
+  {
+    "id": "solana-solana-clawd-skills-pumpfun-trading",
+    "title": "PumpFun Trading",
+    "summary": "Buy and sell tokens on Pump.fun bonding curves and AMM pools",
+    "usage": "Execute buy and sell trades on the Pump.fun protocol using the native Pump SDK. Supports both bonding curve trading (pre-graduation) and AMM pool trading (post-graduation).",
+    "category": "solana",
+    "category_title": "Solana",
+    "source": {
+      "name": "solana-clawd",
+      "repository": "https://github.com/x402agent/solana-clawd",
+      "install": "npx skills add x402agent/solana-clawd"
+    },
+    "skill_path": "skills/solana-clawd/skills/pumpfun-trading/SKILL.md"
+  },
+  {
+    "id": "solana-solana-clawd-skills-solana-formal-verification",
+    "title": "qedgen",
+    "summary": "Formally verify programs by writing Lean 4 proofs. Trigger this skill whenever the user wants to formally verify code, generate Lean 4 proofs, prove properties about algorithms or smart contracts, verify invariants, convert program logic into formal specifications, or anything involving Lean 4 and formal verification. Also trigger when the user mentions \"qedgen\", \"lean proof\", \"formal proof\", \"verify my code\", \"prove correctness\", \"formal verification\", or wants mathematical guarantees about their implementation.",
+    "usage": "You (Claude) are the proof engineer. You read the codebase, write Lean 4 models and proofs, iterate on compiler errors, and call Leanstral (Mistral's theorem prover) only for hard sub-goals you cannot fill yourself.",
+    "category": "solana",
+    "category_title": "Solana",
+    "source": {
+      "name": "solana-clawd",
+      "repository": "https://github.com/x402agent/solana-clawd",
+      "install": "npx skills add x402agent/solana-clawd"
+    },
+    "skill_path": "skills/solana-clawd/skills/solana-formal-verification/SKILL.md"
+  },
+  {
+    "id": "solana-solana-clawd-skill-solana-clawd",
+    "title": "solana-clawd",
+    "summary": "One-shot setup and operation guide for the solana-clawd agentic engine. Use when: cloning the repo, setting up MCP tools, starting the Telegram bot, deploying to Fly.io/Netlify, hatching blockchain buddies, running OODA loops, configuring voice mode (ElevenLabs + Grok), minting Metaplex agents, managing the vault, running the worker swarm, or contributing to the project. Covers all 31 MCP tools, 18 buddy species, 9 spinners, 60+ Telegram commands, 95 skills, and the full repo structure.",
+    "usage": "- Setting up solana-clawd from scratch (clone, install, configure)\n- Connecting MCP tools to Claude Desktop, Cursor, VS Code\n- Starting the Telegram trading bot\n- Deploying the web app or MCP server\n- Hatching blockchain buddies or running spinners\n- Running OODA trading loops\n- Configuring voice mode (ElevenLabs + Grok)\n- Minting agents on Metaplex\n- Managing encrypted vault secrets\n- Contributing new tools, buddies, or skills",
+    "category": "solana",
+    "category_title": "Solana",
+    "source": {
+      "name": "solana-clawd",
+      "repository": "https://github.com/x402agent/solana-clawd",
+      "install": "npx skills add x402agent/solana-clawd"
+    },
+    "skill_path": "skills/solana-clawd/skill/solana-clawd/SKILL.md"
+  },
+  {
+    "id": "solana-solana-clawd-skills-solana-dev-skill-main-skill",
+    "title": "solana-dev",
+    "summary": "End-to-end Solana development playbook (Jan 2026). Prefer Solana Foundation framework-kit (@solana/client + @solana/react-hooks) for React/Next.js UI. Prefer @solana/kit for all new client/RPC/transaction code. When legacy dependencies require web3.js, isolate it behind @solana/web3-compat (or @solana/web3.js as a true legacy fallback). Covers wallet-standard-first connection (incl. ConnectorKit), Anchor/Pinocchio programs, Codama-based client generation, LiteSVM/Mollusk/Surfpool testing, and security checklists.",
+    "usage": "## What this Skill is for\nUse this Skill when the user asks for:\n- Solana dApp UI work (React / Next.js)\n- Wallet connection + signing flows\n- Transaction building / sending / confirmation UX\n- On-chain program development (Anchor or Pinocchio)\n- Client SDK generation (typed program clients)\n- Local testing (LiteSVM, Mollusk, Surfpool)\n- Security hardening and audit-style reviews",
+    "category": "solana",
+    "category_title": "Solana",
+    "source": {
+      "name": "solana-clawd",
+      "repository": "https://github.com/x402agent/solana-clawd",
+      "install": "npx skills add x402agent/solana-clawd"
+    },
+    "skill_path": "skills/solana-clawd/skills/solana-dev-skill-main/skill/SKILL.md"
+  },
+  {
+    "id": "solana-solana-clawd-skills-gateway-node-ops",
+    "title": "SolanaOS Gateway + Node Workflow",
+    "summary": "How to spawn a SolanaOS Gateway and connect headless nodes",
+    "usage": "## Prerequisites",
+    "category": "solana",
+    "category_title": "Solana",
+    "source": {
+      "name": "solana-clawd",
+      "repository": "https://github.com/x402agent/solana-clawd",
+      "install": "npx skills add x402agent/solana-clawd"
+    },
+    "skill_path": "skills/solana-clawd/skills/gateway-node-ops/SKILL.md"
+  },
+  {
+    "id": "solana-solana-clawd-skills-swarm-orchestrator",
+    "title": "Swarm Orchestrator",
+    "summary": "Orchestrate multi-bot trading swarms on Pump.fun with persona-driven agents",
+    "usage": "| Command | Description |\n|---------|-------------|\n| `/spawn <role> [--persona <id>]` | Spawn agent |\n| `/stop <id>` | Stop an agent |\n| `/agents` | List active agents |\n| `/personas [query]` | Browse personas |\n| `/memory <id>` | View agent memory |\n| `/health` | Swarm health dashboard |\n| `/price <mint>` | Token price |\n| `/quote <mint> <sol>` | Buy/sell quote |\n| `/curve <mint>` | Bonding curve state |\n| `/events` | Recent event stream |",
+    "category": "solana",
+    "category_title": "Solana",
+    "source": {
+      "name": "solana-clawd",
+      "repository": "https://github.com/x402agent/solana-clawd",
+      "install": "npx skills add x402agent/solana-clawd"
+    },
+    "skill_path": "skills/solana-clawd/skills/swarm-orchestrator/SKILL.md"
+  }
+]

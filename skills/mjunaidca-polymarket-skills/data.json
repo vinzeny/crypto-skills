@@ -1,0 +1,86 @@
+[
+  {
+    "id": "polymarket-mjunaidca-polymarket-skills-polymarket-analyzer",
+    "title": "polymarket-analyzer",
+    "summary": "Use this skill whenever the user wants to find trading opportunities, detect arbitrage,\nanalyze a market, perform edge detection, find mispricing, do probability analysis,\nevaluate orderbook depth, find momentum signals, or assess Polymarket market quality.\nTriggers: \"find opportunities\", \"detect arbitrage\", \"analyze market\", \"edge detection\",\n\"mispricing\", \"probability analysis\", \"orderbook analysis\", \"momentum scanner\",\n\"market inefficiency\", \"price gap\", \"volume surge\", \"trading edge\", \"market analysis\".",
+    "usage": "Detect trading edges and opportunities across Polymarket prediction markets using\nreal-time data from the Gamma and CLOB APIs. Zero authentication required -- all\nanalysis is read-only.",
+    "category": "polymarket",
+    "category_title": "Polymarket",
+    "source": {
+      "name": "mjunaidca-polymarket-skills",
+      "repository": "https://github.com/mjunaidca/polymarket-skills",
+      "install": "npx skills add mjunaidca/polymarket-skills"
+    },
+    "skill_path": "skills/mjunaidca-polymarket-skills/polymarket-analyzer/SKILL.md"
+  },
+  {
+    "id": "polymarket-mjunaidca-polymarket-skills-polymarket-live-executor",
+    "title": "polymarket-live-executor",
+    "summary": "Use this skill when the user wants to execute a real trade on Polymarket, place a live\norder, go live, buy or sell on Polymarket, check real positions, or manage a live trading\nwallet. Triggers: \"execute trade\", \"live trade\", \"real trade\", \"go live\",\n\"place order polymarket\", \"buy on polymarket\", \"sell on polymarket\", \"check positions\",\n\"my balance\", \"cancel order\", \"live portfolio\".\nCRITICAL: This skill executes REAL trades with REAL money. Every trade requires explicit\nhuman confirmation before execution. Never execute autonomously.",
+    "usage": "Use the setup wizard to configure everything:\n\n```bash",
+    "category": "polymarket",
+    "category_title": "Polymarket",
+    "source": {
+      "name": "mjunaidca-polymarket-skills",
+      "repository": "https://github.com/mjunaidca/polymarket-skills",
+      "install": "npx skills add mjunaidca/polymarket-skills"
+    },
+    "skill_path": "skills/mjunaidca-polymarket-skills/polymarket-live-executor/SKILL.md"
+  },
+  {
+    "id": "polymarket-mjunaidca-polymarket-skills-polymarket-monitor",
+    "title": "polymarket-monitor",
+    "summary": ">-",
+    "usage": "All scripts require the Python venv at `/home/verticalclaw/.venv`.\n\n### Monitor Multiple Markets for Price Alerts\n\n```bash\nsource /home/verticalclaw/.venv/bin/activate && python polymarket-monitor/scripts/monitor_prices.py \\\n  --token-id \"<TOKEN_ID_1>\" \\\n  --token-id \"<TOKEN_ID_2>\" \\\n  --interval 30 \\\n  --threshold 5.0\n```\n\nThis polls every 30 seconds and prints a JSON alert whenever a token's midpoint moves more than 5% from its baseline.\n\n### Watch a Single Market Live\n\n```bash\nsource /home/verticalclaw/.venv/bin/activate && python polymarket-monitor/scripts/watch_market.py \\\n  --token-id \"<TOKEN_ID>\" \\\n  --interval 15\n```\n\nPrints a JSON snapshot every 15 seconds with price, spread, and order book depth.",
+    "category": "polymarket",
+    "category_title": "Polymarket",
+    "source": {
+      "name": "mjunaidca-polymarket-skills",
+      "repository": "https://github.com/mjunaidca/polymarket-skills",
+      "install": "npx skills add mjunaidca/polymarket-skills"
+    },
+    "skill_path": "skills/mjunaidca-polymarket-skills/polymarket-monitor/SKILL.md"
+  },
+  {
+    "id": "polymarket-mjunaidca-polymarket-skills-polymarket-paper-trader",
+    "title": "polymarket-paper-trader",
+    "summary": "Use this skill whenever the user wants to paper trade, simulate trades, virtual trading, demo mode, practice trading, backtest strategies, test strategy performance, use paper money, manage a virtual portfolio, track simulated P&L, or do risk-free trading on Polymarket prediction markets. Also use when the user asks about their portfolio, positions, trade history, or performance report for paper trading. This is the core trading engine — it executes simulated trades against real live Polymarket prices with zero financial risk.",
+    "usage": "### Initialize a Portfolio\n```bash\npython ~/.agents/skills/polymarket-paper-trader/scripts/paper_engine.py --action init --balance 1000\n```\n\n### Buy Shares (Market Order)\n```bash",
+    "category": "polymarket",
+    "category_title": "Polymarket",
+    "source": {
+      "name": "mjunaidca-polymarket-skills",
+      "repository": "https://github.com/mjunaidca/polymarket-skills",
+      "install": "npx skills add mjunaidca/polymarket-skills"
+    },
+    "skill_path": "skills/mjunaidca-polymarket-skills/polymarket-paper-trader/SKILL.md"
+  },
+  {
+    "id": "polymarket-mjunaidca-polymarket-skills-polymarket-scanner",
+    "title": "polymarket-scanner",
+    "summary": ">-",
+    "usage": "All scripts live in this skill's `scripts/` directory and require the Python venv at `/home/verticalclaw/.venv`.\n\n### Browse Top Markets\n\n```bash\nsource /home/verticalclaw/.venv/bin/activate && python polymarket-scanner/scripts/scan_markets.py --limit 10\n```\n\n### Search by Category or Keyword\n\n```bash\nsource /home/verticalclaw/.venv/bin/activate && python polymarket-scanner/scripts/scan_markets.py --category \"crypto\" --limit 20\nsource /home/verticalclaw/.venv/bin/activate && python polymarket-scanner/scripts/scan_markets.py --search \"trump\" --limit 10\n```\n\n### Filter by Volume\n\n```bash\nsource /home/verticalclaw/.venv/bin/activate && python polymarket-scanner/scripts/scan_markets.py --min-volume 100000 --sort-by volume24hr\n```\n\n### Get Order Book\n\n```bash\nsource /home/verticalclaw/.venv/bin/activate && python polymarket-scanner/scripts/get_orderbook.py --token-id <TOKEN_ID>\n```\n\n### Get Prices\n\n```bash",
+    "category": "polymarket",
+    "category_title": "Polymarket",
+    "source": {
+      "name": "mjunaidca-polymarket-skills",
+      "repository": "https://github.com/mjunaidca/polymarket-skills",
+      "install": "npx skills add mjunaidca/polymarket-skills"
+    },
+    "skill_path": "skills/mjunaidca-polymarket-skills/polymarket-scanner/SKILL.md"
+  },
+  {
+    "id": "polymarket-mjunaidca-polymarket-skills-polymarket-strategy-advisor",
+    "title": "polymarket-strategy-advisor",
+    "summary": ">-",
+    "usage": "You are a prediction market strategist. This skill teaches you a complete,\ndisciplined methodology for evaluating Polymarket opportunities and generating\ntrade recommendations. Follow this methodology exactly -- it is the difference\nbetween systematic trading and gambling.",
+    "category": "polymarket",
+    "category_title": "Polymarket",
+    "source": {
+      "name": "mjunaidca-polymarket-skills",
+      "repository": "https://github.com/mjunaidca/polymarket-skills",
+      "install": "npx skills add mjunaidca/polymarket-skills"
+    },
+    "skill_path": "skills/mjunaidca-polymarket-skills/polymarket-strategy-advisor/SKILL.md"
+  }
+]

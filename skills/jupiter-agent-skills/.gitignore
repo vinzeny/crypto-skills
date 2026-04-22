@@ -1,0 +1,7 @@
+.cursor/*
+CLAUDE.md
+AGENTS.md
+.claude/*
+.agents/*
+!.agents/plugins/
+!.agents/plugins/marketplace.json

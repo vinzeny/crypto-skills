@@ -1,0 +1,16 @@
+[
+  {
+    "id": "polymarket-bowen-polymarket-agent-skills",
+    "title": "polymarket",
+    "summary": "Full Python SDK for Polymarket prediction markets platform. Use when:\n(1) Trading on Polymarket - placing, cancelling, managing orders\n(2) Researching markets - discovering events, analyzing prices, tracking positions\n(3) Building trading bots - WebSocket streaming, real-time data feeds\n(4) Managing funds - deposits, withdrawals via Bridge API\n(5) Any task involving prediction markets or Polymarket APIs",
+    "usage": "```python\nfrom polymarket import PolymarketClient\n\nasync with PolymarketClient() as client:\n    # List active markets\n    markets = await client.markets.list_markets(active=True, limit=10)\n    for market in markets:\n        print(f\"{market.question}: {market.outcome_prices}\")\n```",
+    "category": "polymarket",
+    "category_title": "Polymarket",
+    "source": {
+      "name": "bowen-polymarket-agent-skills",
+      "repository": "https://github.com/bowen31337/polymarket-agent-skills",
+      "install": "git clone https://github.com/bowen31337/polymarket-agent-skills.git ~/.claude/skills/polymarket"
+    },
+    "skill_path": "skills/bowen-polymarket-agent-skills/SKILL.md"
+  }
+]

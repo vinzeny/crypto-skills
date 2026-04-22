@@ -1,0 +1,16 @@
+[
+  {
+    "id": "bybit-bybit-skills",
+    "title": "bybit-trading",
+    "summary": "Bybit AI Trading Skill — Trade on Bybit using natural language. Covers spot, derivatives, earn, and more. Works with Claude, ChatGPT, OpenClaw, and any AI assistant.",
+    "usage": "### Step 1: Get an API Key\n\n1. Log in to [Bybit](https://www.bybit.com) → API Management → Create New Key\n2. Permissions: enable **Read + Trade only** (NEVER enable Withdraw for AI use)\n3. Recommended: bind your IP address (makes the key permanent; otherwise expires in 3 months)\n4. **Strongly recommended**: Create a dedicated **sub-account** for AI trading with limited balance\n\n### Step 2: Configure Credentials\n\nCredential setup depends on where the AI runs. Auto-detect the environment and follow the matching path:\n\n**Path A — Local CLI** (Claude Code, Cursor, or any tool with shell access):\n\n```bash",
+    "category": "bybit",
+    "category_title": "Bybit",
+    "source": {
+      "name": "bybit-skills",
+      "repository": "https://github.com/bybit-exchange/skills",
+      "install": "直接使用仓库根目录 SKILL.md"
+    },
+    "skill_path": "skills/bybit-skills/SKILL.md"
+  }
+]

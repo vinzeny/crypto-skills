@@ -1,0 +1,142 @@
+[
+  {
+    "id": "uniswap-uniswap-ai-packages-plugins-uniswap-cca-skills-configurator",
+    "title": "configurator",
+    "summary": "Configure CCA (Continuous Clearing Auction) smart contract parameters through an interactive bulk form flow. Use when user says \"configure auction\", \"cca auction\", \"setup token auction\", \"auction configuration\", \"continuous auction\", or mentions CCA contracts.",
+    "usage": "Configure Continuous Clearing Auction (CCA) smart contract parameters for fair and transparent token distribution.",
+    "category": "uniswap",
+    "category_title": "Uniswap",
+    "source": {
+      "name": "uniswap-ai",
+      "repository": "https://github.com/Uniswap/uniswap-ai",
+      "install": "npx skills add Uniswap/uniswap-ai"
+    },
+    "skill_path": "skills/uniswap-ai/packages/plugins/uniswap-cca/skills/configurator/SKILL.md"
+  },
+  {
+    "id": "uniswap-uniswap-ai-packages-plugins-uniswap-cca-skills-deployer",
+    "title": "deployer",
+    "summary": "Deploy CCA (Continuous Clearing Auction) smart contracts using the Factory pattern. Use when user says \"deploy auction\", \"deploy cca\", \"factory deployment\", or wants to deploy a configured auction.",
+    "usage": "Deploy Continuous Clearing Auction (CCA) smart contracts using the `ContinuousClearingAuctionFactory` with CREATE2 for consistent addresses across chains.",
+    "category": "uniswap",
+    "category_title": "Uniswap",
+    "source": {
+      "name": "uniswap-ai",
+      "repository": "https://github.com/Uniswap/uniswap-ai",
+      "install": "npx skills add Uniswap/uniswap-ai"
+    },
+    "skill_path": "skills/uniswap-ai/packages/plugins/uniswap-cca/skills/deployer/SKILL.md"
+  },
+  {
+    "id": "uniswap-uniswap-ai-packages-plugins-uniswap-driver-skills-liquidity-planner",
+    "title": "liquidity-planner",
+    "summary": "This skill should be used when the user asks to \"provide liquidity\", \"create LP position\", \"add liquidity to pool\", \"become a liquidity provider\", \"create v3 position\", \"create v4 position\", \"concentrated liquidity\", \"set price range\", or mentions providing liquidity, LP positions, or liquidity pools on Uniswap. Generates deep links to create positions in the Uniswap interface.",
+    "usage": "Before interpolating user-provided values into any shell command, validate all inputs:\n\n- **Token addresses** MUST match: `^0x[a-fA-F0-9]{40}$`\n- **Chain/network names** MUST be from the allowed list in `../../references/chains.md`\n- **Amounts** MUST be valid decimal numbers (match: `^[0-9]+\\.?[0-9]*$`)\n- **Reject** any input containing shell metacharacters (`;`, `|`, `$`, `` ` ``, `&`, `(`, `)`, `>`, `<`, `\\`, `'`, `\"`, newlines)",
+    "category": "uniswap",
+    "category_title": "Uniswap",
+    "source": {
+      "name": "uniswap-ai",
+      "repository": "https://github.com/Uniswap/uniswap-ai",
+      "install": "npx skills add Uniswap/uniswap-ai"
+    },
+    "skill_path": "skills/uniswap-ai/packages/plugins/uniswap-driver/skills/liquidity-planner/SKILL.md"
+  },
+  {
+    "id": "uniswap-uniswap-ai-packages-plugins-uniswap-trading-skills-pay-with-any-token",
+    "title": "pay-with-any-token",
+    "summary": "Pay HTTP 402 payment challenges using tokens via the Tempo CLI and Uniswap\nTrading API. Use when the user encounters a 402 Payment Required response,\nneeds to fulfill a machine payment, mentions \"MPP\", \"Tempo payment\", \"pay for\nAPI access\", \"HTTP 402\", \"x402\", \"machine payment protocol\",\n\"pay-with-any-token\", \"use tempo\", \"tempo request\", or \"tempo wallet\".",
+    "usage": "Run these commands in order. Do not skip steps.\n\n**Step 1 — Install:**\n\n```bash\nmkdir -p \"$HOME/.local/bin\" \\\n  && curl -fsSL https://tempo.xyz/install -o /tmp/tempo_install.sh \\\n  && TEMPO_BIN_DIR=\"$HOME/.local/bin\" bash /tmp/tempo_install.sh\n```\n\n**Step 2 — Login** (requires browser/passkey — prompt user, wait for\nconfirmation):\n\n```bash\n\"$HOME/.local/bin/tempo\" wallet login\n```\n\n> When run by agents, use a long command timeout (at least 16 minutes).\n\n**Step 3 — Confirm readiness:**\n\n```bash\n\"$HOME/.local/bin/tempo\" wallet -t whoami\n```\n\n> **Rules:** Do not use `sudo`. Use full absolute paths (`$HOME/.local/bin/tempo`)\n> — do not rely on `export PATH`. If `$HOME` does not expand, use the literal\n> absolute path.\n\nAfter setup, report: install location, version (`--version`), wallet status\n(address, balance). If balance is 0, direct user to `tempo wallet fund`.\n\n> **Minimum balance reserve:** Keep at least **0.10 USDC** in the Tempo wallet\n> to cover typical API calls without triggering the full swap+bridge funding\n> flow. The funding flow requires 3-5 on-chain transactions and ~2 minutes of\n> wall time, which is disproportionate for small top-ups. When transferring\n> funds out of the Tempo wallet, warn the user if the remaining balance would\n> drop below this threshold.",
+    "category": "uniswap",
+    "category_title": "Uniswap",
+    "source": {
+      "name": "uniswap-ai",
+      "repository": "https://github.com/Uniswap/uniswap-ai",
+      "install": "npx skills add Uniswap/uniswap-ai"
+    },
+    "skill_path": "skills/uniswap-ai/packages/plugins/uniswap-trading/skills/pay-with-any-token/SKILL.md"
+  },
+  {
+    "id": "uniswap-uniswap-ai-packages-plugins-uniswap-trading-skills-swap-integration",
+    "title": "swap-integration",
+    "summary": "Integrate Uniswap swaps into applications. Use when user says \"integrate swaps\", \"uniswap\", \"trading api\", \"add swap functionality\", \"build a swap frontend\", \"create a swap script\", \"smart contract swap integration\", \"use Universal Router\", \"Trading API\", or mentions swapping tokens via Uniswap.",
+    "usage": "Each command is a single byte:\n\n| Bits | Name     | Purpose                             |\n| ---- | -------- | ----------------------------------- |\n| 0    | flag     | Allow revert (1 = continue on fail) |\n| 1-2  | reserved | Use 0                               |\n| 3-7  | command  | Operation identifier                |",
+    "category": "uniswap",
+    "category_title": "Uniswap",
+    "source": {
+      "name": "uniswap-ai",
+      "repository": "https://github.com/Uniswap/uniswap-ai",
+      "install": "npx skills add Uniswap/uniswap-ai"
+    },
+    "skill_path": "skills/uniswap-ai/packages/plugins/uniswap-trading/skills/swap-integration/SKILL.md"
+  },
+  {
+    "id": "uniswap-uniswap-ai-packages-plugins-uniswap-driver-skills-swap-planner",
+    "title": "swap-planner",
+    "summary": "This skill should be used when the user asks to \"swap tokens\", \"trade ETH for USDC\", \"exchange tokens on Uniswap\", \"buy tokens\", \"sell tokens\", \"convert ETH to stablecoins\", \"find memecoins\", \"discover tokens\", \"research tokens\", \"tokens to buy\", \"find tokens to swap\", \"what should I buy\", or mentions swapping, trading, researching, discovering, buying, or exchanging tokens on any Uniswap-supported chain. Supports both known token swaps and token discovery workflows (discovery uses keyword search and web search — there is no live \"trending\" feed). Generates deep links to execute swaps in the Uniswap interface.",
+    "usage": "Plan and generate deep links for token swaps on Uniswap across all supported chains.",
+    "category": "uniswap",
+    "category_title": "Uniswap",
+    "source": {
+      "name": "uniswap-ai",
+      "repository": "https://github.com/Uniswap/uniswap-ai",
+      "install": "npx skills add Uniswap/uniswap-ai"
+    },
+    "skill_path": "skills/uniswap-ai/packages/plugins/uniswap-driver/skills/swap-planner/SKILL.md"
+  },
+  {
+    "id": "uniswap-uniswap-ai-packages-plugins-uniswap-hooks-skills-v4-hook-generator",
+    "title": "v4-hook-generator",
+    "summary": "Generate Uniswap v4 hook contracts via OpenZeppelin MCP. Use when building custom swap logic, async swaps, hook-owned liquidity, custom curves, dynamic fees, MEV protection, limit orders, or oracle hooks.",
+    "usage": "Use this skill when you need to:\n\n- Scaffold a new Uniswap v4 hook contract from scratch\n- Select the right base hook type for a specific use case (fees, MEV protection, oracles, etc.)\n- Configure hook permissions, utility libraries, shares, and access control\n- Produce the canonical MCP tool call JSON to invoke the OpenZeppelin Contracts Wizard\n- Understand trade-offs between hook configuration options before committing to an implementation\n\n**Prerequisite / companion skill**: `v4-security-foundations` — run it before writing custom logic\nand again before deployment. Hook misconfiguration can drain user funds.",
+    "category": "uniswap",
+    "category_title": "Uniswap",
+    "source": {
+      "name": "uniswap-ai",
+      "repository": "https://github.com/Uniswap/uniswap-ai",
+      "install": "npx skills add Uniswap/uniswap-ai"
+    },
+    "skill_path": "skills/uniswap-ai/packages/plugins/uniswap-hooks/skills/v4-hook-generator/SKILL.md"
+  },
+  {
+    "id": "uniswap-uniswap-ai-packages-plugins-uniswap-trading-skills-v4-sdk-integration",
+    "title": "v4-sdk-integration",
+    "summary": "App-layer SDK guide for building swap and liquidity experiences directly with the Uniswap v4 SDK.\nUse when user asks about \"v4 sdk\", \"uniswap v4\", \"v4 swap\", \"v4 liquidity\", \"PoolManager\",\n\"V4Planner\", \"StateView\", \"PositionManager\", \"pool state\", \"v4 position\", \"uniswap sdk\",\nor when building swap/liquidity UX directly with SDKs rather than via the Trading API.",
+    "usage": "- Token swap UI (single-hop or multi-hop)\n- Quote/price display before executing a trade\n- Liquidity position management (add/remove/collect)\n- Pool state reads (price, tick, liquidity)",
+    "category": "uniswap",
+    "category_title": "Uniswap",
+    "source": {
+      "name": "uniswap-ai",
+      "repository": "https://github.com/Uniswap/uniswap-ai",
+      "install": "npx skills add Uniswap/uniswap-ai"
+    },
+    "skill_path": "skills/uniswap-ai/packages/plugins/uniswap-trading/skills/v4-sdk-integration/SKILL.md"
+  },
+  {
+    "id": "uniswap-uniswap-ai-packages-plugins-uniswap-hooks-skills-v4-security-foundations",
+    "title": "v4-security-foundations",
+    "summary": "Security-first Uniswap v4 hook development. Use when user mentions \"v4 hooks\", \"hook security\", \"PoolManager\", \"beforeSwap\", \"afterSwap\", or asks about V4 hook best practices, vulnerabilities, or audit requirements.",
+    "usage": "Security-first guide for building Uniswap v4 hooks. Hook vulnerabilities can drain user funds—understand these concepts before writing any hook code.",
+    "category": "uniswap",
+    "category_title": "Uniswap",
+    "source": {
+      "name": "uniswap-ai",
+      "repository": "https://github.com/Uniswap/uniswap-ai",
+      "install": "npx skills add Uniswap/uniswap-ai"
+    },
+    "skill_path": "skills/uniswap-ai/packages/plugins/uniswap-hooks/skills/v4-security-foundations/SKILL.md"
+  },
+  {
+    "id": "uniswap-uniswap-ai-packages-plugins-uniswap-viem-skills-viem-integration",
+    "title": "viem-integration",
+    "summary": "Integrate EVM blockchains using viem. Use when user says \"read blockchain data\", \"send transaction\", \"interact with smart contract\", \"connect to Ethereum\", \"use viem\", \"use wagmi\", \"wallet integration\", \"viem setup\", or mentions blockchain/EVM development with TypeScript.",
+    "usage": "### Read Balance\n\n```typescript\nimport { createPublicClient, http, formatEther } from 'viem';\nimport { mainnet } from 'viem/chains';\n\nconst client = createPublicClient({\n  chain: mainnet,\n  transport: http(),\n});\n\nconst balance = await client.getBalance({\n  address: '0xd8dA6BF26964aF9D7eEd9e03E53415D37aA96045',\n});\n\nconsole.log(`Balance: ${formatEther(balance)} ETH`);\n```\n\n### Read Contract\n\n```typescript\nimport { createPublicClient, http, parseAbi } from 'viem';\nimport { mainnet } from 'viem/chains';\n\nconst client = createPublicClient({\n  chain: mainnet,\n  transport: http(),\n});\n\nconst abi = parseAbi([\n  'function balanceOf(address) view returns (uint256)',\n  'function decimals() view returns (uint8)',\n]);\n\nconst balance = await client.readContract({\n  address: '0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48', // USDC\n  abi,\n  functionName: 'balanceOf',\n  args: ['0xd8dA6BF26964aF9D7eEd9e03E53415D37aA96045'],\n});\n```\n\n### Send Transaction\n\n```typescript\nimport { createWalletClient, http, parseEther } from 'viem';\nimport { privateKeyToAccount } from 'viem/accounts';\nimport { mainnet } from 'viem/chains';\n\nconst account = privateKeyToAccount(process.env.PRIVATE_KEY as `0x${string}`);\n\nconst client = createWalletClient({\n  account,\n  chain: mainnet,\n  transport: http(),\n});\n\nconst hash = await client.sendTransaction({\n  to: '0x...',\n  value: parseEther('0.1'),\n});\n\nconsole.log(`Trans…",
+    "category": "uniswap",
+    "category_title": "Uniswap",
+    "source": {
+      "name": "uniswap-ai",
+      "repository": "https://github.com/Uniswap/uniswap-ai",
+      "install": "npx skills add Uniswap/uniswap-ai"
+    },
+    "skill_path": "skills/uniswap-ai/packages/plugins/uniswap-viem/skills/viem-integration/SKILL.md"
+  }
+]

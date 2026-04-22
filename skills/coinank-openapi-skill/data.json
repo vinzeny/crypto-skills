@@ -1,0 +1,16 @@
+[
+  {
+    "id": "coinank-coinank-openapi-skill",
+    "title": "coinank-openapi",
+    "summary": "call coinank openapi to get cryptocurrency data",
+    "usage": "# SECURITY MANIFEST:\n# - Allowed to read: {baseDir}/README.md, {baseDir}/references/*.json\n# - Allowed to make network requests to: https://open-api.coinank.com",
+    "category": "coinank",
+    "category_title": "CoinAnk",
+    "source": {
+      "name": "coinank-openapi-skill",
+      "repository": "https://github.com/coinank/coinank-openapi-skill",
+      "install": "git clone https://github.com/coinank/coinank-openapi-skill.git ~/.openclaw/skills/coinank-openapi-skill"
+    },
+    "skill_path": "skills/coinank-openapi-skill/SKILL.md"
+  }
+]

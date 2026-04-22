@@ -1,0 +1,19 @@
+---
+import Layout from "../layouts/Layout.astro";
+import SkillsDirectory from "../components/SkillsDirectory.jsx";
+
+---
+
+<!--
+  Assumptions:
+  - Grouping uses each skill's category_title from every skills directory data.json.
+  - No official brand asset pack was provided, so the design uses neutral text labels and category accents instead of exchange logos.
+  - Cards expose title, summary, usage, install source, repository, and local skill path.
+-->
+
+<Layout
+  title="Crypto Skills"
+  description="Browse AI crypto skills by exchange, protocol, and source repository."
+>
+  <SkillsDirectory client:load />
+</Layout>

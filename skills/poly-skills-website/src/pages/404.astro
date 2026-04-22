@@ -1,0 +1,17 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+const homeHref = import.meta.env.BASE_URL.endsWith("/") ? import.meta.env.BASE_URL : `${import.meta.env.BASE_URL}/`;
+---
+
+<Layout title="404: Not Found">
+  <div class="empty-state" style="min-height: 60vh; border: none; background: transparent;">
+    <div style="text-align: center;">
+      <h1 style="font-size: 100px; margin: 0; color: #000; font-weight: 900; text-shadow: 6px 6px 0px var(--accent-pink);">404</h1>
+      <p style="font-size: 24px; color: #000; margin-top: 10px; font-family: 'VT323', monospace;">GAME OVER: Page Not Found</p>
+      <a href={homeHref} class="open-button" style="margin-top: 30px; display: inline-block;">
+        Insert Coin to Restart
+      </a>
+    </div>
+  </div>
+</Layout>

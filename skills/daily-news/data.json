@@ -1,0 +1,16 @@
+[
+  {
+    "id": "6551-daily-news-openclaw-skill-daily-news",
+    "title": "daily-news",
+    "summary": "Daily news and hot topics via the 6551 API. Supports news categories, hot news articles, and trending tweets by category.",
+    "usage": "Query daily news and hot topics from the 6551 platform REST API. No authentication required.",
+    "category": "6551",
+    "category_title": "6551 Daily News",
+    "source": {
+      "name": "daily-news",
+      "repository": "https://github.com/6551Team/daily-news",
+      "install": "OpenClaw: cp -r openclaw-skill/daily-news ~/.openclaw/skills/6551-daily-news"
+    },
+    "skill_path": "skills/daily-news/openclaw-skill/daily-news/SKILL.md"
+  }
+]

@@ -1,0 +1,30 @@
+[
+  {
+    "id": "crypto-com-crypto-agent-trading-crypto-com-app",
+    "title": "crypto-com-app",
+    "summary": "Execute crypto trades (buy, sell, swap, exchange), manage cash deposits and withdrawals, and query account balances, market prices, and transaction history via the Crypto.com APP API. View weekly trading limits, portfolio positions, bank accounts, and payment networks. Use when the user wants to trade cryptocurrency, deposit or withdraw cash, check bank account details, view deposit instructions, or manage fiat wallet operations. Supports BTC, ETH, CRO, and 200+ tokens across fiat and crypto wallets.",
+    "usage": "**ALL API interactions MUST go through these scripts.** They handle signing, execution, filtering, and error formatting. Run the appropriate command below via shell, then parse the JSON output.\n\n**Prerequisite:** `npx tsx` (Node.js 18+ required; `tsx` is fetched automatically by `npx`).\n\n**Important:** All script paths below use `$SKILL_DIR` as a placeholder for this skill's root directory. Resolve it from the path you loaded this SKILL.md from, or `cd` into the skill directory and use `./scripts/...` as the path. Either approach works.\n\n### Account Commands\n\n```bash",
+    "category": "crypto-com",
+    "category_title": "Crypto.com",
+    "source": {
+      "name": "crypto-agent-trading",
+      "repository": "https://github.com/crypto-com/crypto-agent-trading",
+      "install": "npx skills add crypto-com/crypto-agent-trading/crypto-com-app -g -y"
+    },
+    "skill_path": "skills/crypto-agent-trading/crypto-com-app/SKILL.md"
+  },
+  {
+    "id": "crypto-com-crypto-agent-trading-crypto-com-exchange",
+    "title": "crypto-com-exchange",
+    "summary": "Crypto.com Exchange Spot request using the Crypto.com Exchange API. Authentication requires API key and secret key. Supports production and UAT sandbox.",
+    "usage": "Spot request on Crypto.com Exchange using authenticated API endpoints. Requires API key and secret key for private endpoints. Return the result in JSON format.",
+    "category": "crypto-com",
+    "category_title": "Crypto.com",
+    "source": {
+      "name": "crypto-agent-trading",
+      "repository": "https://github.com/crypto-com/crypto-agent-trading",
+      "install": "npx skills add crypto-com/crypto-agent-trading/crypto-com-app -g -y"
+    },
+    "skill_path": "skills/crypto-agent-trading/crypto-com-exchange/SKILL.md"
+  }
+]
